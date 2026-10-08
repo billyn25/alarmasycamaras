@@ -29,6 +29,28 @@ with sync_playwright() as p:
         page.evaluate("document.querySelectorAll('img').forEach(img => img.loading = 'eager')")
         page.wait_for_function('Array.from(document.images).every(img => img.complete && img.naturalWidth > 0)')
         page.screenshot(path=str(OUT / f'home-{width}.png'), full_page=True)
+    # Regresiones: imagen con proporción original, productos completos y cobertura SSR.
+    for width in [320, 390, 600, 768, 1024, 1440, 1920]:
+        page.set_viewport_size({'width': width, 'height': 1000})
+        page.goto(BASE, wait_until='networkidle')
+        page.wait_for_function('document.querySelector(".hero-product").naturalWidth > 0')
+        metrics = page.locator('.hero-product').evaluate("""el => {
+          const r=el.getBoundingClientRect(), p=el.parentElement.getBoundingClientRect();
+          const card=document.querySelector('.floating-product').getBoundingClientRect();
+          return {ratio:r.width/r.height, original:el.naturalWidth/el.naturalHeight,
+            contained:r.x>=p.x && r.right<=p.right && r.top>=p.top && r.bottom<=p.bottom,
+            uncovered:card.top>=r.bottom};
+        }""")
+        assert abs(metrics['ratio']-metrics['original']) < .01, (width,metrics)
+        assert metrics['contained'] and metrics['uncovered'], (width,metrics)
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
+        assert page.locator('.coverage-province').count() == 19
+        assert page.locator('.coverage-province li a').count() == 114
+        checks.append(f'{width}px: proporción original, kit sin superposición, 19 provincias y 114 enlaces OK')
+    page.goto(BASE + '/marcas/ajax/', wait_until='networkidle')
+    assert page.locator('.ajax-topics article').count() == 6
+    assert page.locator('.source-links a').count() >= 8
+    checks.append('Guía Ajax: seis temas y enlaces a documentación oficial OK')
     page.set_viewport_size({'width': 390, 'height': 844})
     page.goto(BASE)
     page.locator('.menu-toggle').click()
@@ -69,6 +91,10 @@ with sync_playwright() as p:
     assert not errors, errors
     nojs = browser.new_context(java_script_enabled=False, viewport={'width':390,'height':844})
     np = nojs.new_page()
+    np.goto(BASE)
+    assert np.locator('.coverage-province').count() == 19
+    assert np.locator('.coverage-province li a').count() == 114
+    checks.append('Cobertura de portada disponible sin JavaScript: 19 provincias y 114 localidades')
     np.goto(BASE + '/burgos/')
     assert np.locator('[data-town-list] a').count() == 371
     assert np.locator('#main-nav').is_visible()

@@ -16,3 +16,29 @@ test('Una preview de rama nunca hereda producción',()=>assert.equal(runtime(sit
 test('Valida origen de la URL',()=>assert.throws(()=>runtime(site,{URL:'https://revision.netlify.app/ruta'}),/origen/));
 test('Producción exige un dominio definitivo',()=>{const ready=structuredClone(site);for(const k of Object.keys(ready.ready))ready.ready[k]=true;for(const k of Object.keys(ready.legal))ready.legal[k]='Dato de prueba';assert.throws(()=>runtime(ready,{SITE_MODE:'production'}),/dominio/);assert.throws(()=>runtime(ready,{SITE_MODE:'production',SITE_URL:'https://revision.netlify.app'}),/Dominio/);assert.equal(runtime(ready,{SITE_MODE:'production',SITE_URL:'https://dominio-confirmado.es'}).production,true);});
 test('No se aprueba una página local vacía',()=>{assert.equal(approvedLocal(null),false);assert.equal(approvedLocal({approved:true}),false);assert.equal(approvedLocal({approved:true,reviewedAt:'2026-10-08',source:'Registro verificado de cobertura',blocks:[{title:'Datos del servicio',text:'Contenido comprobado. '.repeat(12)},{title:'Condiciones de la visita',text:'Información comprobada. '.repeat(12)}]}),true);});
+
+test('Cobertura en portada: 19 provincias y 114 localidades de su propia provincia',async()=>{
+ const {coverageSection,featuredByProvince}=await import('../src/coverage.mjs');
+ const towns=townsFrom(records),html=coverageSection(towns);
+ assert.equal((html.match(/class="coverage-province"/g)||[]).length,19);
+ assert.equal((html.match(/<li><a href=/g)||[]).length,114);
+ assert.equal(Object.keys(featuredByProvince).length,19);
+ for(const province of provinces){
+  const names=featuredByProvince[province.slug];assert.equal(new Set(names).size,6);
+  for(const name of names){const town=towns.find(t=>t.province.id===province.id&&t.name===name);assert.ok(town);assert.ok(html.includes(`href="${town.url}"`));}
+  assert.ok(html.includes('Ver todos los municipios de '+e(province.name)));
+ }
+ assert.throws(()=>coverageSection(towns.filter(t=>t.name!=='Lerma')),/Lerma/);
+});
+test('Contenido Ajax diferenciado, fuentes oficiales y sin promesas absolutas',async()=>{
+ const {technicalSources,homeKnowledge,ajaxKnowledge,serviceKnowledge}=await import('../src/security.mjs');
+ for(const source of Object.values(technicalSources))assert.equal(new URL(source.url).hostname,'ajax.systems');
+ const detail=ajaxKnowledge();for(const id of ['radio-jeweller','luz-e-internet','modo-noche','fotoverificacion','mascotas','video-compatible'])assert.ok(detail.includes(`id="${id}"`));
+ assert.ok(homeKnowledge().includes('/marcas/ajax/#luz-e-internet'));
+ assert.ok(detail.includes('no alimenta automáticamente'));
+ assert.ok(detail.includes('no se atribuyen al MotionCam estándar'));
+ assert.ok(!/100\s*%\s*segur|imposible de inhibir|la más segura del mercado/i.test(detail));
+ for(const service of services)assert.ok(serviceKnowledge(service.slug).includes('practical-grid'));
+ assert.ok(serviceKnowledge('alarmas-y-camaras').includes('id="fotos-directo-grabacion"'));
+ assert.equal(serviceKnowledge('desconocido'),'');
+});

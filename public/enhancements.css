@@ -1,0 +1,96 @@
+/* Hero: mantener la imagen original, sin compresión ni tarjeta sobre los equipos. */
+.hero{grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);gap:36px}
+.hero-visual{height:auto;min-height:0;flex-direction:column;padding:54px 22px 16px;overflow:visible}
+.hero-product{display:block;flex:none;width:100%;height:auto;aspect-ratio:1;object-fit:contain;max-width:540px;transform:none;margin:0 auto}
+.product-caption{top:20px;left:28px;font-size:18px;line-height:1.15}
+.product-caption span{font-size:10px}
+.floating-product{position:static;left:auto;right:auto;bottom:auto;min-width:0;width:100%;margin:8px 0 0;padding:10px 16px;box-shadow:none;flex:none}
+.floating-product img{width:58px;height:58px}
+.visual-note{position:static;display:block;margin-top:12px;text-align:center;font-size:10px;line-height:1.5}
+/* Una selección de localidades bajo cada provincia, sin scroll interior. */
+.coverage-provinces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.coverage-province{min-width:0;background:white;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column}
+.coverage-province header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:17px;border-bottom:1px solid var(--line)}
+.coverage-province h3{font-size:24px;line-height:1.2;letter-spacing:-.035em}
+.coverage-province header>span{font-size:11px;white-space:nowrap;color:var(--muted)}
+.coverage-province ul{list-style:none;margin:12px 0 20px;padding:0;flex:1}
+.coverage-province li{margin:0;padding:0}
+.coverage-province li a{display:block;line-height:1.5;font-size:13px;padding:8px 0;overflow-wrap:anywhere}
+.coverage-province li a:hover{text-decoration:underline;text-underline-offset:4px}
+.coverage-all{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;font-weight:600;line-height:1.5}
+.coverage-all>span{font-size:18px;flex:none}
+.coverage-bottom{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:30px}
+.coverage-bottom p{max-width:570px;font-size:12px}
+/* Información útil, separada del mensaje comercial principal. */
+.knowledge-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.knowledge-grid article{border-top:1px solid var(--line);padding-top:25px;display:flex;flex-direction:column;min-width:0}
+.knowledge-grid h3{font-size:25px;line-height:1.15;letter-spacing:-.035em}
+.knowledge-grid article>p:not(.eyebrow){font-size:14px;line-height:1.75;margin:20px 0 24px}
+.knowledge-grid .eyebrow{font-size:9px;margin-bottom:18px;color:#0759bd}
+.knowledge-grid .text-link{margin-top:auto;font-size:12px}
+.knowledge-note{font-size:11px;margin-top:30px}
+.knowledge-index{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.knowledge-index a{border:1px solid var(--line);border-radius:100px;padding:10px 15px;font-size:12px;background:var(--soft)}
+.knowledge-index a:hover{border-color:var(--blue)}
+.ajax-topics article{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:65px;border-top:1px solid var(--line);padding-block:36px;scroll-margin-top:110px}
+.ajax-topics h3{font-size:31px;line-height:1.15;max-width:370px}
+.ajax-topics article>div>p{font-size:15px;line-height:1.8}
+.ajax-topics .practical-advice{margin-top:18px}
+.practical-advice strong{color:var(--ink);font-weight:600}
+.source-links{font-size:11px!important;line-height:1.8!important;margin:24px 0}
+.source-links>span{display:block;margin-bottom:4px}
+.source-links a{display:inline;text-decoration:underline;text-underline-offset:3px}
+.source-links a>span{font-size:10px}
+.equipment-note{padding:34px 38px;background:var(--soft);border-radius:20px;margin-top:25px}
+.equipment-note h3{font-size:28px}
+.equipment-note p{font-size:14px;line-height:1.8;margin:18px 0 24px;max-width:870px}
+.service-knowledge{border-top:1px solid var(--line)}
+.service-knowledge .section-heading h2{max-width:760px;font-size:clamp(31px,3.5vw,46px)}
+.practical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.practical-grid article{background:var(--soft);border-radius:20px;padding:29px}
+.practical-grid h3{font-size:24px;line-height:1.2}
+.practical-grid p{font-size:14px;line-height:1.8;margin-top:20px}
+.service-knowledge>.text-link{margin-top:22px}
+@media(max-width:1150px){
+ .hero{gap:26px}.hero h1{font-size:clamp(59px,6vw,70px)}
+ .hero-visual{padding-inline:17px}.hero-product{max-width:510px}
+ .knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px}
+ .coverage-province{padding:20px}.coverage-province h3{font-size:22px}
+ .coverage-province header{flex-wrap:wrap;gap:4px}
+ .practical-grid article{padding:23px}
+}
+@media(max-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px}
+ .hero h1{font-size:clamp(45px,6.1vw,57px)}.hero-visual{padding-top:52px}
+ .floating-product{padding:9px 12px;gap:10px}.floating-product img{width:48px;height:48px}
+ .floating-product strong{font-size:13px}.visual-note{font-size:9px}
+ .coverage-provinces{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .coverage-bottom{align-items:flex-start}.coverage-bottom p{max-width:390px}
+ .ajax-topics article{gap:30px}.ajax-topics h3{font-size:28px}
+ .practical-grid{gap:16px}.practical-grid h3{font-size:22px}.practical-grid article{padding:22px}
+}
+@media(max-width:600px){
+ .hero{grid-template-columns:minmax(0,1fr);gap:27px}
+ .hero h1{font-size:clamp(45px,11.9vw,68px)}
+ .hero-visual{height:auto;padding:47px 14px 14px;overflow:visible}
+ .hero-product{width:100%;height:auto;max-width:450px;aspect-ratio:1;transform:none}
+ .product-caption{top:17px;left:23px;font-size:15px}.product-caption span{font-size:8px}
+ .floating-product{min-width:0;width:100%;margin-top:6px;padding:10px 13px;gap:13px}
+ .floating-product img{width:47px;height:47px}.floating-product strong{font-size:14px}
+ .visual-note{font-size:9px;margin-top:10px}
+ .coverage-provinces{grid-template-columns:minmax(0,1fr);gap:16px}
+ .coverage-province{padding:22px}.coverage-province header{flex-wrap:nowrap;gap:12px}
+ .coverage-province h3{font-size:25px}.coverage-province li a{font-size:13px;padding-block:10px}
+ .coverage-all{font-size:12px;min-height:48px}.coverage-bottom{display:block}
+ .coverage-bottom p{margin-top:18px;font-size:11px;max-width:none}
+ .knowledge-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+ .knowledge-grid h3{font-size:28px}.knowledge-grid article>p:not(.eyebrow){margin-block:17px 20px}
+ .knowledge-grid .text-link{font-size:13px}.knowledge-note{font-size:11px}
+ .ajax-topics article{grid-template-columns:minmax(0,1fr);gap:19px;padding-block:29px}
+ .ajax-topics h3{font-size:28px}.ajax-topics article>div>p{font-size:14px}
+ .knowledge-index{gap:8px}.knowledge-index a{font-size:11px;padding:10px 12px}
+ .equipment-note{padding:28px}.equipment-note h3{font-size:26px}
+ .practical-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+ .practical-grid article{padding:27px}.practical-grid h3{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
