@@ -46,7 +46,12 @@ with sync_playwright() as p:
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
         assert page.locator('.coverage-province').count() == 19
         assert page.locator('.coverage-province li a').count() == 114
-        checks.append(f'{width}px: proporción original, kit sin superposición, 19 provincias y 114 enlaces OK')
+        photos = page.locator('main img').evaluate_all("els => els.map(el => el.getAttribute('src'))")
+        assert len(photos) == 4 and len(set(photos)) == 4, photos
+        assert page.locator('.trust-star').count() == 5
+        assert page.locator('[data-stat=municipalities]').inner_text() == '3.797'
+        assert page.locator('[data-stat=services]').inner_text() == '4'
+        checks.append(f'{width}px: proporción, 4 fotos distintas, compromisos, totales y cobertura OK')
     page.goto(BASE + '/marcas/ajax/', wait_until='networkidle')
     assert page.locator('.ajax-topics article').count() == 6
     assert page.locator('.source-links a').count() >= 8

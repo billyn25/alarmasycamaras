@@ -12,5 +12,33 @@
     "description": "Ajax TurretCam, imagen comercial de producto distribuida por Raskpreke",
     "sha256": "e85500400d40cdaf727685174766ae255da39f05613df2d384d5de9a67ff39d4",
     "rights": "Imagen comercial para maqueta de revisión; confirmar permiso de uso antes de producción. No representa un trabajo de Rapid."
+  },
+  {
+    "file": "ajax-keypad-touchscreen.webp",
+    "source": "https://www.ibdglobal.com/web/image/product.product/18668/image_1024/%5BKEYPAD-TOUCH-WH%5D%20Ajax%20KeyPad%20TouchScreen%20Jeweller.%20Teclado%20T%C3%A1ctil%20con%20Lector%20Inal%C3%A1mbrico.%20Color%20Blanco?unique=2c01636",
+    "description": "KeyPad TouchScreen Jeweller blanco: imagen comercial publicada por IBD Global.",
+    "width": 1000,
+    "height": 1000,
+    "source_dimensions": [
+      1024,
+      1024
+    ],
+    "source_sha256": "f9f7b4906eb08bac1597969e76768f33fbd89673ce1d58791d40f59fb59be9fd",
+    "sha256": "b73e068dbed754abb63ba31fa5fb7b975a4d40ca712fa2cbf0256d405da148a5",
+    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no es una instalación realizada por Rapid."
+  },
+  {
+    "file": "ajax-bulletcam.webp",
+    "source": "https://www.alarmalti.es/ajax-bulletcam.png",
+    "description": "BulletCam negra: imagen comercial publicada por AlarmaLti.",
+    "width": 600,
+    "height": 600,
+    "source_dimensions": [
+      600,
+      600
+    ],
+    "source_sha256": "9219dc58bc3f1eb18ad7d557160e89c1aa5980bb21d24310289cac138e5b5b75",
+    "sha256": "41a08eefbf9f154a599de47059a1484c008d1b60d3000cb9aec7c22a8aba3bcb",
+    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no es una instalación realizada por Rapid."
   }
 ]
