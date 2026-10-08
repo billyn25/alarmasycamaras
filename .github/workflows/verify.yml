@@ -2,25 +2,50 @@ name: Verificar web
 on:
   push:
     branches: [main]
-    paths-ignore: ['docs/**', 'README.md']
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: verify-${{ github.ref }}
+  group: rapid-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  verify:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Exportar fuentes para revisión
-        uses: actions/upload-artifact@v4
+      - uses: actions/setup-node@v4
         with:
-          name: fuentes-revision
-          path: |
-            data
-            public/assets
+          node-version: '22'
+      - name: Compilar y auditar todas las páginas
+        run: npm run build
+      - name: Pruebas unitarias
+        run: npm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Navegador de pruebas
+        run: |
+          pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Pruebas de móvil, PC, buscador y contacto
+        run: |
+          node scripts/serve.mjs > /tmp/rapid-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          python tests/browser.py
+      - name: Preparar copia de fuentes
+        if: always()
+        run: |
+          mkdir -p artifacts
+          git archive --format=zip HEAD -o artifacts/fuentes.zip
+          cp .cache/*report.json artifacts/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revision-web
+          path: artifacts/
           retention-days: 7
+          if-no-files-found: error

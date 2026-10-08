@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {e,slug,cleanName,townsFrom,runtime,approvedLocal} from '../src/lib.mjs';
+import {provinces,brands,services} from '../src/content.mjs';
+const site=JSON.parse(fs.readFileSync('config/site.json','utf8')),records=JSON.parse(fs.readFileSync('data/municipios.json','utf8')).municipalities;
+test('Escape HTML de contenido y atributos',()=>assert.equal(e('<x a="1">&\''),'&lt;x a=&quot;1&quot;&gt;&amp;&#39;'));
+test('Rutas sin tildes y artículos conservados',()=>{assert.equal(slug('Las Rozas de Madrid'),'las-rozas-de-madrid');assert.equal(cleanName('Rozas de Madrid, Las'),'Las Rozas de Madrid');assert.equal(slug('Agurain/Salvatierra'),'agurain-salvatierra');assert.equal(slug('Ávila'),'avila');});
+test('19 provincias y seis marcas',()=>{assert.equal(provinces.length,19);assert.equal(brands.length,6);assert.equal(services.length,4);assert.equal(new Set(provinces.map(p=>p.slug)).size,19);});
+test('Inventario municipal íntegro y rutas únicas',()=>{const towns=townsFrom(records);assert.equal(towns.length,3797);assert.equal(new Set(towns.map(t=>t.url)).size,towns.length);assert.ok(towns.some(t=>t.url==='/burgos/lerma/'));assert.ok(towns.some(t=>t.url==='/bizkaia/zalla/'));});
+test('Rechaza códigos municipales duplicados',()=>assert.throws(()=>townsFrom([records[0],records[0]]),/duplicado/));
+test('Rechaza provincia y código incoherentes',()=>assert.throws(()=>townsFrom([{id:'01001',province:'09',name:'Prueba'}]),/inválido/));
+test('Preview por defecto sin dominio inventado',()=>assert.deepEqual(runtime(site,{}),{production:false,base:''}));
+test('No se activa producción con datos pendientes',()=>assert.throws(()=>runtime(site,{SITE_MODE:'production'}),/pendiente/));
+test('Una preview de rama nunca hereda producción',()=>assert.equal(runtime(site,{SITE_MODE:'production',CONTEXT:'deploy-preview',DEPLOY_PRIME_URL:'https://revision.netlify.app'}).production,false));
+test('Valida origen de la URL',()=>assert.throws(()=>runtime(site,{URL:'https://revision.netlify.app/ruta'}),/origen/));
+test('Producción exige un dominio definitivo',()=>{const ready=structuredClone(site);for(const k of Object.keys(ready.ready))ready.ready[k]=true;for(const k of Object.keys(ready.legal))ready.legal[k]='Dato de prueba';assert.throws(()=>runtime(ready,{SITE_MODE:'production'}),/dominio/);assert.throws(()=>runtime(ready,{SITE_MODE:'production',SITE_URL:'https://revision.netlify.app'}),/Dominio/);assert.equal(runtime(ready,{SITE_MODE:'production',SITE_URL:'https://dominio-confirmado.es'}).production,true);});
+test('No se aprueba una página local vacía',()=>{assert.equal(approvedLocal(null),false);assert.equal(approvedLocal({approved:true}),false);assert.equal(approvedLocal({approved:true,reviewedAt:'2026-10-08',source:'Registro verificado de cobertura',blocks:[{title:'Datos del servicio',text:'Contenido comprobado. '.repeat(12)},{title:'Condiciones de la visita',text:'Información comprobada. '.repeat(12)}]}),true);});
