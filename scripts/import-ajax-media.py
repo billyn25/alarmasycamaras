@@ -21,10 +21,13 @@ for name,url,expected,description in ASSETS:
     if len(raw)>12_000_000:raise ValueError('Imagen demasiado grande: '+name)
     with Image.open(BytesIO(raw)) as image:
         image.load()
-        if image.size!=expected:raise ValueError(f'Dimensiones inesperadas: {name} {image.size}, esperadas {expected}')
+        original=image.size
+        if image.width<expected[0] or image.height<expected[1] or image.width*expected[1]!=image.height*expected[0]:
+            raise ValueError(f'Resolución o proporción inesperada: {name} {original}')
         if image.mode not in ('RGB','RGBA'):image=image.convert('RGBA' if 'transparency' in image.info else 'RGB')
+        if image.size!=expected:image=image.resize(expected,Image.Resampling.LANCZOS)
         image.save(target,format='WEBP',quality=91,method=6)
     rows=[r for r in rows if r['file']!=name]
-    rows.append({'file':name,'source':url,'description':description,'width':expected[0],'height':expected[1],'source_sha256':sha256(raw).hexdigest(),'sha256':sha256(target.read_bytes()).hexdigest(),'rights':'Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no es una instalación realizada por Rapid.'})
+    rows.append({'file':name,'source':url,'description':description,'width':expected[0],'height':expected[1],'source_dimensions':list(original),'source_sha256':sha256(raw).hexdigest(),'sha256':sha256(target.read_bytes()).hexdigest(),'rights':'Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no es una instalación realizada por Rapid.'})
     print('Importada:',name,target.stat().st_size,'bytes')
 manifest.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
