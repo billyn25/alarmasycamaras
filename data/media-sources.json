@@ -1,0 +1,16 @@
+[
+  {
+    "file": "ajax-kit.jpg",
+    "source": "https://www.easyalarm.it/cdn/shop/files/MotionCamAjaxWhite.jpg?v=1739229998",
+    "description": "Ajax StarterKit Cam, imagen comercial de producto distribuida por Easy Alarm",
+    "sha256": "fb15bb47c5b22f1c3b2980a60b30b7f2554bd83d9929243f64f2a72d95ab7d3c",
+    "rights": "Imagen comercial para maqueta de revisión; confirmar permiso de uso antes de producción. No representa un trabajo de Rapid."
+  },
+  {
+    "file": "ajax-turret.jpg",
+    "source": "https://www.raskpreke.lt/images/uploader/aj/1000x1000.g/ajax-turretcam-64927197wh1-28mm-balta-8mp-50m-ir-mikrofonas-microsd-256gb-ip65.jpg?v=1763849841",
+    "description": "Ajax TurretCam, imagen comercial de producto distribuida por Raskpreke",
+    "sha256": "e85500400d40cdaf727685174766ae255da39f05613df2d384d5de9a67ff39d4",
+    "rights": "Imagen comercial para maqueta de revisión; confirmar permiso de uso antes de producción. No representa un trabajo de Rapid."
+  }
+]
