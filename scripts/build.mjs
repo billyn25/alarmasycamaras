@@ -7,6 +7,7 @@ import * as view from '../src/views.mjs';
 const started=performance.now(),read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 const site=read('config/site.json'),locals=read('config/local-content.json'),rt=runtime(site);
 const source=read('data/municipios.json'),towns=townsFrom(source.municipalities),ids=new Set(towns.map(t=>t.id));
+site.directoryCount=towns.length;
 for(const [id,entry] of Object.entries(locals.approved)){if(!ids.has(id))throw Error('Municipio desconocido: '+id);if(!approvedLocal(entry))throw Error('Contenido local sin revisión completa: '+id);}
 for(const media of read('data/media-sources.json')){const file='public/assets/'+media.file;if(!fs.existsSync(file))throw Error('Falta imagen: '+file);const actual=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');if(media.sha256&&actual!==media.sha256)throw Error('Imagen distinta a su fuente: '+file);}
 const out=path.resolve('dist');fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});fs.mkdirSync('.cache',{recursive:true});

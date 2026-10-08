@@ -42,3 +42,20 @@ test('Contenido Ajax diferenciado, fuentes oficiales y sin promesas absolutas',a
  assert.ok(serviceKnowledge('alarmas-y-camaras').includes('id="fotos-directo-grabacion"'));
  assert.equal(serviceKnowledge('desconocido'),'');
 });
+
+
+test('Portada sin fotos repetidas y con compromisos, no reseñas inventadas',async()=>{
+ const {home}=await import('../src/views.mjs');const html=home(townsFrom(records));
+ const images=[...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m=>m[1]);
+ assert.equal(images.length,4);assert.equal(new Set(images).size,images.length);
+ assert.equal((html.match(/class="trust-star"/g)||[]).length,5);
+ assert.ok(!/AggregateRating|reviewCount|ratingValue/.test(html));
+ assert.ok(html.includes('Instalación discreta. Protección profesional.'));
+ assert.ok(!html.includes('Radio propia. No el Wi-Fi de casa.'));
+});
+test('Totales del pie calculados y teléfono clicable',async()=>{
+ const {footerSummary}=await import('../src/trust.mjs');const html=footerSummary(site,services.length,provinces.length,records.length);
+ assert.ok(html.includes('href="tel:'+site.tel+'"'));assert.ok(html.includes('data-stat="services">4'));
+ assert.ok(html.includes('data-stat="provinces">19'));assert.ok(html.includes('3.797'));
+ assert.throws(()=>footerSummary(site,4,19,undefined),/Totales/);
+});

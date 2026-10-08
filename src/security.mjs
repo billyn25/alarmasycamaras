@@ -21,7 +21,7 @@ const more=(url,label)=>`<a class="text-link" href="${url}">${e(label)} <span ar
 
 export function homeKnowledge(){
  const cards=[
-  ['01 / SIN CABLES','Radio propia. No el Wi-Fi de casa.','Los detectores Ajax Jeweller se comunican con la central mediante radio bidireccional cifrada. Para enviarte avisos al móvil, la central utiliza sus conexiones a Internet. Son dos comunicaciones distintas.','radio-jeweller'],
+  ['01 / ALARMAS INALÁMBRICAS','Instalación discreta. Protección profesional.','Protege puertas, ventanas y zonas de paso con detectores inalámbricos Ajax. Diseñamos una instalación cuidada, sin tender cables entre cada detector y la central, adaptada a tu vivienda o negocio.','radio-jeweller'],
   ['02 / ALGO FALLA','¿Se va la luz? Hay que preverlo.','Una central con batería de respaldo puede seguir funcionando durante un corte. Una conexión móvil configurada ofrece otra vía si falla el router. Revisamos batería, cobertura y alimentación de cada equipo.','luz-e-internet'],
   ['03 / ESTÁS EN CASA','Descansa dentro. Protege los accesos.','El Modo Noche permite armar los detectores seleccionados. Podemos plantear la protección de determinadas puertas y ventanas mientras permaneces en casa, sin activar todos los espacios a la vez.','modo-noche'],
   ['04 / RECIBES UN AVISO','Una foto ayuda a entenderlo.','Los detectores MotionCam compatibles pueden acompañar una alarma con fotografías. Sirven para comprobar el evento: no sustituyen a las cámaras destinadas a ver en directo o guardar vídeo.','fotoverificacion']
