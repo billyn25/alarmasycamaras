@@ -23,7 +23,9 @@ with sync_playwright() as p:
             assert page.locator('h1').count()==1,route
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(width,route)
             assert page.locator('footer a[href^="tel:"]').count()==1
-            assert page.locator('meta[name=robots]').get_attribute('content').startswith('noindex')
+            robots=page.locator('meta[name=robots]').get_attribute('content')
+            if route in ['/aviso-legal/','/privacidad/','/cookies/']: assert robots.startswith('noindex')
+            else: assert robots.startswith('index,follow')
             if route!='/404.html':
                 assert page.locator('link[rel="canonical"]').count()==1
                 assert page.locator('link[rel="canonical"]').get_attribute('href')=='https://camarasyalarmasrapid.com'+route
