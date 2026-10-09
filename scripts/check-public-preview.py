@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import json, re, hashlib
-BASE='https://alarmasycamarasrapid.netlify.app'
+BASE='https://camarasyalarmasrapid.com'
 cssfile=next(Path('dist/assets').glob('css.*.css'))
 expected_css='/assets/'+cssfile.name
 expected_hash=hashlib.sha256(cssfile.read_bytes()).hexdigest()
