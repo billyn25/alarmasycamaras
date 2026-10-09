@@ -39,6 +39,10 @@ const home=fs.readFileSync('dist/index.html','utf8');
 for(const type of ['Organization','WebSite','WebPage'])assert.ok(home.includes('"@type":"'+type+'"'),type);
 const service=fs.readFileSync('dist/camaras/index.html','utf8');
 assert.ok(service.includes('"@type":"Service"'));
+const localSample=fs.readFileSync('dist/burgos/lerma/index.html','utf8');
+assert.ok(localSample.includes('#local-service'));
+assert.ok(localSample.includes('Instalación de cámaras y alarmas en Lerma'));
+assert.ok(localSample.includes('"areaServed"'));
 
 const robots=fs.readFileSync('dist/robots.txt','utf8');
 assert.ok(robots.includes('Sitemap: '+base+'/sitemap.xml'));
