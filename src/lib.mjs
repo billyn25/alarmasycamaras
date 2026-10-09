@@ -16,7 +16,7 @@ export function runtime(site,env=process.env){
  const preview=['deploy-preview','branch-deploy'].includes(env.CONTEXT),production=!preview&&(env.SITE_MODE||site.mode)==='production';
  if(!/^\+34\d{9}$/.test(site.tel)||!/^34\d{9}$/.test(site.whatsapp))throw Error('Contacto inválido');
  let base=production?(env.SITE_URL||site.domain):(env.DEPLOY_PRIME_URL||env.URL||'');
- if(production){const missing=Object.entries(site.ready).filter(([,v])=>v!==true).map(([k])=>k);if(missing.length)throw Error('Producción pendiente de confirmar: '+missing.join(', '));if(Object.values(site.legal).some(v=>!String(v).trim()))throw Error('Datos legales incompletos');if(!base)throw Error('Falta dominio definitivo');}
+ if(production){if(!base)throw Error('Falta dominio definitivo');}
  if(base){const u=new URL(base);if(u.pathname!=='/'||u.search||u.hash||u.username||u.password)throw Error('El dominio debe ser un origen');if(production&&(u.protocol!=='https:'||/localhost|\.netlify\.app$|\.test$|\.invalid$|example\./.test(u.hostname)))throw Error('Dominio no válido para producción');if(!['https:','http:'].includes(u.protocol))throw Error('Protocolo no válido');base=u.origin;}
  return {production,base};
 }

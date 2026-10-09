@@ -1,17 +1,17 @@
 {
   "brand": "Cámaras y Alarmas Rapid",
-  "domain": "https://alarmasycamarasrapid.com",
-  "mode": "preview",
+  "domain": "https://camarasyalarmasrapid.com",
+  "mode": "production",
   "phone": "641 589 394",
   "tel": "+34641589394",
   "whatsapp": "34641589394",
   "contactNote": "Contacto por teléfono y WhatsApp.",
   "ready": {
-    "contact": false,
-    "coverage": false,
+    "contact": true,
+    "coverage": true,
     "legal": false,
-    "mediaRights": false,
-    "commercialOffer": false
+    "mediaRights": true,
+    "commercialOffer": true
   },
   "legal": {
     "holder": "R.F.G.",

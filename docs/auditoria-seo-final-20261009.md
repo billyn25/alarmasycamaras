@@ -1,6 +1,6 @@
 # Auditoría SEO técnica de cierre · 9 octubre 2026
 
-Dominio canónico fijado: https://alarmasycamarasrapid.com
+Dominio canónico fijado: https://camarasyalarmasrapid.com
 
 ## Cerrado
 - Una sola URL canónica por página HTML válida; 404 sin canonical.

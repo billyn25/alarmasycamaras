@@ -3,7 +3,7 @@
 La verificación normal se ejecuta en modo preview/noindex. Además, CI realiza una segunda compilación temporal en modo producción que NO se despliega.
 
 La simulación exige:
-- dominio canónico https://alarmasycamarasrapid.com;
+- dominio canónico https://camarasyalarmasrapid.com;
 - 3.844 URLs indexables en producción: 28 páginas núcleo, 19 provincias y 3.797 municipios;
 - sitemap principal con las páginas núcleo y provincias;
 - 19 sitemaps provinciales con todos sus municipios;
@@ -15,3 +15,7 @@ La simulación exige:
 Los datos legales usados durante el dry-run son exclusivamente internos del runner y nunca se versionan ni se despliegan. El archivo real config/site.json se restaura al terminar.
 
 La variación editorial municipal ya generada se considera suficiente para permitir indexación técnica de las páginas locales. El contexto público verificado se mantiene como refuerzo adicional, no como requisito de salida.
+
+
+## Estado final
+El dominio principal se publica en modo producción. Los deploy previews de Netlify continúan con noindex. Las 3.844 URLs comerciales y locales salen con `index,follow`; las páginas legales y 404 permanecen fuera del sitemap.

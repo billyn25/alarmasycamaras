@@ -6,7 +6,7 @@ const pages=JSON.parse(fs.readFileSync('.cache/pages.json','utf8'));
 const report=JSON.parse(fs.readFileSync('.cache/build-report.json','utf8'));
 const base=new URL(site.domain).origin;
 
-assert.equal(base,'https://alarmasycamarasrapid.com');
+assert.equal(base,'https://camarasyalarmasrapid.com');
 assert.equal(report.pages,3848);
 assert.equal(report.municipalities,3797);
 
@@ -24,8 +24,8 @@ for(const page of pages){
 }
 const redirects=fs.readFileSync('dist/_redirects','utf8');
 for(const line of [
- 'https://www.alarmasycamarasrapid.com/* https://alarmasycamarasrapid.com/:splat 301!',
- 'http://alarmasycamarasrapid.com/* https://alarmasycamarasrapid.com/:splat 301!',
+ 'https://www.camarasyalarmasrapid.com/* https://camarasyalarmasrapid.com/:splat 301!',
+ 'http://camarasyalarmasrapid.com/* https://camarasyalarmasrapid.com/:splat 301!',
  '/index.html / 301!',
  '/guipuzcoa/* /gipuzkoa/:splat 301!',
  '/vizcaya/* /bizkaia/:splat 301!'

@@ -7,3 +7,7 @@
   SITE_MODE = "preview"
 [context.branch-deploy.environment]
   SITE_MODE = "preview"
+
+[context.production.environment]
+  SITE_MODE = "production"
+  SITE_URL = "https://camarasyalarmasrapid.com"

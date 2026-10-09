@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 
-const base='https://alarmasycamarasrapid.com';
+const base='https://camarasyalarmasrapid.com';
 const pages=JSON.parse(fs.readFileSync('.cache/pages.json','utf8'));
 const report=JSON.parse(fs.readFileSync('.cache/build-report.json','utf8'));
 

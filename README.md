@@ -6,7 +6,7 @@ Web estática independiente para instalación de alarmas, cámaras y sistemas in
 
 Importar **billyn25/alarmasycamaras**, rama **main**. Directorio base vacío. Comando **npm run build**. Directorio de publicación **dist**. Node 22 ya configurado en `netlify.toml`.
 
-Dominio definitivo: **https://alarmasycamarasrapid.com**. Mientras el sitio siga en modo preview, Netlify mantiene noindex. El paso a producción debe hacerse solo cuando se activen los controles internos de publicación; este repositorio no modifica DNS automáticamente.
+Dominio definitivo: **https://camarasyalarmasrapid.com**. El sitio principal está configurado en modo producción. Los deploy previews de Netlify siguen noindex.
 
 ## Contenido incluido
 
@@ -34,7 +34,7 @@ Sin cuota mensual obligatoria por alarma autogestionada. Conectividad, mantenimi
 
 ## Publicación e indexación
 
-Dominio definitivo configurado en **https://alarmasycamarasrapid.com**. En modo preview todo permanece `noindex`. La simulación de producción valida **3.844 URLs indexables**: 28 páginas principales, 19 provincias y 3.797 municipios. Aviso legal, privacidad, cookies y 404 siguen fuera del índice.
+Dominio definitivo configurado en **https://camarasyalarmasrapid.com**. En producción se publican **3.844 URLs indexables**: 28 páginas principales, 19 provincias y 3.797 municipios. Aviso legal, privacidad, cookies y 404 siguen fuera del índice.
 
 Cada municipio conserva una sola URL canónica y combina contenido técnico, variantes de intención de búsqueda, soluciones por inmueble, guías y enlazado interno. No se crean páginas distintas para «técnico», «instalador», «instalar cámaras» o «instalar alarmas». Los contextos municipales con fuente pública añaden profundidad extra, pero no son un requisito técnico de indexación.
 

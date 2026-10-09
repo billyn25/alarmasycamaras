@@ -19,7 +19,7 @@ La estrategia de publicación se actualizó para indexar la cobertura completa: 
 
 La auditoría técnica no garantiza posiciones en Google. Se mantiene como regla editorial no inventar trabajos, oficinas, clientes, reseñas, tiempos de llegada ni hechos locales. Las fuentes municipales públicas se usan como refuerzo cuando existen y no como prueba de oficina física.
 
-El dominio canónico es alarmasycamarasrapid.com. La simulación de producción comprueba 3.844 URLs indexables, sitemap principal, 19 sitemaps provinciales, canonical, robots y schema Service municipal.
+El dominio canónico es camarasyalarmasrapid.com. La simulación de producción comprueba 3.844 URLs indexables, sitemap principal, 19 sitemaps provinciales, canonical, robots y schema Service municipal.
 
 **R.F.G. es la identificación proporcionada, no una validación jurídica completa.** Los datos legales visibles no contienen textos dummy ni avisos de desarrollo.
 

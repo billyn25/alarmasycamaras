@@ -15,7 +15,7 @@ Cada municipio distribuye títulos y descripciones estables entre variantes como
 No se crean URLs distintas para sinónimos. Una sola landing municipal concentra la relevancia y enlaza a cámaras, alarmas, integración, soluciones y guías.
 
 ## Sitemaps y canonical
-- Canonical único a https://alarmasycamarasrapid.com.
+- Canonical único a https://camarasyalarmasrapid.com.
 - Redirecciones de http/www/index.html y variantes históricas.
 - Un sitemap principal.
 - 19 sitemaps provinciales con todos los municipios.
