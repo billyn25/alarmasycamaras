@@ -28,9 +28,9 @@ def inspect(route):
         main=re.search(r'<main\b[\s\S]*?</main>',html)
         footer=re.search(r'<footer\b[\s\S]*?</footer>',html)
         photos=re.findall(r'<img\b[^>]*src="([^"]+)"',main[0] if main else '')
-        row.update(status=status,photos=len(photos),distinctPhotos=len(set(photos)),footerPhones=len(re.findall(r'href="tel:',footer[0] if footer else '')),expectedStylesheet=expected_css in html)
+        row.update(status=status,photos=len(photos),distinctPhotos=len(set(photos)),footerPhones=len(re.findall(r'href="tel:',footer[0] if footer else '')),expectedStylesheet=expected_css in html,logoUpdated='/assets/logo-rapid.svg' in html)
         local_ok=(route=='/' or ('id="local-ecosystem-title"' in html and 'id="local-usage-title"' in html))
-        row['updated']=status==200 and row['expectedStylesheet'] and len(photos)==len(set(photos))==4 and row['footerPhones']==1 and local_ok
+        row['updated']=status==200 and row['expectedStylesheet'] and row['logoUpdated'] and len(photos)==len(set(photos))==7 and row['footerPhones']==1 and local_ok
     except Exception as error:row['error']=str(error)
     return row
 rows=list(ThreadPoolExecutor(max_workers=3).map(inspect,['/','/burgos/lerma/','/bizkaia/zalla/']))
