@@ -77,7 +77,7 @@ export function localVariantSection(t){
  const drop=hash(seed+'|drop')%pools.length;
  const selected=pools.filter((_,i)=>i!==drop).map(pool=>({pool,variant:choose(pool.variants,seed+'|'+pool.key),order:hash(seed+'|order|'+pool.key)})).sort((a,b)=>a.order-b.order).slice(0,5);
  const blocks=selected.map(({pool,variant})=>`<article class="local-variant-card"><p class="eyebrow">${e(pool.label)}</p><h3>${e(variant[0])}</h3><p>${e(variant[1])}</p><a class="text-link" href="${pool.url}">Ampliar información <span aria-hidden="true">→</span></a></article>`).join('');
- return `<section class="section wrap local-variant-section" aria-labelledby="local-variant-title"><div class="section-heading"><div><p class="eyebrow">CÓMO PLANTEAR TU INSTALACIÓN</p><h2 id="local-variant-title">Decisiones útiles para ${e(t.name)}.</h2></div><p>${intro}</p></div><div class="local-variant-grid">${blocks}</div><p class="fine-print">Contenido orientativo generado de forma estable para este municipio a partir de criterios técnicos generales. No describe una visita, una obra ni condiciones de cobertura ya comprobadas.</p></section>`;
+ return `<section class="section wrap local-variant-section" aria-labelledby="local-variant-title"><div class="section-heading"><div><p class="eyebrow">CÓMO PLANTEAR TU INSTALACIÓN</p><h2 id="local-variant-title">Decisiones útiles para ${e(t.name)}.</h2></div><p>${intro}</p></div><div class="local-variant-grid">${blocks}</div><p class="fine-print">Estos criterios ayudan a preparar la instalación según el inmueble. La visita, disponibilidad y condiciones se confirman al preparar el presupuesto.</p></section>`;
 }
 
 export function localVariantSignature(t){
