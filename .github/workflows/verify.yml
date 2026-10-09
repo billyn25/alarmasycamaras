@@ -20,6 +20,8 @@ jobs:
           node-version: '22'
       - name: Compilar y auditar todas las páginas
         run: npm run build
+      - name: Auditoría SEO final
+        run: node scripts/seo-final-check.mjs
       - name: Pruebas unitarias
         run: npm test
       - uses: actions/setup-python@v5
