@@ -48,7 +48,7 @@ with sync_playwright() as p:
     q=nojs.new_page();q.goto(BASE+'/burgos/lerma/')
     assert q.locator('main img').count()==7
     assert q.locator('.local-ecosystem-options li').count()==6
-    assert q.locator('meta[name=robots]').get_attribute('content').startswith('noindex')
+    assert q.locator('meta[name=robots]').get_attribute('content').startswith('index,follow')
     assert not errors,errors
     nojs.close();browser.close()
 report={'checks':checks,'passed':len(checks),'noJavaScript':'Photos and accessories present in HTML','consoleErrors':errors}
