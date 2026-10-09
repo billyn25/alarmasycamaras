@@ -3,25 +3,25 @@ import {provinces} from './content.mjs';
 
 // Selección editorial, no clasificación por demanda ni promesa de cercanía.
 export const featuredByProvince = {
- alava:['Amurrio','Laudio/Llodio','Agurain/Salvatierra','Alegría-Dulantzi','Laguardia','Artziniega'],
- bizkaia:['Zalla','Balmaseda','Güeñes','Durango','Gernika-Lumo','Amorebieta-Etxano'],
- gipuzkoa:['Zarautz','Tolosa','Beasain','Azpeitia','Eibar','Oñati'],
- burgos:['Lerma','Aranda de Duero','Briviesca','Medina de Pomar','Salas de los Infantes','Roa'],
- cantabria:['Castro-Urdiales','Reinosa','Laredo','Santoña','Cabezón de la Sal','Los Corrales de Buelna'],
- navarra:['Tudela','Estella-Lizarra','Tafalla','Olite/Erriberri','Sangüesa/Zangoza','Baztan'],
- 'la-rioja':['Haro','Calahorra','Nájera','Santo Domingo de la Calzada','Arnedo','Alfaro'],
- leon:['Astorga','La Bañeza','Bembibre','Villablino','Valencia de Don Juan','Sahagún'],
- valladolid:['Medina del Campo','Tordesillas','Peñafiel','Íscar','Olmedo','Medina de Rioseco'],
- zamora:['Benavente','Toro','Puebla de Sanabria','Fuentesaúco','Fermoselle','Alcañices'],
- avila:['Arévalo','Arenas de San Pedro','Candeleda','El Barco de Ávila','Las Navas del Marqués','Piedrahíta'],
- palencia:['Aguilar de Campoo','Guardo','Saldaña','Carrión de los Condes','Venta de Baños','Dueñas'],
- salamanca:['Béjar','Ciudad Rodrigo','Peñaranda de Bracamonte','Alba de Tormes','Guijuelo','Ledesma'],
- segovia:['Cuéllar','El Espinar','Cantalejo','Sepúlveda','Riaza','Ayllón'],
- soria:['Almazán','Burgo de Osma-Ciudad de Osma','San Esteban de Gormaz','Ólvega','Ágreda','San Leonardo de Yagüe'],
- madrid:['Torrelaguna','Buitrago del Lozoya','Chinchón','Colmenar de Oreja','San Martín de Valdeiglesias','El Escorial'],
- asturias:['Llanes','Ribadesella','Cangas de Onís','Villaviciosa','Tineo','Cangas del Narcea'],
- toledo:['Illescas','Torrijos','Ocaña','Consuegra','Madridejos','Quintanar de la Orden'],
- guadalajara:['Sigüenza','Brihuega','Molina de Aragón','Pastrana','Jadraque','Alovera']
+ alava:['Amurrio','Laudio/Llodio','Agurain/Salvatierra','Alegría-Dulantzi','Laguardia','Artziniega','Oyón-Oion','Labastida/Bastida','Campezo/Kanpezu','Iruña Oka/Iruña de Oca'],
+ bizkaia:['Zalla','Balmaseda','Güeñes','Durango','Gernika-Lumo','Amorebieta-Etxano','Muskiz','Galdakao','Bermeo','Mungia'],
+ gipuzkoa:['Zarautz','Tolosa','Beasain','Azpeitia','Eibar','Oñati','Hondarribia','Zumaia','Lasarte-Oria','Arrasate/Mondragón'],
+ burgos:['Lerma','Aranda de Duero','Briviesca','Medina de Pomar','Salas de los Infantes','Roa','Villarcayo de Merindad de Castilla la Vieja','Belorado','Espinosa de los Monteros','Villadiego'],
+ cantabria:['Castro-Urdiales','Reinosa','Laredo','Santoña','Cabezón de la Sal','Los Corrales de Buelna','Potes','Suances','Comillas','Noja'],
+ navarra:['Tudela','Estella-Lizarra','Tafalla','Olite/Erriberri','Sangüesa/Zangoza','Baztan','Corella','Viana','Lodosa','Peralta/Azkoien'],
+ 'la-rioja':['Haro','Calahorra','Nájera','Santo Domingo de la Calzada','Arnedo','Alfaro','Ezcaray','Cervera del Río Alhama','Autol','Rincón de Soto'],
+ leon:['Astorga','La Bañeza','Bembibre','Villablino','Valencia de Don Juan','Sahagún','Cistierna','Fabero','Boñar','Robla, La'],
+ valladolid:['Medina del Campo','Tordesillas','Peñafiel','Íscar','Olmedo','Medina de Rioseco','Tudela de Duero','Laguna de Duero','Nava del Rey','Simancas'],
+ zamora:['Benavente','Toro','Puebla de Sanabria','Fuentesaúco','Fermoselle','Alcañices','Tábara','Villalpando','Mombuey','Bermillo de Sayago'],
+ avila:['Arévalo','Arenas de San Pedro','Candeleda','El Barco de Ávila','Las Navas del Marqués','Piedrahíta','Cebreros','Burgohondo','Sotillo de la Adrada','Piedralaves'],
+ palencia:['Aguilar de Campoo','Guardo','Saldaña','Carrión de los Condes','Venta de Baños','Dueñas','Cervera de Pisuerga','Herrera de Pisuerga','Villamuriel de Cerrato','Baltanás'],
+ salamanca:['Béjar','Ciudad Rodrigo','Peñaranda de Bracamonte','Alba de Tormes','Guijuelo','Ledesma','Vitigudino','Lumbrales','Tamames','Alberca, La'],
+ segovia:['Cuéllar','El Espinar','Cantalejo','Sepúlveda','Riaza','Ayllón','Coca','Nava de la Asunción','Carbonero el Mayor','Real Sitio de San Ildefonso'],
+ soria:['Almazán','Burgo de Osma-Ciudad de Osma','San Esteban de Gormaz','Ólvega','Ágreda','San Leonardo de Yagüe','San Pedro Manrique','Berlanga de Duero','Vinuesa','Duruelo de la Sierra'],
+ madrid:['Torrelaguna','Buitrago del Lozoya','Chinchón','Colmenar de Oreja','San Martín de Valdeiglesias','El Escorial','Cercedilla','Guadarrama','Miraflores de la Sierra','Rascafría'],
+ asturias:['Llanes','Ribadesella','Cangas de Onís','Villaviciosa','Tineo','Cangas del Narcea','Navia','Pravia','Cudillero','Colunga'],
+ toledo:['Illescas','Torrijos','Ocaña','Consuegra','Madridejos','Quintanar de la Orden','Sonseca','Yuncos','Bargas','Mora'],
+ guadalajara:['Sigüenza','Brihuega','Molina de Aragón','Pastrana','Jadraque','Alovera','Cifuentes','Trillo','Sacedón','Marchamalo']
 };
 
 export function coverageSection(towns){
