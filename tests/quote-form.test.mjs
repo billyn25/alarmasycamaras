@@ -34,5 +34,5 @@ test('Sin almacén ni envío de clientes a un servidor propio y privacidad actua
  const js=fs.readFileSync('public/quote-form.js','utf8');assert.ok(!/localStorage|sessionStorage|sendBeacon|innerHTML|fetch\([^)]*wa\.me/.test(js));
  assert.ok(js.includes('encodeURIComponent(message())'));assert.ok(js.includes('event.preventDefault()'));
  assert.ok(fs.readFileSync('src/legal.mjs','utf8').includes('teléfono de contacto que introduces'));
- assert.equal(site.mode,'preview');assert.deepEqual(JSON.parse(fs.readFileSync('config/local-content.json','utf8')).approved,{});
+ assert.equal(site.mode,'production');assert.deepEqual(JSON.parse(fs.readFileSync('config/local-content.json','utf8')).approved,{});
 });
