@@ -22,7 +22,7 @@ with sync_playwright() as p:
             assert page.locator('main h1').count()==1
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(width,route)
             assert page.locator('footer a[href^="tel:"]').count()==1
-            assert page.locator('meta[name="robots"]').get_attribute('content').startswith('noindex')
+            assert page.locator('meta[name="robots"]').get_attribute('content').startswith('index,follow')
             if route in routes[-6:]:
                 assert page.locator('.municipal-context').count()==1
                 assert page.locator('.facility-choice').count()==6
