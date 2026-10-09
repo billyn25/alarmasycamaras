@@ -29,7 +29,7 @@ test('Municipios: seis opciones en HTML y continuidad de localidad, sin nuevas c
   for(const [,raw] of matches){const u=new URL(raw.replaceAll('&amp;','&'),'https://example.invalid');assert.equal(u.searchParams.get('pueblo'),`${t.name}, ${t.province.name}`);assert.ok(u.searchParams.get('inmueble'));}
  }
 });
-test('Once contextos municipales trazables no aprueban indexación ni inventan cobertura',()=>{
+test('Once contextos municipales trazables añaden profundidad sin inventar cobertura',()=>{
  assert.equal(Object.keys(localContexts).length,11);
  const hashes=new Set();
  for(const [id,c] of Object.entries(localContexts)){
@@ -40,7 +40,7 @@ test('Once contextos municipales trazables no aprueban indexación ni inventan c
  assert.equal(hashes.size,11);
  const other=towns.find(t=>!localContexts[t.id]);assert.equal(municipalContext(other),'');
  assert.deepEqual(JSON.parse(fs.readFileSync('config/local-content.json','utf8')).approved,{});
- assert.equal(JSON.parse(fs.readFileSync('config/site.json','utf8')).mode,'preview');
+ assert.equal(JSON.parse(fs.readFileSync('config/site.json','utf8')).mode,'production');
  const t=towns.find(t=>localContexts[t.id]);assert.throws(()=>municipalContext({...t,name:'Otra localidad'}));
 });
 test('Escape de campos y tipos de inmueble en el preparador',()=>{
