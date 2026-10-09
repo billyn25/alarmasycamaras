@@ -153,5 +153,5 @@ const deepLinks=[
 ];
 export function localInternalLinks(t){
  const ranked=deepLinks.map((item,i)=>({item,rank:hash(t.id+'|deep-link|'+i)})).sort((a,b)=>a.rank-b.rank).slice(0,5);
- return `<nav class="local-deep-links" aria-label="Información relacionada para ${e(t.name)}"><strong>Información para preparar tu instalación</strong>${ranked.map(({item})=>`<a href="${item[0]}">${e(item[1])} <span aria-hidden="true">→</span></a>`).join('')}</nav>`;
+ return `<nav class="local-deep-links wrap" aria-label="Información relacionada para ${e(t.name)}"><strong>Información para preparar tu instalación</strong>${ranked.map(({item})=>`<a href="${item[0]}">${e(item[1])} <span aria-hidden="true">→</span></a>`).join('')}</nav>`;
 }
