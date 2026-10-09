@@ -6,7 +6,7 @@ Web estática independiente para instalación de alarmas, cámaras y sistemas in
 
 Importar **billyn25/alarmasycamaras**, rama **main**. Directorio base vacío. Comando **npm run build**. Directorio de publicación **dist**. Node 22 ya configurado en `netlify.toml`.
 
-No es necesario elegir dominio ahora. Mantener la URL temporal de Netlify: la configuración por defecto genera la web en **preview, con noindex**. Este repositorio no crea un sitio en Netlify ni conecta dominios automáticamente.
+Dominio definitivo: **https://alarmasycamarasrapid.com**. Mientras el sitio siga en modo preview, Netlify mantiene noindex. El paso a producción debe hacerse solo cuando se activen los controles internos de publicación; este repositorio no modifica DNS automáticamente.
 
 ## Contenido incluido
 
@@ -34,7 +34,7 @@ Sin cuota mensual obligatoria por alarma autogestionada. Conectividad, mantenimi
 
 ## Antes de indexar
 
-Completar dominio y datos legales; confirmar contacto, cobertura real, condiciones y derechos de las fotos. Los flags `ready` impiden activar producción por accidente. `SITE_MODE=production` y `SITE_URL` solo después de esa revisión.
+Dominio definitivo configurado. Revisar datos legales; confirmar contacto, cobertura real, condiciones y derechos de las fotos. Los flags `ready` impiden activar producción por accidente. `SITE_MODE=production` y `SITE_URL` solo después de esa revisión.
 
 Los municipios están generados como **base editorial de revisión**, no como miles de textos locales originales ya terminados. Para indexar uno, completar su entrada por código en `config/local-content.json` con `approved`, `reviewedAt`, `source` y al menos dos bloques locales comprobados. Los no revisados permanecen noindex aunque la portada pase a producción. No inventar trabajos, sedes, reseñas ni tiempos de llegada.
 
