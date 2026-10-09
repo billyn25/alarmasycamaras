@@ -17,7 +17,7 @@ with sync_playwright() as p:
         assert pg.locator('#cookie-notice').is_visible();assert ctx.cookies()==[]
         assert pg.evaluate('localStorage.length===0 && sessionStorage.length===0')
         if width in [390,1440]: pg.screenshot(path=str(OUT/f'aviso-cookies-{width}.png'))
-        opener=pg.locator('.cookie-trigger') if width>900 else pg.locator('footer [data-cookie-open]')
+        opener=pg.locator('.cookie-trigger') if width>900 else pg.locator('#cookie-notice [data-cookie-open]')
         if width<=900: assert not pg.locator('.cookie-trigger').is_visible()
         opener.click()
         assert pg.locator('#cookie-dialog').is_visible();assert ctx.cookies()==[]
