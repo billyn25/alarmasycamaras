@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="240" viewBox="0 0 1000 240" role="img" aria-labelledby="title desc">
+<title id="title">Cámaras y Alarmas Rapid</title><desc id="desc">Escudo con ojo de videovigilancia y nombre Cámaras y Alarmas Rapid</desc>
+<g transform="translate(18 14)">
+  <path d="M92 0C65 10 38 24 11 39v62c0 52 31 91 81 119 50-28 81-67 81-119V39C146 24 119 10 92 0Z" fill="#14171B"/>
+  <path d="M92 0c27 10 54 24 81 39v62c0 10-1 20-4 30-17-18-31-43-39-73-7-27-19-46-38-58Z" fill="#1473FF"/>
+  <path d="M30 101c16-30 38-45 62-45s46 15 62 45c-16 30-38 45-62 45s-46-15-62-45Z" fill="#FFFFFF"/>
+  <path d="M43 101c13-21 30-32 49-32s36 11 49 32c-13 21-30 32-49 32s-36-11-49-32Z" fill="#14171B"/>
+  <circle cx="92" cy="101" r="23" fill="#1473FF"/><circle cx="92" cy="101" r="12" fill="#0B111B"/><circle cx="101" cy="92" r="5" fill="#FFFFFF"/><circle cx="107" cy="87" r="2.6" fill="#FFFFFF"/>
+  <path d="M93 218c23-17 44-39 58-67-21 7-41 21-56 42-7 10-10 18-2 25Z" fill="#1DCF94"/>
+  <path d="M94 218c-4-9 0-19 9-31 12-16 27-27 48-36-12 27-32 50-57 67Z" fill="#FFFFFF" opacity=".88"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif">
+  <text x="235" y="96" fill="#14171B" font-size="64" font-weight="700" letter-spacing="-2">Cámaras y Alarmas</text>
+  <text x="232" y="203" fill="#1473FF" font-size="118" font-weight="800" font-style="italic" letter-spacing="-7">Rapid</text>
+</g>
+</svg>

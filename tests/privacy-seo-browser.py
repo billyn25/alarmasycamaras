@@ -24,6 +24,9 @@ with sync_playwright() as p:
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(width,route)
             assert page.locator('footer a[href^="tel:"]').count()==1
             assert page.locator('meta[name=robots]').get_attribute('content').startswith('noindex')
+            if route!='/404.html':
+                assert page.locator('link[rel="canonical"]').count()==1
+                assert page.locator('link[rel="canonical"]').get_attribute('href')=='https://alarmasycamarasrapid.com'+route
             assert page.evaluate('localStorage.length===0 && sessionStorage.length===0')
             assert context.cookies()==[],route
             checks.append({'route':route,'width':width,'overflow':False,'cookies':0})
