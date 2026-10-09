@@ -1,111 +1,30 @@
 {
-  "09194": {
-    "name": "Lerma",
-    "provinceId": "09",
+  "26061": {
+    "name": "Ezcaray",
+    "provinceId": "26",
     "reviewedAt": "2026-10-09",
     "type": "public-context-not-service-verification",
-    "title": "Lerma y sus núcleos: concretar el inmueble antes del kit",
-    "fact": "El directorio del Ayuntamiento de Lerma incluye, además de la villa, núcleos como Castrillo de Solarana, Rabé de los Escuderos y Ruyales del Agua.",
-    "sourceLabel": "Ayuntamiento de Lerma · Pueblos",
-    "source": "https://lerma.burgos.es/pueblos",
-    "intro": "Indicar solo «Lerma» puede no describir la ubicación del trabajo. En la consulta conviene precisar el núcleo y si se trata de una vivienda, un local o un inmueble con dependencias separadas; así se puede valorar el desplazamiento sin asumir que todos los puntos están en la villa.",
+    "title": "Ezcaray y sus aldeas: ubicación, conexión y uso de la vivienda",
+    "fact": "El Ayuntamiento de Ezcaray enumera aldeas como Azárrulla, Zaldierna, Urdanta, Turza, Posadas, Ayabarrena y San Antón dentro del municipio.",
+    "sourceLabel": "Ayuntamiento de Ezcaray · Aldeas",
+    "source": "https://www.ezcaray.org/aldeas-de-ezcaray/",
+    "intro": "Para una instalación en Ezcaray conviene indicar si el inmueble está en el núcleo principal o en una aldea. Eso no determina por sí solo la solución, pero ayuda a preparar la visita y a preguntar por alimentación, cobertura móvil, acceso a Internet y dependencias separadas antes de presupuestar.",
     "decisions": [
       [
-        "Cuando hay patio o dependencias",
-        "Si necesitas proteger una casa y un anexo, conviene separar los accesos de cada edificio y comprobar el enlace de los detectores en sus posiciones. No damos por hecho que una central cubra todos los espacios por pertenecer a una misma propiedad."
+        "Cobertura en el punto, no en el mapa",
+        "Si se plantea control remoto o una cámara 4G, la señal debe comprobarse donde quedará el equipo. La cobertura general del municipio no sustituye esa prueba."
       ],
       [
-        "Cuando la casa se utiliza por temporadas",
-        "En una segunda residencia interesa definir qué equipos mantendrán alimentación y conectividad, y quién recibirá los avisos. Las cámaras y su grabador necesitan una previsión distinta de la batería del hub."
+        "Casa de uso temporal",
+        "En una segunda residencia se separan las necesidades de alarma y vídeo. Central, router, cámaras y grabador tienen alimentaciones y autonomías distintas que conviene revisar."
       ],
       [
-        "Para preparar la visita",
-        "Describe el núcleo, número de plantas, accesos y equipos que quieras conservar. No hace falta enviar códigos ni fechas en las que la vivienda quede vacía. La disponibilidad y el alcance se confirman antes de concertar el trabajo."
+        "Aldea y acceso exterior",
+        "En una casa con entrada exterior, patio o anexo se estudian encuadre, visión nocturna y montaje para ese punto concreto. No se da por hecho que una cámara de catálogo resuelva cualquier distancia."
       ]
     ],
-    "question": "¿Sirve la misma propuesta para la villa de Lerma y sus otros núcleos?",
-    "answer": "No necesariamente. El núcleo concreto, el inmueble y sus conexiones condicionan la valoración. Identificar el término municipal no confirma por sí solo desplazamiento, cobertura de radio o disponibilidad del servicio."
-  },
-  "48096": {
-    "name": "Zalla",
-    "provinceId": "48",
-    "reviewedAt": "2026-10-09",
-    "type": "public-context-not-service-verification",
-    "title": "En Zalla, el barrio y el uso del inmueble cambian la consulta",
-    "fact": "Mimetiz, Aranguren y Otxaran aparecen en la información municipal de Zalla.",
-    "sourceLabel": "Ayuntamiento de Zalla · Información municipal",
-    "source": "https://www.zalla.eus/es-ES/Eventos/Paginas/20260323-24-Korrika.aspx",
-    "intro": "Para solicitar una instalación, precisa el barrio y el tipo de inmueble, no solo el nombre de Zalla. Una vivienda con varios accesos, un piso y un comercio requieren recorridos de detección y formas de uso diferentes; no elegimos una solución por el barrio sin revisar el espacio.",
-    "decisions": [
-      [
-        "Piso y accesos compartidos",
-        "Si el acceso es un portal compartido, conviene separar la protección de tu vivienda de cualquier cámara que pueda captar zonas comunes. La necesidad de imágenes se decide junto con su encuadre y permisos."
-      ],
-      [
-        "Casa con garaje o jardín",
-        "En una casa con espacios exteriores se estudian los puntos de entrada y la luz disponible para las cámaras. Un detector interior no se traslada al exterior sin comprobar que el equipo es adecuado para ese uso."
-      ],
-      [
-        "Local con varios usuarios",
-        "Para un comercio o despacho interesa describir quién abre, quién cierra y si existe almacén independiente. Se pueden estudiar permisos y zonas de armado, sin compartir un único código por comodidad."
-      ]
-    ],
-    "question": "¿Qué información de Zalla debo indicar al pedir presupuesto?",
-    "answer": "El barrio y si se trata de piso, casa, comercio u otro inmueble. Añade accesos y conectividad disponible; no hace falta compartir claves ni rutinas sensibles en la primera consulta."
-  },
-  "39020": {
-    "name": "Castro-Urdiales",
-    "provinceId": "39",
-    "reviewedAt": "2026-10-09",
-    "type": "public-context-not-service-verification",
-    "title": "Castro-Urdiales: distinguir el núcleo urbano y las juntas vecinales",
-    "fact": "El Ayuntamiento de Castro-Urdiales distingue juntas vecinales como Sámano, Mioño, Otañes y Oriñón, además del núcleo urbano.",
-    "sourceLabel": "Ayuntamiento de Castro-Urdiales · Juntas vecinales",
-    "source": "https://www.castro-urdiales.net/servicios-ciudadania/informacion/juntas-vecinales-castro-urdiales",
-    "intro": "Precisar dónde está el inmueble evita tratar todo el municipio como un único punto. Al consultar, indica el núcleo o junta vecinal y si necesitas proteger una vivienda, un local o un acceso exterior; la ubicación no sustituye la comprobación de red, señal y alimentación.",
-    "decisions": [
-      [
-        "Cámara de exterior, ubicación concreta",
-        "Si la cámara queda expuesta, se elige un equipo y montaje adecuados a ese punto. La visión nocturna se comprueba con faros, iluminación y superficies próximas; no se deduce de que una imagen de catálogo se vea bien."
-      ],
-      [
-        "Vivienda con entrada compartida",
-        "En un piso o urbanización hay que delimitar qué acceso necesitas vigilar y qué zonas quedan fuera del encuadre. El proyecto no da por autorizada la captación de zonas comunes o propiedades ajenas."
-      ],
-      [
-        "Conexión y grabación",
-        "Una cámara con acceso móvil necesita conectividad, pero ver el directo no garantiza que exista archivo. Conviene aclarar dónde se guardará el vídeo y probar una reproducción antes de la entrega."
-      ]
-    ],
-    "question": "¿Puedo indicar Sámano, Mioño u otra junta en la consulta?",
-    "answer": "Sí. Indica ese núcleo junto a Castro-Urdiales para identificar mejor la ubicación. Las condiciones de desplazamiento y la disponibilidad se concretan al valorar el trabajo; no se anuncia una sede en cada junta."
-  },
-  "47085": {
-    "name": "Medina del Campo",
-    "provinceId": "47",
-    "reviewedAt": "2026-10-09",
-    "type": "public-context-not-service-verification",
-    "title": "Medina del Campo, Rodilana y Gomeznarro: ubicación y accesos",
-    "fact": "La información del Ayuntamiento de Medina del Campo incluye Rodilana y Gomeznarro junto a la población de Medina del Campo.",
-    "sourceLabel": "Ayuntamiento de Medina del Campo · Ámbito municipal",
-    "source": "https://ayto-medinadelcampo.es/prevencion-y-promocion-de-la-participacion?print=1&tmpl=component",
-    "intro": "La propuesta debe identificar el núcleo donde se realizará la instalación, además del municipio. Esto ayuda a concretar una visita y a distinguir si el encargo corresponde a una vivienda, un comercio o una dependencia con accesos y conexiones propios.",
-    "decisions": [
-      [
-        "Casa con varias dependencias",
-        "Si hay almacén, patio o garaje separado, describe esa separación antes de pedir un número cerrado de detectores. La señal entre dispositivos y central se prueba en los puntos elegidos; el nombre del municipio no informa de esa cobertura."
-      ],
-      [
-        "Comercio con entrada de mercancía",
-        "Cuando existen dos accesos con usos distintos, la alarma y las cámaras deben considerar ambos. Se estudian horarios de armado y permisos sin pedir que publiques tus rutinas de apertura y cierre."
-      ],
-      [
-        "Trabajo definido antes del desplazamiento",
-        "Indica si dispones de Internet y si existe cableado aprovechable. La valoración debe distinguir equipos, montaje, red, configuración y desplazamiento para comparar propuestas que incluyan el mismo alcance."
-      ]
-    ],
-    "question": "¿Debo poner Rodilana o Gomeznarro aunque el municipio sea Medina del Campo?",
-    "answer": "Es conveniente indicarlo para identificar la ubicación del trabajo. Después se confirma si hace falta visita, qué desplazamiento implica y qué información del inmueble falta para presupuestar."
+    "question": "¿Debo indicar la aldea aunque la dirección pertenezca a Ezcaray?",
+    "answer": "Sí, ayuda a identificar la ubicación real y a preparar la valoración. Después se confirman desplazamiento, conectividad y alcance; la fuente municipal no acredita que Rapid tenga una sede o servicio permanente allí."
   },
   "26071": {
     "name": "Haro",
@@ -134,6 +53,33 @@
     "question": "¿Puede presupuestarse una bodega igual que una vivienda?",
     "answer": "No debe hacerse por defecto. Se revisan usos, plantas, accesos, distancias y requisitos, y después se concreta si la solución conviene inalámbrica, cableada o combinada."
   },
+  "28096": {
+    "name": "Navalcarnero",
+    "provinceId": "28",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Navalcarnero: vivienda consolidada, barrio nuevo o local comercial",
+    "fact": "La información urbanística municipal identifica sectores y barrios como Caño Viejo y Cuesta de Pajares dentro del planeamiento de Navalcarnero.",
+    "sourceLabel": "Ayuntamiento de Navalcarnero · Planeamiento y tablón",
+    "source": "https://navalcarnero.es/navalcarnero/tablondeanuncios/",
+    "intro": "El nombre del barrio no permite elegir automáticamente una alarma o una cámara, pero sí ayuda a situar la consulta. Lo importante sigue siendo conocer el inmueble, sus accesos, cableado disponible, iluminación y forma de uso antes de cerrar equipos y montaje.",
+    "decisions": [
+      [
+        "Vivienda nueva y cableado disponible",
+        "Si hay canalización o red preparada, se estudia qué puede aprovecharse antes de optar por una solución completamente inalámbrica. La elección debe responder al proyecto, no a una regla por antigüedad del barrio."
+      ],
+      [
+        "Local o negocio",
+        "En comercios se diferencian acceso de clientes, zonas de trabajo y almacén cuando existan. Usuarios, horarios de armado y grabación se configuran sin pedir que el cliente publique rutinas sensibles en el formulario."
+      ],
+      [
+        "Cámara exterior y zonas ajenas",
+        "Se limita el encuadre al objetivo necesario y se revisan las obligaciones de privacidad. Una fachada amplia no implica que deba grabarse todo lo que queda frente a ella."
+      ]
+    ],
+    "question": "¿La zona de Navalcarnero determina qué sistema instalar?",
+    "answer": "No. La zona sirve para ubicar la consulta; la solución se decide con el inmueble, accesos, red, iluminación y necesidades de grabación o detección."
+  },
   "28151": {
     "name": "Torrelaguna",
     "provinceId": "28",
@@ -160,5 +106,194 @@
     ],
     "question": "¿Una alarma inalámbrica evita cualquier intervención en el edificio?",
     "answer": "No. Reduce ciertos tendidos, pero central, detectores y cámaras necesitan ubicaciones y montaje. En el inmueble concreto deben revisarse fijaciones, alimentación y posibles condicionantes antes de ejecutar la instalación."
+  },
+  "39020": {
+    "name": "Castro-Urdiales",
+    "provinceId": "39",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Castro-Urdiales: distinguir el núcleo urbano y las juntas vecinales",
+    "fact": "El Ayuntamiento de Castro-Urdiales distingue juntas vecinales como Sámano, Mioño, Otañes y Oriñón, además del núcleo urbano.",
+    "sourceLabel": "Ayuntamiento de Castro-Urdiales · Juntas vecinales",
+    "source": "https://www.castro-urdiales.net/servicios-ciudadania/informacion/juntas-vecinales-castro-urdiales",
+    "intro": "Precisar dónde está el inmueble evita tratar todo el municipio como un único punto. Al consultar, indica el núcleo o junta vecinal y si necesitas proteger una vivienda, un local o un acceso exterior; la ubicación no sustituye la comprobación de red, señal y alimentación.",
+    "decisions": [
+      [
+        "Cámara de exterior, ubicación concreta",
+        "Si la cámara queda expuesta, se elige un equipo y montaje adecuados a ese punto. La visión nocturna se comprueba con faros, iluminación y superficies próximas; no se deduce de que una imagen de catálogo se vea bien."
+      ],
+      [
+        "Vivienda con entrada compartida",
+        "En un piso o urbanización hay que delimitar qué acceso necesitas vigilar y qué zonas quedan fuera del encuadre. El proyecto no da por autorizada la captación de zonas comunes o propiedades ajenas."
+      ],
+      [
+        "Conexión y grabación",
+        "Una cámara con acceso móvil necesita conectividad, pero ver el directo no garantiza que exista archivo. Conviene aclarar dónde se guardará el vídeo y probar una reproducción antes de la entrega."
+      ]
+    ],
+    "question": "¿Puedo indicar Sámano, Mioño u otra junta en la consulta?",
+    "answer": "Sí. Indica ese núcleo junto a Castro-Urdiales para identificar mejor la ubicación. Las condiciones de desplazamiento y la disponibilidad se concretan al valorar el trabajo; no se anuncia una sede en cada junta."
+  },
+  "40076": {
+    "name": "El Espinar",
+    "provinceId": "40",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "El Espinar: distinguir El Espinar, San Rafael y otros núcleos",
+    "fact": "El Ayuntamiento publica oficinas municipales o auxiliares en El Espinar, San Rafael, La Estación y Los Ángeles de San Rafael.",
+    "sourceLabel": "Ayuntamiento de El Espinar · Contacto y oficinas",
+    "source": "https://elespinar.es/contacto/",
+    "intro": "Precisar el núcleo evita tratar todo el municipio como una única ubicación. Para valorar una alarma o videovigilancia indica dónde está el inmueble y si se trata de piso, chalet, segunda residencia, comercio o nave; después se revisan accesos, red y alimentación.",
+    "decisions": [
+      [
+        "Chalet con exterior",
+        "Si hay parcela, garaje o porche se separa la detección interior de las necesidades exteriores. La cámara se orienta a un acceso concreto y se prueba de noche con la iluminación real."
+      ],
+      [
+        "Vivienda de uso estacional",
+        "Cuando la casa no está ocupada continuamente, interesa saber qué comunicaciones seguirán activas y quién recibirá avisos. Una solución sin cuota de CRA no significa que SIM, nube o mantenimiento sean gratuitos."
+      ],
+      [
+        "Núcleo y desplazamiento",
+        "Indica San Rafael, La Estación, Los Ángeles de San Rafael u otro punto cuando corresponda. La disponibilidad y el desplazamiento se confirman antes de concertar la instalación."
+      ]
+    ],
+    "question": "¿Conviene poner San Rafael o La Estación además de El Espinar?",
+    "answer": "Sí. Ayuda a identificar el punto de trabajo y preparar mejor la consulta. No cambia el hecho de que cobertura, visita y condiciones deban confirmarse para la dirección concreta."
+  },
+  "47085": {
+    "name": "Medina del Campo",
+    "provinceId": "47",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Medina del Campo, Rodilana y Gomeznarro: ubicación y accesos",
+    "fact": "La información del Ayuntamiento de Medina del Campo incluye Rodilana y Gomeznarro junto a la población de Medina del Campo.",
+    "sourceLabel": "Ayuntamiento de Medina del Campo · Ámbito municipal",
+    "source": "https://ayto-medinadelcampo.es/prevencion-y-promocion-de-la-participacion?print=1&tmpl=component",
+    "intro": "La propuesta debe identificar el núcleo donde se realizará la instalación, además del municipio. Esto ayuda a concretar una visita y a distinguir si el encargo corresponde a una vivienda, un comercio o una dependencia con accesos y conexiones propios.",
+    "decisions": [
+      [
+        "Casa con varias dependencias",
+        "Si hay almacén, patio o garaje separado, describe esa separación antes de pedir un número cerrado de detectores. La señal entre dispositivos y central se prueba en los puntos elegidos; el nombre del municipio no informa de esa cobertura."
+      ],
+      [
+        "Comercio con entrada de mercancía",
+        "Cuando existen dos accesos con usos distintos, la alarma y las cámaras deben considerar ambos. Se estudian horarios de armado y permisos sin pedir que publiques tus rutinas de apertura y cierre."
+      ],
+      [
+        "Trabajo definido antes del desplazamiento",
+        "Indica si dispones de Internet y si existe cableado aprovechable. La valoración debe distinguir equipos, montaje, red, configuración y desplazamiento para comparar propuestas que incluyan el mismo alcance."
+      ]
+    ],
+    "question": "¿Debo poner Rodilana o Gomeznarro aunque el municipio sea Medina del Campo?",
+    "answer": "Es conveniente indicarlo para identificar la ubicación del trabajo. Después se confirma si hace falta visita, qué desplazamiento implica y qué información del inmueble falta para presupuestar."
+  },
+  "48096": {
+    "name": "Zalla",
+    "provinceId": "48",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "En Zalla, el barrio y el uso del inmueble cambian la consulta",
+    "fact": "Mimetiz, Aranguren y Otxaran aparecen en la información municipal de Zalla.",
+    "sourceLabel": "Ayuntamiento de Zalla · Información municipal",
+    "source": "https://www.zalla.eus/es-ES/Eventos/Paginas/20260323-24-Korrika.aspx",
+    "intro": "Para solicitar una instalación, precisa el barrio y el tipo de inmueble, no solo el nombre de Zalla. Una vivienda con varios accesos, un piso y un comercio requieren recorridos de detección y formas de uso diferentes; no elegimos una solución por el barrio sin revisar el espacio.",
+    "decisions": [
+      [
+        "Piso y accesos compartidos",
+        "Si el acceso es un portal compartido, conviene separar la protección de tu vivienda de cualquier cámara que pueda captar zonas comunes. La necesidad de imágenes se decide junto con su encuadre y permisos."
+      ],
+      [
+        "Casa con garaje o jardín",
+        "En una casa con espacios exteriores se estudian los puntos de entrada y la luz disponible para las cámaras. Un detector interior no se traslada al exterior sin comprobar que el equipo es adecuado para ese uso."
+      ],
+      [
+        "Local con varios usuarios",
+        "Para un comercio o despacho interesa describir quién abre, quién cierra y si existe almacén independiente. Se pueden estudiar permisos y zonas de armado, sin compartir un único código por comodidad."
+      ]
+    ],
+    "question": "¿Qué información de Zalla debo indicar al pedir presupuesto?",
+    "answer": "El barrio y si se trata de piso, casa, comercio u otro inmueble. Añade accesos y conectividad disponible; no hace falta compartir claves ni rutinas sensibles en la primera consulta."
+  },
+  "09194": {
+    "name": "Lerma",
+    "provinceId": "09",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Lerma y sus núcleos: concretar el inmueble antes del kit",
+    "fact": "El directorio del Ayuntamiento de Lerma incluye, además de la villa, núcleos como Castrillo de Solarana, Rabé de los Escuderos y Ruyales del Agua.",
+    "sourceLabel": "Ayuntamiento de Lerma · Pueblos",
+    "source": "https://lerma.burgos.es/pueblos",
+    "intro": "Indicar solo «Lerma» puede no describir la ubicación del trabajo. En la consulta conviene precisar el núcleo y si se trata de una vivienda, un local o un inmueble con dependencias separadas; así se puede valorar el desplazamiento sin asumir que todos los puntos están en la villa.",
+    "decisions": [
+      [
+        "Cuando hay patio o dependencias",
+        "Si necesitas proteger una casa y un anexo, conviene separar los accesos de cada edificio y comprobar el enlace de los detectores en sus posiciones. No damos por hecho que una central cubra todos los espacios por pertenecer a una misma propiedad."
+      ],
+      [
+        "Cuando la casa se utiliza por temporadas",
+        "En una segunda residencia interesa definir qué equipos mantendrán alimentación y conectividad, y quién recibirá los avisos. Las cámaras y su grabador necesitan una previsión distinta de la batería del hub."
+      ],
+      [
+        "Para preparar la visita",
+        "Describe el núcleo, número de plantas, accesos y equipos que quieras conservar. No hace falta enviar códigos ni fechas en las que la vivienda quede vacía. La disponibilidad y el alcance se confirman antes de concertar el trabajo."
+      ]
+    ],
+    "question": "¿Sirve la misma propuesta para la villa de Lerma y sus otros núcleos?",
+    "answer": "No necesariamente. El núcleo concreto, el inmueble y sus conexiones condicionan la valoración. Identificar el término municipal no confirma por sí solo desplazamiento, cobertura de radio o disponibilidad del servicio."
+  },
+  "09209": {
+    "name": "Medina de Pomar",
+    "provinceId": "09",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Medina de Pomar: identificar la pedanía y las dependencias del inmueble",
+    "fact": "El Ayuntamiento de Medina de Pomar mantiene un directorio específico de pedanías del municipio.",
+    "sourceLabel": "Ayuntamiento de Medina de Pomar · Pedanías",
+    "source": "https://www.medinadepomar.net/pedanias",
+    "intro": "Para preparar una instalación no basta con indicar Medina de Pomar si el inmueble está en una de sus pedanías. Conviene precisar el núcleo, el tipo de vivienda o negocio y si existen garaje, almacén, patio u otros edificios separados; así se puede valorar el desplazamiento y la arquitectura del sistema sin asumir que todo está en el núcleo principal.",
+    "decisions": [
+      [
+        "Vivienda y anexo no son un único punto",
+        "Si hay casa, garaje o almacén separados, se revisan los accesos y la comunicación entre dispositivos desde sus posiciones reales. La distancia en una parcela no garantiza cobertura de radio ni de red."
+      ],
+      [
+        "Cámara exterior con objetivo concreto",
+        "En patios y entradas se define primero qué acceso debe verse. Se comprueba alimentación, luz nocturna y recorrido de cable antes de elegir óptica o prometer imagen en color."
+      ],
+      [
+        "Consulta con ubicación precisa",
+        "Indica la pedanía, número de plantas y si existe Internet o cableado aprovechable. La disponibilidad del servicio y las condiciones de desplazamiento se confirman al presupuestar."
+      ]
+    ],
+    "question": "¿Por qué conviene indicar la pedanía al solicitar presupuesto?",
+    "answer": "Porque identifica mejor dónde está el inmueble y permite valorar desplazamiento, comunicaciones y posibles dependencias separadas. El dato municipal por sí solo no confirma cobertura ni disponibilidad."
+  },
+  "09903": {
+    "name": "Villarcayo de Merindad de Castilla la Vieja",
+    "provinceId": "09",
+    "reviewedAt": "2026-10-09",
+    "type": "public-context-not-service-verification",
+    "title": "Villarcayo y sus pedanías: definir el punto real de instalación",
+    "fact": "La web del Ayuntamiento de Villarcayo publica actuaciones municipales en distintas pedanías del término.",
+    "sourceLabel": "Ayuntamiento de Villarcayo de MCV",
+    "source": "https://villarcayo.org/",
+    "intro": "En un municipio con varios núcleos, la consulta debe identificar el punto concreto y el uso del inmueble. Una casa de uso habitual, una segunda residencia y una nave no tienen las mismas necesidades de comunicación, grabación o gestión de usuarios, aunque compartan término municipal.",
+    "decisions": [
+      [
+        "Segunda residencia y comunicaciones",
+        "Si la vivienda pasa periodos sin ocupación se revisan alimentación, conexión exterior y personas autorizadas para recibir avisos. La batería de la central no respalda automáticamente cámaras, router o grabador."
+      ],
+      [
+        "Parcela con varios accesos",
+        "Cuando existen portón, puerta principal y anexos, se decide qué detectar y qué visualizar en cada punto. No se reparte el mismo sensor o cámara por igual sin estudiar recorrido y distancias."
+      ],
+      [
+        "Antes de concertar la visita",
+        "Indica el núcleo o pedanía, tipo de inmueble, accesos y conectividad disponible. No hace falta compartir horarios de ausencia, claves ni códigos de alarma."
+      ]
+    ],
+    "question": "¿La página de Villarcayo sirve igual para cualquier pedanía?",
+    "answer": "La información general sirve para preparar la consulta, pero la valoración cambia según el núcleo y el inmueble. Desplazamiento, cobertura y alcance se confirman antes del trabajo."
   }
 }
