@@ -29,15 +29,15 @@ test('Municipios: seis opciones en HTML y continuidad de localidad, sin nuevas c
   for(const [,raw] of matches){const u=new URL(raw.replaceAll('&amp;','&'),'https://example.invalid');assert.equal(u.searchParams.get('pueblo'),`${t.name}, ${t.province.name}`);assert.ok(u.searchParams.get('inmueble'));}
  }
 });
-test('Seis contextos municipales trazables no aprueban indexación ni inventan cobertura',()=>{
- assert.equal(Object.keys(localContexts).length,6);
+test('Once contextos municipales trazables no aprueban indexación ni inventan cobertura',()=>{
+ assert.equal(Object.keys(localContexts).length,11);
  const hashes=new Set();
  for(const [id,c] of Object.entries(localContexts)){
   const t=towns.find(t=>t.id===id);assert.equal(c.name,t.name);assert.equal(c.provinceId,t.province.id);
   const h=municipalContext(t);assert.ok(h.includes('Fuente municipal'));assert.ok(h.includes(e(c.source)));assert.ok(h.includes('no acreditan un trabajo realizado'));
   assert.ok(!approvedLocal(c));hashes.add(plain(h).replaceAll(t.name,'[LOCAL]'));
  }
- assert.equal(hashes.size,6);
+ assert.equal(hashes.size,11);
  const other=towns.find(t=>!localContexts[t.id]);assert.equal(municipalContext(other),'');
  assert.deepEqual(JSON.parse(fs.readFileSync('config/local-content.json','utf8')).approved,{});
  assert.equal(JSON.parse(fs.readFileSync('config/site.json','utf8')).mode,'preview');
