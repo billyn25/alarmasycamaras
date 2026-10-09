@@ -4,6 +4,8 @@ import crypto from 'node:crypto';
 import {provinces,services,brands} from '../src/content.mjs';
 import {townsFrom,runtime,approvedLocal,e} from '../src/lib.mjs';
 import * as view from '../src/views.mjs';
+import {guides,guidesPage,guidePage,guideUrl} from '../src/guides.mjs';
+import {enrichMetadata} from '../src/metadata.mjs';
 const started=performance.now(),read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 const site=read('config/site.json'),locals=read('config/local-content.json'),rt=runtime(site);
 const source=read('data/municipios.json'),towns=townsFrom(source.municipalities),ids=new Set(towns.map(t=>t.id));
@@ -12,12 +14,14 @@ for(const [id,entry] of Object.entries(locals.approved)){if(!ids.has(id))throw E
 for(const media of read('data/media-sources.json')){const file='public/assets/'+media.file;if(!fs.existsSync(file))throw Error('Falta imagen: '+file);const actual=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');if(media.sha256&&actual!==media.sha256)throw Error('Imagen distinta a su fuente: '+file);}
 const out=path.resolve('dist');fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});fs.mkdirSync('.cache',{recursive:true});
 fs.cpSync('public/assets',path.join(out,'assets'),{recursive:true});
-const assets={};for(const [key,file,ext] of [['css','public/styles.css','css'],['js','public/app.js','js']]){const data=key==='css'?Buffer.concat([fs.readFileSync(file),Buffer.from('\n'),fs.readFileSync('public/enhancements.css'),Buffer.from('\n'),fs.readFileSync('public/ajax-accent.css')]):fs.readFileSync(file),hash=crypto.createHash('sha256').update(data).digest('hex').slice(0,12);assets[key]=`/assets/${key}.${hash}.${ext}`;fs.writeFileSync(out+assets[key],data);}
+const assets={};for(const [key,file,ext] of [['css','public/styles.css','css'],['js','public/app.js','js']]){const data=key==='css'?Buffer.concat([fs.readFileSync(file),Buffer.from('\n'),fs.readFileSync('public/enhancements.css'),Buffer.from('\n'),fs.readFileSync('public/ajax-accent.css'),Buffer.from('\n'),fs.readFileSync('public/editorial.css')]):fs.readFileSync(file),hash=crypto.createHash('sha256').update(data).digest('hex').slice(0,12);assets[key]=`/assets/${key}.${hash}.${ext}`;fs.writeFileSync(out+assets[key],data);}
 fs.writeFileSync(out+'/assets/municipios-search.json',JSON.stringify(towns.map(t=>({name:t.name,province:t.province.name,url:t.url}))));
 const pages=[],urls=new Set();
-const add=page=>{if(urls.has(page.url))throw Error('URL duplicada: '+page.url);urls.add(page.url);const relative=page.url==='/404.html'?'404.html':page.url.slice(1)+'index.html',file=path.join(out,relative);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,view.shell(page,site,rt,assets));const {body,...metadata}=page;pages.push({...metadata,file:relative,indexed:rt.production&&page.indexable!==false});};
+const add=original=>{const page=enrichMetadata(original);if(urls.has(page.url))throw Error('URL duplicada: '+page.url);urls.add(page.url);const relative=page.url==='/404.html'?'404.html':page.url.slice(1)+'index.html',file=path.join(out,relative);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,view.shell(page,site,rt,assets));const {body,...metadata}=page;pages.push({...metadata,file:relative,indexed:rt.production&&page.indexable!==false});};
 const crumbs=(...entries)=>entries.map(([name,url])=>({name,url}));
 add({url:'/',title:'Instalación de alarmas y cámaras de seguridad',description:'Alarmas inalámbricas de grado 2, cámaras con visión nocturna e instalación profesional. Sin cuota mensual obligatoria. Consulta tu pueblo: '+site.phone+'.',body:view.home(towns)});
+add({url:'/guias/',title:'Guías de alarmas y cámaras de seguridad',description:'Guías para elegir alarmas sin cuotas, visión nocturna, seguridad en segundas residencias y presupuestos de instalación.',body:guidesPage(),crumbs:crumbs(['Guías','/guias/'])});
+for(const g of guides)add({url:guideUrl(g),title:g.title,description:g.description,body:guidePage(g),guide:true,image:g.category==='CÁMARAS'?'ajax-turret.jpg':'ajax-kit.jpg',crumbs:crumbs(['Guías','/guias/'],[g.label,guideUrl(g)])});
 for(const s of services)add({url:`/${s.slug}/`,title:s.title,description:s.intro,body:view.servicePage(s),crumbs:crumbs([s.name,`/${s.slug}/`])});
 add({url:'/marcas/',title:'Marcas de alarmas y videovigilancia',description:'Instalaciones con Ajax, Hikvision, Dahua, Uniview, Nivian y EZVIZ. Selección de equipos e integración según las necesidades de tu inmueble.',body:view.brandsPage(),crumbs:crumbs(['Marcas','/marcas/'])});
 for(const b of brands)add({url:`/marcas/${b.slug}/`,title:'Instalación de sistemas '+b.name,description:b.text,body:view.brandPage(b),crumbs:crumbs(['Marcas','/marcas/'],[b.name,`/marcas/${b.slug}/`])});

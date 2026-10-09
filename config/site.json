@@ -6,6 +6,17 @@
   "tel": "+34641589394",
   "whatsapp": "34641589394",
   "contactNote": "Contacto provisional tomado de Antenas Rapid; confirmar para la nueva marca.",
-  "ready": {"contact":false,"coverage":false,"legal":false,"mediaRights":false,"commercialOffer":false},
-  "legal": {"holder":"","taxId":"","address":"","contact":""}
+  "ready": {
+    "contact": false,
+    "coverage": false,
+    "legal": false,
+    "mediaRights": false,
+    "commercialOffer": false
+  },
+  "legal": {
+    "holder": "R.F.G.",
+    "taxId": "",
+    "address": "",
+    "contact": ""
+  }
 }
