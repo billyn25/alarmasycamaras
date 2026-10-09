@@ -140,3 +140,11 @@
   .hero-final .lead{font-size:14.5px}
   .hero-final .actions .button{min-height:46px}
 }
+
+/* Ajuste fino tras revisión móvil real. */
+.hero-final .product-caption{color:#14171b}
+.hero-final .product-caption span{color:#65716f}
+@media(max-width:700px){
+  .hero-final .fine-print{margin-bottom:-2px}
+  .hero-final .hero-visual{margin-top:-2px}
+}
