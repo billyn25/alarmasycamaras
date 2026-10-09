@@ -1,0 +1,55 @@
+name: Preparar y verificar fotos locales y verde Ajax
+on:
+  push:
+    branches: [revision/verde-ajax-locales]
+    paths: [scripts/apply-local-visuals.py, src/local-media.mjs, public/ajax-accent.css, tests/local-media.test.mjs, tests/local-media-browser.py, .github/workflows/prepare-local-visuals.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Aplicar cambios y compilar
+        run: |
+          python scripts/apply-local-visuals.py
+          npm run build
+          npm test
+      - name: Revisar móvil y PC
+        run: |
+          pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          node scripts/serve.mjs > /tmp/rapid-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          python tests/browser.py
+          python tests/local-media-browser.py
+      - name: Guardar fuentes comprobadas en la rama de revisión
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/views.mjs scripts/build.mjs tests/site.test.mjs .github/workflows/verify.yml
+          git commit -m 'feat: cuatro fotos por municipio, contenido práctico y acento Ajax comprobado'
+          git push origin HEAD:revision/verde-ajax-locales
+      - name: Guardar evidencia
+        if: always()
+        run: |
+          mkdir -p artifacts
+          git archive --format=zip HEAD -o artifacts/fuentes.zip
+          cp .cache/*report.json artifacts/ 2>/dev/null || true
+          git rev-parse HEAD > artifacts/commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revision-local-verde
+          path: artifacts/
+          retention-days: 7
+          if-no-files-found: error
