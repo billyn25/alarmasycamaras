@@ -10,18 +10,18 @@ assert.equal(report.domain,base);
 assert.equal(report.pages,3848);
 assert.equal(report.municipalities,3797);
 assert.equal(report.approvedLocalities,0);
-assert.equal(report.indexable,28,'Solo las 28 páginas núcleo deben salir indexables en el primer lanzamiento');
-assert.deepEqual(report.sitemaps,['/sitemaps/principal.xml']);
+assert.equal(report.indexable,3844,'Deben salir indexables las 28 páginas núcleo, 19 provincias y 3797 pueblos');
+assert.equal(report.sitemaps.length,20);assert.ok(report.sitemaps.includes('/sitemaps/principal.xml'));for(const slug of ['alava','bizkaia','gipuzkoa','burgos','cantabria','navarra','la-rioja','leon','valladolid','zamora','avila','palencia','salamanca','segovia','soria','madrid','asturias','toledo','guadalajara'])assert.ok(report.sitemaps.includes('/sitemaps/'+slug+'.xml'));
 
 const indexed=pages.filter(p=>p.indexed);
-assert.equal(indexed.length,28);
-assert.equal(indexed.filter(p=>p.townId).length,0);
-assert.equal(indexed.filter(p=>p.province).length,0);
+assert.equal(indexed.length,3844);
+assert.equal(indexed.filter(p=>p.townId).length,3797);
+assert.equal(indexed.filter(p=>p.province&&!p.townId).length,19);
 
 const sitemap=fs.readFileSync('dist/sitemaps/principal.xml','utf8');
 const locs=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
-assert.equal(locs.length,28);
-assert.equal(new Set(locs).size,28);
+assert.equal(locs.length,47);
+assert.equal(new Set(locs).size,47);
 for(const loc of locs){
   assert.ok(loc.startsWith(base+'/'),loc);
   const path=new URL(loc).pathname;
@@ -48,6 +48,7 @@ assert.ok(!headers.includes('X-Robots-Tag: noindex'));
 
 const root=fs.readFileSync('dist/sitemap.xml','utf8');
 assert.ok(root.includes(base+'/sitemaps/principal.xml'));
-assert.ok(!root.includes('/sitemaps/burgos.xml'));
+assert.ok(root.includes('/sitemaps/burgos.xml'));
 
-console.log('PRODUCTION SEO DRY-RUN OK: 28 páginas núcleo indexables; 0 provincias y 0 pueblos liberados; sitemap, canonical, robots y schema correctos.');
+for(const province of report.provinces){const xml=fs.readFileSync('dist/sitemaps/'+province.slug+'.xml','utf8');const urls=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);assert.equal(urls.length,province.count,province.slug);}
+console.log('PRODUCTION SEO DRY-RUN OK: 3844 URLs indexables; 3797 pueblos, 19 provincias y 28 páginas núcleo; sitemap, canonical, robots y schema correctos.');
