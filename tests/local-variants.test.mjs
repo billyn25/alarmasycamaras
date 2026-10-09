@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';
 import {townsFrom} from '../src/lib.mjs';
-import {localVariantSection,localVariantSignature} from '../src/local-variants.mjs';
+import {localVariantSection,localVariantSignature,localSeoMeta,localInternalLinks} from '../src/local-variants.mjs';
 const towns=townsFrom(JSON.parse(fs.readFileSync('data/municipios.json','utf8')).municipalities);
 test('Variación local es estable y útil',()=>{
  for(const t of towns.slice(0,100)){const a=localVariantSection(t),b=localVariantSection(t);assert.equal(a,b);assert.equal((a.match(/class="local-variant-card"/g)||[]).length,5);assert.ok(a.includes(t.name));assert.ok(!/hemos instalado|nuestros clientes de|oficina en/i.test(a));}
@@ -8,4 +8,14 @@ test('Variación local es estable y útil',()=>{
 test('La matriz crea miles de combinaciones estables, no random por deploy',()=>{
  const signatures=new Set(towns.map(t=>crypto.createHash('sha256').update(localVariantSignature(t)).digest('hex')));
  assert.ok(signatures.size>3300,signatures.size);
+});
+
+test('Metadatos locales estables, variados y únicos',()=>{
+ const metas=towns.map(t=>localSeoMeta(t,'641 589 394'));
+ assert.equal(new Set(metas.map(x=>x.title)).size,towns.length);
+ assert.equal(new Set(metas.map(x=>x.description)).size,towns.length);
+ assert.ok(metas.every(x=>x.description.length<=170));
+});
+test('Enlazado profundo local es estable y contiene cinco destinos',()=>{
+ for(const t of towns.slice(0,200)){const a=localInternalLinks(t),b=localInternalLinks(t);assert.equal(a,b);assert.equal((a.match(/<a href=/g)||[]).length,5);}
 });
