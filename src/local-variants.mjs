@@ -83,3 +83,40 @@ export function localVariantSection(t){
 export function localVariantSignature(t){
  return localVariantSection(t).replaceAll(e(t.name),'[LOCAL]').replaceAll(e(t.province.name),'[PROVINCIA]');
 }
+
+const titlePatterns=[
+ t=>`Alarmas y cámaras en ${t.name}, ${t.province.name}`,
+ t=>`Instalación de alarmas y cámaras en ${t.name}`,
+ t=>`Cámaras de seguridad y alarmas en ${t.name}`,
+ t=>`Instalador de alarmas y cámaras en ${t.name}`,
+ t=>`Alarmas inalámbricas y cámaras en ${t.name}`,
+ t=>`Seguridad con alarmas y cámaras en ${t.name}`
+];
+const descriptionPatterns=[
+ (t,p)=>`Instalación de alarmas inalámbricas y cámaras de seguridad en ${t.name}, ${t.province.name}. Diseñamos detección, vídeo y grabación según el inmueble. ${p}.`,
+ (t,p)=>`Alarmas y videovigilancia en ${t.name}, ${t.province.name}: accesos, visión nocturna, grabación y control móvil según el proyecto. Presupuesto en ${p}.`,
+ (t,p)=>`Protección para viviendas, negocios y segundas residencias en ${t.name}. Alarmas, cámaras y almacenamiento configurados a medida. Consulta: ${p}.`,
+ (t,p)=>`Instalador de alarmas y cámaras en ${t.name}. Revisamos accesos, conexión, visión nocturna y grabación antes de elegir equipos. Contacto: ${p}.`,
+ (t,p)=>`Cámaras de seguridad y alarmas en ${t.name}, ${t.province.name}. Soluciones para vivienda y negocio, con integración y costes definidos en presupuesto. ${p}.`,
+ (t,p)=>`Consulta alarmas inalámbricas y cámaras en ${t.name}. Diseñamos el sistema según accesos, uso, conectividad y necesidades de grabación. ${p}.`
+];
+export function localSeoMeta(t,phone){
+ let title=choose(titlePatterns,t.id+'|seo-title')(t);
+ const description=choose(descriptionPatterns,t.id+'|seo-description')(t,phone);
+ if(title.length>68)title=`Alarmas y cámaras en ${t.name}`;
+ return {title,description};
+}
+const deepLinks=[
+ ['/alarmas/','Alarmas inalámbricas'],
+ ['/camaras/','Cámaras de seguridad'],
+ ['/alarmas-y-camaras/','Alarma y vídeo integrados'],
+ ['/soluciones/','Soluciones por inmueble'],
+ ['/guias/camaras-exteriores-noche/','Cámaras exteriores y noche'],
+ ['/guias/grabacion-nvr-almacenamiento/','Grabación y NVR'],
+ ['/guias/camaras-4g-solares/','Cámaras 4G y solares'],
+ ['/guias/presupuesto-instalacion/','Cómo comparar presupuestos']
+];
+export function localInternalLinks(t){
+ const ranked=deepLinks.map((item,i)=>({item,rank:hash(t.id+'|deep-link|'+i)})).sort((a,b)=>a.rank-b.rank).slice(0,5);
+ return `<nav class="local-deep-links" aria-label="Información relacionada para ${e(t.name)}"><strong>Información para preparar tu instalación</strong>${ranked.map(({item})=>`<a href="${item[0]}">${e(item[1])} <span aria-hidden="true">→</span></a>`).join('')}</nav>`;
+}
