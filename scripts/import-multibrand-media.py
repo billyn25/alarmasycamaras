@@ -5,7 +5,7 @@ from hashlib import sha256
 import json
 from PIL import Image,ImageOps
 ASSETS=[
-('hikvision-colorvu.webp','https://hiksurveillance.co.za/cdn/shop/products/23x7g1_20g2-1000x1000_1000x.jpg?v=1621536616','Hikvision ColorVu turret, imagen comercial de producto publicada por Hik Surveillance South Africa.'),
+('hikvision-colorvu.webp','https://www.megateh.eu/files/products/00/48/85/ds-2cd2347g2-lu-28.png','Hikvision ColorVu turret, imagen comercial de producto publicada por Hik Surveillance South Africa.'),
 ('dahua-wizsense.webp','https://cdn11.bigcommerce.com/s-5pb63bdidh/images/stencil/1280x1280/products/4132/37616/28DH-IPC-HDW3866EMP-S-AUS_front__90420.1758675415.1280.1280_1765522230__38779.1769138534.jpg?c=1&imbypass=on','Dahua WizSense turret, imagen comercial de producto publicada por Bitek.'),
 ('uniview-colorhunter.webp','https://global.uniview.com/es/res/202608/24/20260824_2374576_dccd647d-392f-49c8-9089-956914e68944_1051531_798522_0.png','Uniview turret, imagen de producto publicada por Uniview.') ]
 manifest=Path('data/media-sources.json');rows=json.loads(manifest.read_text())
