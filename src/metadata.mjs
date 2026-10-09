@@ -11,6 +11,7 @@ export function structuredData(page,site,rt){
  if(service)graph.push({'@context':'https://schema.org','@type':'Service','@id':url+'#service',name:service.title,serviceType:service.title,url,description:page.description,provider:{'@id':org}});
  return graph;
 }
+const trimMeta=(value,max=165)=>{const text=String(value??'').trim();if(text.length<=max)return text;const raw=text.slice(0,max-1),space=raw.lastIndexOf(' '),cut=(space>100?raw.slice(0,space):raw).replace(/[\s,;:.\-]+$/,'');return cut+'.';};
 const descriptions={
  '/alarmas/':'Instalación de alarmas Ajax inalámbricas de grado 2. Equipos, configuración y pruebas a medida, sin cuota mensual obligatoria por el sistema autogestionado.',
  '/camaras/':'Instalación de cámaras de seguridad con visión nocturna, grabación y consulta móvil. Elegimos encuadres, conexión y almacenamiento según tu inmueble.',
@@ -21,5 +22,5 @@ export function enrichMetadata(page){
  const service=services.find(s=>page.url===`/${s.slug}/`);
  const brand=brands.find(b=>page.url===`/marcas/${b.slug}/`);
  // Sin una foto de la marca concreta se usa la identidad Rapid, no un producto de otra marca.
- return {...page,description:descriptions[page.url]||cameraBrands[brand?.slug]?.description||page.description,image:page.image||(service?.image)||(brand&&brand.slug!=='ajax'?'logo-rapid.svg':page.townId?'ajax-turret.jpg':'ajax-kit.jpg')};
+ return {...page,description:trimMeta(descriptions[page.url]||cameraBrands[brand?.slug]?.description||page.description),image:page.image||(service?.image)||(brand&&brand.slug!=='ajax'?'logo-rapid.svg':page.townId?'ajax-turret.jpg':'ajax-kit.jpg')};
 }
