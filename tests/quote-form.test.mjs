@@ -25,7 +25,7 @@ test('Ubicación rellenada desde servidor y escape de datos',()=>{
  assert.throws(()=>whatsappForm({id:'bad"'}));
 });
 test('Formulario en todas las localidades y sin modificar fotos ni títulos SEO',()=>{
- for(const t of towns){const html=townPage(t,[],null);assert.equal((html.match(/data-quote-form/g)||[]).length,1,t.url);assert.ok(html.includes(`value="${t.province.name}" selected`),t.url);assert.equal((html.match(/<img /g)||[]).length,4,t.url);}
+ for(const t of towns){const html=townPage(t,[],null);assert.equal((html.match(/data-quote-form/g)||[]).length,1,t.url);assert.ok(html.includes(`value="${t.province.name}" selected`),t.url);assert.equal((html.match(/<img /g)||[]).length,7,t.url);}
  assert.equal((home(towns).match(/data-quote-form/g)||[]).length,1);
  assert.equal((contactPage(site).match(/data-quote-form/g)||[]).length,1);
  for(const s of services)assert.equal((servicePage(s).match(/data-quote-form/g)||[]).length,1,s.slug);
