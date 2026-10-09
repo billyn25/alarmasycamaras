@@ -51,3 +51,15 @@
 @media(max-width:750px){.local-ecosystem{grid-template-columns:1fr;gap:28px}.local-service-media{padding:10px}.local-services>article{padding:15px}}
 @media(max-width:600px){.local-photo-camera{max-height:none;padding:24px}.local-photo-camera img{width:100%;height:auto;max-width:270px;margin:6px auto 12px}.local-visual-title{font-size:28px}.local-services{gap:24px;padding-top:38px}.local-services>article{padding:24px}.local-service-media img{height:230px}.local-services h2{font-size:27px}.local-ecosystem{padding:28px}.local-ecosystem-options ul{gap:7px}.local-ecosystem-options li{font-size:12px;padding-inline:0}.ajax-range>.section-heading:first-child{padding-left:18px}.footer-figures{align-items:start}.local-usage-grid{grid-template-columns:1fr;gap:30px}}
 @media(max-width:360px){.local-ecosystem{padding:23px}.local-ecosystem-options ul{grid-template-columns:1fr}.local-service-media img{height:200px}.local-photo-camera{padding:21px}}
+
+/* Mobile: show the camera immediately after the local heading, before the long copy. */
+@media(max-width:600px){
+ .local-hero{row-gap:20px}
+ .local-hero>div:first-child{display:contents}
+ .local-hero>div:first-child>.eyebrow{order:1;margin-bottom:0}
+ .local-hero h1{order:2}
+ .local-hero>.local-photo-camera{order:3}
+ .local-hero .actions{order:4}
+ .local-hero .lead{order:5;margin:0}
+ .local-hero .local-pills{order:6;margin-top:0}
+}

@@ -59,3 +59,5 @@ test('Totales del pie calculados y teléfono clicable',async()=>{
  assert.ok(html.includes('data-stat="provinces">19'));assert.ok(html.includes('3.797'));
  assert.throws(()=>footerSummary(site,4,19,undefined),/Totales/);
 });
+
+import './local-media.test.mjs';
