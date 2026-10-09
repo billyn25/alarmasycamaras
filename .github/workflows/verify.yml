@@ -54,6 +54,14 @@ jobs:
           python scripts/check-cookies-brands-deploy.py
           python scripts/check-facilities-deploy.py
           python scripts/check-whatsapp-form-deploy.py
+      - name: Auditoría de producción sin publicar
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          cp config/site.json /tmp/site.preview.json
+          node scripts/prepare-production-audit.mjs
+          SITE_MODE=production SITE_URL=https://alarmasycamarasrapid.com npm run build
+          node scripts/production-seo-check.mjs
+          cp /tmp/site.preview.json config/site.json
       - name: Preparar copia de fuentes
         if: always()
         run: |

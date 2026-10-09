@@ -148,3 +148,9 @@
   .hero-final .fine-print{margin-bottom:-2px}
   .hero-final .hero-visual{margin-top:-2px}
 }
+
+/* Cierre final móvil: el producto entra antes sin apretar la marca. */
+@media(max-width:700px){
+  .hero-final{gap:13px}
+  .hero-final .hero-visual{margin-top:-7px}
+}
