@@ -17,7 +17,9 @@ with sync_playwright() as p:
         assert pg.locator('#cookie-notice').is_visible();assert ctx.cookies()==[]
         assert pg.evaluate('localStorage.length===0 && sessionStorage.length===0')
         if width in [390,1440]: pg.screenshot(path=str(OUT/f'aviso-cookies-{width}.png'))
-        pg.locator('.cookie-trigger').click()
+        opener=pg.locator('.cookie-trigger') if width>900 else pg.locator('footer [data-cookie-open]')
+        if width<=900: assert not pg.locator('.cookie-trigger').is_visible()
+        opener.click()
         assert pg.locator('#cookie-dialog').is_visible();assert ctx.cookies()==[]
         assert pg.evaluate('document.activeElement.closest("#cookie-dialog")!==null')
         for _ in range(10):
@@ -25,7 +27,7 @@ with sync_playwright() as p:
             assert pg.evaluate('document.activeElement.closest("#cookie-dialog")!==null'), 'Focus outside modal'
         if width in [390,1440]: pg.screenshot(path=str(OUT/f'panel-cookies-{width}.png'))
         pg.keyboard.press('Escape');assert not pg.locator('#cookie-dialog').is_visible();assert ctx.cookies()==[]
-        assert pg.locator('.cookie-trigger').evaluate('el=>el===document.activeElement')
+        if width>900: assert pg.locator('.cookie-trigger').evaluate('el=>el===document.activeElement')
         pg.locator('#cookie-notice [data-cookie-ack]').click()
         saved=ctx.cookies();assert len(saved)==1 and saved[0]['name']=='rapid_cookie_notice'
         assert saved[0]['value']=='v1' and saved[0]['path']=='/' and saved[0]['sameSite']=='Lax'
@@ -54,17 +56,18 @@ with sync_playwright() as p:
         if width in [390,1440]:pg.locator('.camera-planner').screenshot(path=str(OUT/f'orientador-camaras-{width}.png'))
         contact_box=pg.locator('.mobile-contact').bounding_box()
         trigger_box=pg.locator('.cookie-trigger').bounding_box()
-        assert trigger_box is not None
+        if width<=900:
+            assert trigger_box is None, 'El botón flotante de cookies debe ocultarse en móvil/tableta'
+        else:
+            assert trigger_box is not None
         if width<=600: assert contact_box is not None, 'Barra de contacto ausente en móvil'
-        if contact_box is not None:
-            assert trigger_box['y']+trigger_box['height']<=contact_box['y'], 'Cookies tapa la barra móvil'
         checks.append({'width':width,'brands':5,'cookiePersistence':True,'reopenAndDelete':True,'focusAndEscape':True,'overflow':False})
         ctx.close()
     blocked=browser.new_context()
     blocked.add_init_script("Object.defineProperty(Document.prototype,'cookie',{get(){throw new Error('blocked')},set(){throw new Error('blocked')}})")
     q=blocked.new_page();q.on('pageerror',lambda e:errors.append(str(e)));q.goto(BASE);q.locator('#cookie-notice [data-cookie-ack]').click();assert not q.locator('#cookie-notice').is_visible();blocked.close()
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844});q=nojs.new_page();q.goto(BASE+'/marcas/nivian/');assert q.locator('.camera-brand-grid article').count()==3
-    q.locator('.cookie-trigger').click();assert q.url==BASE+'/cookies/';assert 'rapid_cookie_notice' in q.locator('main').inner_text();nojs.close()
+    q.locator('footer [data-cookie-open]').click();assert q.url==BASE+'/cookies/';assert 'rapid_cookie_notice' in q.locator('main').inner_text();nojs.close()
     assert not errors,errors;assert not external,external
     browser.close()
 report={'base':BASE,'layouts':checks,'brandLayouts':20,'beforeActionCookies':0,'afterActionCookie':'rapid_cookie_notice=v1; 180 días; SameSite=Lax; Secure en HTTPS','externalRequests':external,'consoleErrors':errors,'blockedCookiesFallback':True,'noJavaScriptFallback':True}
