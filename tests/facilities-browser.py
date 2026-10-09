@@ -2,7 +2,7 @@
 import json,os
 from pathlib import Path
 from urllib.parse import urlparse
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright,expect
 BASE=os.environ.get('RAPID_TEST_BASE','http://127.0.0.1:4173').rstrip('/')
 OUT=Path('artifacts');OUT.mkdir(exist_ok=True)
 facilities=json.loads(Path('data/facilities.json').read_text())
@@ -33,8 +33,9 @@ with sync_playwright() as p:
         if width in [390,1440]:
             for route,selector,name in [('/soluciones/',None,'soluciones'),('/burgos/lerma/','.municipal-context','lerma-contexto'),('/burgos/lerma/','.facility-selector','lerma-selector'),('/la-rioja/haro/','.municipal-context','haro-contexto'),('/soluciones/casas-y-chalets/',None,'chalets')]:
                 page.goto(BASE+route,wait_until='load')
+                page.evaluate('document.activeElement?.blur()')
                 if selector=='.facility-selector':page.locator('.facility-choice summary').nth(1).click()
-                if selector:page.locator(selector).screenshot(path=str(OUT/f'{name}-{width}.png'),style='.site-header,.mobile-contact,.cookie-trigger{visibility:hidden!important}')
+                if selector:page.locator(selector).screenshot(path=str(OUT/f'{name}-{width}.png'),style='.site-header,.mobile-contact,.cookie-trigger,.skip-link{visibility:hidden!important}')
                 else:
                     page.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
                     page.wait_for_function('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)')
@@ -42,10 +43,11 @@ with sync_playwright() as p:
                     page.screenshot(path=str(OUT/f'{name}-{width}.png'),full_page=True)
         page.goto(BASE+'/burgos/lerma/');page.locator('.facility-choice summary').nth(1).click()
         page.locator('.facility-choice').nth(1).locator('a').nth(1).click()
-        assert page.locator('[name="town"]').input_value()=='Lerma, Burgos'
-        assert page.locator('[name="building"]').input_value()=='Casa o chalet'
+        page.wait_for_url('**/contacto/**')
+        expect(page.locator('[name="town"]')).to_have_value('Lerma, Burgos')
+        expect(page.locator('[name="building"]')).to_have_value('Casa o chalet')
         page.goto(BASE+'/contacto/?inmueble=%3Cscript%3Ebad%3C%2Fscript%3E')
-        assert page.locator('[name="building"]').input_value()=='Vivienda'
+        expect(page.locator('[name="building"]')).to_have_value('Vivienda')
         ctx.close()
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':900})
     page=nojs.new_page();page.goto(BASE+'/burgos/lerma/')
