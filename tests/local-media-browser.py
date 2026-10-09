@@ -42,7 +42,7 @@ with sync_playwright() as p:
     page.set_viewport_size({'width':1440,'height':960})
     page.goto(BASE,wait_until='load')
     page.wait_for_function('document.querySelector(".hero-product").complete')
-    assert page.locator('.hero .button').evaluate('el=>getComputedStyle(el).backgroundColor')=='rgb(90, 228, 170)'
+    assert page.locator('.hero .hero-whatsapp').evaluate('el=>getComputedStyle(el).backgroundColor')=='rgb(90, 228, 170)'
     page.screenshot(path=str(OUT/'home-verde-1440.png'))
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
     q=nojs.new_page();q.goto(BASE+'/burgos/lerma/')
