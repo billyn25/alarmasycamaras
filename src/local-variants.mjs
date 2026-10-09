@@ -86,11 +86,11 @@ export function localVariantSignature(t){
 
 const titlePatterns=[
  t=>`Alarmas y cámaras en ${t.name}, ${t.province.name}`,
- t=>`Instalación de alarmas y cámaras en ${t.name}`,
- t=>`Cámaras de seguridad y alarmas en ${t.name}`,
- t=>`Instalador de alarmas y cámaras en ${t.name}`,
- t=>`Alarmas inalámbricas y cámaras en ${t.name}`,
- t=>`Seguridad con alarmas y cámaras en ${t.name}`
+ t=>`Instalación de alarmas y cámaras · ${t.name}, ${t.province.name}`,
+ t=>`Cámaras de seguridad y alarmas · ${t.name}, ${t.province.name}`,
+ t=>`Instalador de alarmas y cámaras · ${t.name}, ${t.province.name}`,
+ t=>`Alarmas inalámbricas y cámaras · ${t.name}, ${t.province.name}`,
+ t=>`Seguridad con alarmas y cámaras · ${t.name}, ${t.province.name}`
 ];
 const descriptionPatterns=[
  (t,p)=>`Instalación de alarmas inalámbricas y cámaras de seguridad en ${t.name}, ${t.province.name}. Diseñamos detección, vídeo y grabación según el inmueble. ${p}.`,
@@ -103,7 +103,7 @@ const descriptionPatterns=[
 export function localSeoMeta(t,phone){
  let title=choose(titlePatterns,t.id+'|seo-title')(t);
  const description=choose(descriptionPatterns,t.id+'|seo-description')(t,phone);
- if(title.length>68)title=`Alarmas y cámaras en ${t.name}`;
+ if(title.length>76)title=`${t.name}, ${t.province.name}: alarmas y cámaras`;
  return {title,description};
 }
 const deepLinks=[
