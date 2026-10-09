@@ -3,7 +3,7 @@ import json,re
 from pathlib import Path
 from datetime import datetime,timezone
 from urllib.request import Request,urlopen
-BASE='https://alarmasycamarasrapid.netlify.app'
+BASE='https://camarasyalarmasrapid.com'
 checks=[]
 paths={'/soluciones/':['Tu espacio marca la diferencia.','/soluciones/naves-y-almacenes/'],'/soluciones/casas-y-chalets/':['Proteger por zonas, no llenar la parcela','inmueble=Casa'],'/burgos/lerma/':['municipal-context','Castrillo de Solarana','facility-choice'],'/bizkaia/zalla/':['municipal-context','Otxaran','facility-choice'],'/la-rioja/haro/':['municipal-context','Barrio de la Estación','facility-choice']}
 for path,markers in paths.items():
