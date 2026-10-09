@@ -35,6 +35,8 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID || true' EXIT
           for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          python tests/facility-summary-browser.py
+          python tests/facilities-browser.py
           python tests/cookies-brands-browser.py
           python tests/browser.py
           python tests/local-media-browser.py
@@ -45,6 +47,7 @@ jobs:
           python scripts/check-public-preview.py
           python scripts/check-editorial-deploy.py
           python scripts/check-cookies-brands-deploy.py
+          python scripts/check-facilities-deploy.py
       - name: Preparar copia de fuentes
         if: always()
         run: |
