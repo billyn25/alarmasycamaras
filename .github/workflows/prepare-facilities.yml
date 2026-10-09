@@ -1,0 +1,58 @@
+name: Revisar soluciones y contenido municipal
+on:
+  push:
+    branches: [revision/soluciones-locales]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Integrar contenido sin cambiar aprobaciones ni URLs previas
+        run: |
+          python scripts/generate-facility-data.py
+          python scripts/generate-municipal-context.py
+          python scripts/integrate-facilities.py
+          npm run build
+          npm test
+      - name: Navegador y regresiones
+        run: |
+          pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          node scripts/serve.mjs > /tmp/rapid.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          python tests/facilities-browser.py
+          python tests/cookies-brands-browser.py
+          python tests/browser.py
+          python tests/local-media-browser.py
+          python tests/privacy-seo-browser.py
+      - name: Guardar fuentes comprobadas, sin escribir workflows
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/facilities.json data/local-context.json src/views.mjs public/app.js scripts/build.mjs scripts/content-audit.mjs tests/site.test.mjs
+          git commit -m 'feat: integrar soluciones por inmueble y seis contextos municipales verificados'
+          git push origin HEAD:revision/soluciones-locales
+      - name: Evidencia
+        if: always()
+        run: |
+          mkdir -p artifacts
+          git archive --format=zip HEAD -o artifacts/fuentes.zip
+          cp .cache/*report.json artifacts/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revision-soluciones-locales
+          path: artifacts/
+          retention-days: 7
