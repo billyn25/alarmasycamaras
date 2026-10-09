@@ -68,3 +68,5 @@ import './local-media.test.mjs';
 import './quote-form.test.mjs';
 
 import './multibrand.test.mjs';
+
+import './local-variants.test.mjs';
