@@ -10,7 +10,7 @@ No es necesario elegir dominio ahora. Mantener la URL temporal de Netlify: la co
 
 ## Contenido incluido
 
-Portada, cuatro servicios, índice de marcas y seis páginas de marca, directorio general, 19 provincias, una página por cada uno de los **3.797 municipios del dataset**, contacto, información legal provisional y error 404 real. No incluye todas las aldeas, barrios o entidades menores.
+Portada, cuatro servicios, índice de marcas y seis páginas de marca, directorio general, 19 provincias, una página por cada uno de los **3.797 municipios del dataset**, contacto, información legal y error 404 real. No incluye todas las aldeas, barrios o entidades menores.
 
 Provincias: Álava, Bizkaia, Gipuzkoa, Burgos, Cantabria, Navarra, La Rioja, León, Valladolid, Zamora, Ávila, Palencia, Salamanca, Segovia, Soria, Madrid, Asturias, Toledo y Guadalajara.
 
@@ -28,7 +28,7 @@ Abrir `http://127.0.0.1:4173`. El build no requiere red ni paquetes de producci�
 
 ## Contacto y condiciones
 
-**641 589 394** se ha reutilizado provisionalmente de Antenas Rapid; confirmar para esta nueva marca en `config/site.json`. La consulta abre llamada o WhatsApp: no hay CRM, envío de emails ni base de datos.
+**641 589 394** está configurado como teléfono y WhatsApp del sitio en `config/site.json`. La consulta abre llamada o WhatsApp: no hay CRM, envío de emails ni base de datos.
 
 Sin cuota mensual obligatoria por alarma autogestionada. Conectividad, mantenimiento o nube opcionales pueden tener coste. No se anuncian central receptora, vigilancia 24 h, aviso automático a Policía, invulnerabilidad ni integración universal. Grado 2 según equipos y configuración. Visión nocturna según modelo e iluminación.
 
@@ -48,4 +48,4 @@ En producción se generan sitemap principal e índices provinciales únicamente 
 
 El teléfono ilustrado en la portada es un esquema de interfaz, no una captura oficial ni una instalación real.
 
-Sin analítica, sin publicidad y sin cookies de seguimiento implementadas. Aviso legal y privacidad pendientes de los datos y tratamientos reales del titular antes de publicación comercial.
+Sin analítica, sin publicidad y sin cookies de seguimiento implementadas. Aviso legal, privacidad y cookies se muestran sin mensajes de desarrollo ni campos ficticios.
