@@ -48,7 +48,7 @@ with sync_playwright() as p:
         assert metrics['contained'] and metrics['uncovered'], (width,metrics)
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
         assert page.locator('.coverage-province').count() == 19
-        assert page.locator('.coverage-province li a').count() == 114
+        assert page.locator('.coverage-province li a').count() == 190
         photos = page.locator('main img').evaluate_all("els => els.map(el => el.getAttribute('src'))")
         assert len(photos) == 7 and len(set(photos)) == 7, photos
         assert page.locator('.trust-star').count() == 5
@@ -102,8 +102,8 @@ with sync_playwright() as p:
     np = nojs.new_page()
     np.goto(BASE)
     assert np.locator('.coverage-province').count() == 19
-    assert np.locator('.coverage-province li a').count() == 114
-    checks.append('Cobertura de portada disponible sin JavaScript: 19 provincias y 114 localidades')
+    assert np.locator('.coverage-province li a').count() == 190
+    checks.append('Cobertura de portada disponible sin JavaScript: 19 provincias y 190 localidades')
     np.goto(BASE + '/burgos/')
     assert np.locator('[data-town-list] a').count() == 371
     assert np.locator('#main-nav').is_visible()
