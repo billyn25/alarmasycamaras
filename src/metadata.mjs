@@ -1,3 +1,4 @@
+import {cameraBrands} from './camera-brands.mjs';
 import {services,brands} from './content.mjs';
 export function structuredData(page,site,rt){
  if(!rt.production||!rt.base)return [];
@@ -20,5 +21,5 @@ export function enrichMetadata(page){
  const service=services.find(s=>page.url===`/${s.slug}/`);
  const brand=brands.find(b=>page.url===`/marcas/${b.slug}/`);
  // Sin una foto de la marca concreta se usa la identidad Rapid, no un producto de otra marca.
- return {...page,description:descriptions[page.url]||page.description,image:page.image||(service?.image)||(brand&&brand.slug!=='ajax'?'logo.svg':page.townId?'ajax-turret.jpg':'ajax-kit.jpg')};
+ return {...page,description:descriptions[page.url]||cameraBrands[brand?.slug]?.description||page.description,image:page.image||(service?.image)||(brand&&brand.slug!=='ajax'?'logo.svg':page.townId?'ajax-turret.jpg':'ajax-kit.jpg')};
 }

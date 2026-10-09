@@ -17,7 +17,7 @@ const report={reviewedAt:'2026-10-09',scope:'HTML generado completo y plantillas
  {priority:'Antes de publicar comercialmente',topic:'Identificación del titular',status:'pendiente',detail:'R.F.G. confirmado. Identificación completa, NIF, domicilio y correo no facilitados. No se marca ready.legal=true ni se certifica cumplimiento con las iniciales.'},
  {priority:'Antes de indexar',topic:'Dominio y Search Console',status:'pendiente',detail:'Dominio definitivo sin configurar; noindex conservado. Sitemaps solo con URLs finales y localidades aprobadas, no con todo el directorio de revisión.'},
  {priority:'Antes de publicar comercialmente',topic:'Oferta, cobertura y fotografías',status:'pendiente',detail:'Confirmar flags de contacto, cobertura, oferta y permisos de imágenes; no hay oficinas o reseñas ficticias.'},
- {priority:'Mejora de contenido',topic:'Fichas multimarca',status:'pendiente',detail:'Ajax dispone de guía extensa; Hikvision, Dahua, Uniview, Nivian y EZVIZ aún necesitan ejemplos de soluciones y criterios por gama/modelo, sin copiar catálogos.'},
+ {priority:'Mejora de contenido',topic:'Fichas multimarca',status:'ampliadas',detail:'Cinco fichas ampliadas con criterios por gama/modelo, ejemplos de proyecto, preguntas frecuentes y fuentes oficiales. Falta evidencia fotográfica propia y confirmar referencias disponibles.'},
  {priority:'Confianza comercial',topic:'Pruebas del trabajo',status:'pendiente',detail:'Añadir fotografías de instalaciones propias autorizadas, referencias y testimonios reales cuando se aporten. Estrellas actuales: compromisos, no valoraciones.'}
  ],details};
 fs.writeFileSync('.cache/content-seo-report.json',JSON.stringify(report,null,2));

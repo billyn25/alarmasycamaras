@@ -19,6 +19,7 @@ with sync_playwright() as p:
         for route in routes:
             response = page.goto(BASE + route, wait_until='networkidle')
             assert response.status == 200, route
+            if page.locator('#cookie-notice').is_visible(): page.locator('#cookie-notice [data-cookie-ack]').click()
             assert page.locator('h1').count() == 1, route
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), f'Overflow {width}: {route}'
             page.evaluate("document.querySelectorAll('img').forEach(img => img.loading = 'eager')")

@@ -35,6 +35,7 @@ with sync_playwright() as p:
     assert page.locator('.privacy-summary').is_visible()
     assert not outbound,outbound
     assert not set_cookies,set_cookies
+    page.locator('#cookie-notice [data-cookie-ack]').click()
     intercepted=[]
     def block_message(route):
         intercepted.append(route.request.url);route.abort()
