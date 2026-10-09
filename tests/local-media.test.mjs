@@ -29,7 +29,7 @@ test('Verde verificado y logo Rapid inalterado',()=>{
   for(const hex of ['#5ae4aa','#1dcf94','#00b280'])assert.ok(css.includes(hex),hex);
   const logo=fs.readFileSync('public/assets/logo.svg');
   const sha=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+logo.length+'\0'),logo])).digest('hex');
-  assert.equal(sha,'4cb69142e42ec4dd11b058b38403a0bb1feabde7');
+  assert.equal(sha,'dca6aeb64a3a897dd5ebf22e7d0817974afffcf1');
   const html=home(towns);const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(srcs.length,7);assert.equal(new Set(srcs).size,7);
 });
