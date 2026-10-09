@@ -19,5 +19,6 @@ const descriptions={
 export function enrichMetadata(page){
  const service=services.find(s=>page.url===`/${s.slug}/`);
  const brand=brands.find(b=>page.url===`/marcas/${b.slug}/`);
- return {...page,description:descriptions[page.url]||page.description,image:page.image||(service?.image)||((page.townId||brand&&brand.slug!=='ajax')?'ajax-turret.jpg':'ajax-kit.jpg')};
+ // Sin una foto de la marca concreta se usa la identidad Rapid, no un producto de otra marca.
+ return {...page,description:descriptions[page.url]||page.description,image:page.image||(service?.image)||(brand&&brand.slug!=='ajax'?'logo.svg':page.townId?'ajax-turret.jpg':'ajax-kit.jpg')};
 }
