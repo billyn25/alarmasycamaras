@@ -1,0 +1,31 @@
+name: Sustituir foto Uniview limpia
+on:
+  push:
+    branches: [revision/uniview-white]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - name: Sustituir recurso y validar
+        run: |
+          python scripts/replace-uniview-white.py
+          npm run build
+          npm test
+      - name: Guardar imagen
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/assets/uniview-colorhunter.webp data/media-sources.json
+          git commit -m 'fix: sustituir Uniview por imagen blanca sin marco'
+          git push origin HEAD:revision/uniview-white
