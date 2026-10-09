@@ -52,8 +52,12 @@ with sync_playwright() as p:
         pg.goto(BASE+'/camaras/',wait_until='networkidle');assert pg.locator('.camera-planner details').count()==3
         pg.locator('.camera-planner summary').nth(1).click()
         if width in [390,1440]:pg.locator('.camera-planner').screenshot(path=str(OUT/f'orientador-camaras-{width}.png'))
-        if width<901:
-            assert pg.locator('.cookie-trigger').bounding_box()['y']+pg.locator('.cookie-trigger').bounding_box()['height']<=pg.locator('.mobile-contact').bounding_box()['y']
+        contact_box=pg.locator('.mobile-contact').bounding_box()
+        trigger_box=pg.locator('.cookie-trigger').bounding_box()
+        assert trigger_box is not None
+        if width<=600: assert contact_box is not None, 'Barra de contacto ausente en móvil'
+        if contact_box is not None:
+            assert trigger_box['y']+trigger_box['height']<=contact_box['y'], 'Cookies tapa la barra móvil'
         checks.append({'width':width,'brands':5,'cookiePersistence':True,'reopenAndDelete':True,'focusAndEscape':True,'overflow':False})
         ctx.close()
     blocked=browser.new_context()
