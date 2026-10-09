@@ -3,7 +3,7 @@ from pathlib import Path
 from urllib.request import Request,urlopen
 from datetime import datetime,timezone
 import json,re,time
-BASE='https://alarmasycamarasrapid.netlify.app'
+BASE='https://camarasyalarmasrapid.com'
 OUT=Path('artifacts');OUT.mkdir(exist_ok=True)
 routes={'/':'cookie-dialog','/cookies/':'rapid_cookie_notice','/camaras/':'camera-planner','/marcas/hikvision/':'camera-brand-content','/marcas/nivian/':'NV-CAM01-SOLAR4G','/burgos/lerma/':'cookie-trigger'}
 report={'base':BASE,'checkedAt':None,'matchesBuild':False,'pages':[]}
