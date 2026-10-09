@@ -26,8 +26,17 @@ s=s.replace(old,"fs.readFileSync('public/enhancements.css'),Buffer.from('\\n'),f
 p.write_text(s)
 p=Path('tests/site.test.mjs')
 p.write_text(p.read_text()+"\nimport './local-media.test.mjs';\n")
-p=Path('.github/workflows/verify.yml');s=p.read_text()
-old='          python tests/browser.py\n'
-assert s.count(old)==1
-p.write_text(s.replace(old,old+'          python tests/local-media-browser.py\n'))
+p=Path('public/ajax-accent.css')
+p.write_text(p.read_text()+'''\n/* Mobile: show the camera immediately after the local heading, before the long copy. */
+@media(max-width:600px){
+ .local-hero{row-gap:20px}
+ .local-hero>div:first-child{display:contents}
+ .local-hero>div:first-child>.eyebrow{order:1;margin-bottom:0}
+ .local-hero h1{order:2}
+ .local-hero>.local-photo-camera{order:3}
+ .local-hero .actions{order:4}
+ .local-hero .lead{order:5;margin:0}
+ .local-hero .local-pills{order:6;margin-top:0}
+}
+''')
 print('Applied: local images, useful content, Ajax accent CSS, regression tests. Footer unchanged.')

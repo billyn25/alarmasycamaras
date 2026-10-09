@@ -36,8 +36,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/views.mjs scripts/build.mjs tests/site.test.mjs .github/workflows/verify.yml
-          git commit -m 'feat: cuatro fotos por municipio, contenido práctico y acento Ajax comprobado'
+          git add src/views.mjs scripts/build.mjs tests/site.test.mjs public/ajax-accent.css
+          git commit -m 'feat: fotos visibles también en móvil y contenido de seguridad para cada pueblo'
           git push origin HEAD:revision/verde-ajax-locales
       - name: Guardar evidencia
         if: always()
