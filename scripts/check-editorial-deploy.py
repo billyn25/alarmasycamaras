@@ -2,7 +2,7 @@
 import json,time
 from pathlib import Path
 from urllib.request import Request,urlopen
-BASE='https://alarmasycamarasrapid.netlify.app'
+BASE='https://camarasyalarmasrapid.com'
 checks={ '/aviso-legal/':['propiedad de R.F.G.'], '/privacidad/':['Política de privacidad','R.F.G.'], '/cookies/':['Política de cookies','Navegación sin seguimiento'], '/guias/':['Elegir bien también'], '/guias/alarmas-sin-cuotas/':['Qué significa autogestionar'] }
 report={'base':BASE,'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'status':'not_confirmed','pages':[]}
 for attempt in range(4):
