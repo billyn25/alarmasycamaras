@@ -24,7 +24,9 @@ with sync_playwright() as p:
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), f'Overflow {width}: {route}'
             page.evaluate("document.querySelectorAll('img').forEach(img => img.loading = 'eager')")
             page.wait_for_function('Array.from(document.images).every(img => img.complete && img.naturalWidth > 0)')
-            assert page.locator('meta[name="robots"]').get_attribute('content').startswith('noindex')
+            robots=page.locator('meta[name="robots"]').get_attribute('content')
+            if route=='/aviso-legal/': assert robots.startswith('noindex')
+            else: assert robots.startswith('index,follow')
             checks.append(f'{width}px {route}: HTML, imágenes y anchura OK')
         page.goto(BASE, wait_until='networkidle')
         page.evaluate("document.querySelectorAll('img').forEach(img => img.loading = 'eager')")
