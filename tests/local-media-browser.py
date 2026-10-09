@@ -21,7 +21,7 @@ with sync_playwright() as p:
             page.evaluate("document.querySelectorAll('img').forEach(x=>x.loading='eager')")
             page.wait_for_function('Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)')
             photos=page.locator('main img').evaluate_all('els=>els.map(i=>i.getAttribute("src"))')
-            assert len(photos)==len(set(photos))==4,(width,route,photos)
+            assert len(photos)==len(set(photos))==7,(width,route,photos)
             assert page.locator('.local-services article').count()==3
             assert page.locator('.local-ecosystem-options li').count()==6
             assert page.locator('.local-usage-grid article').count()==3
