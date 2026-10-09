@@ -72,7 +72,7 @@
   {
     "file": "uniview-colorhunter.webp",
     "source": "https://global.uniview.com/es/res/202608/24/20260824_2374576_dccd647d-392f-49c8-9089-956914e68944_1051531_798522_0.png",
-    "description": "Uniview ColorHunter turret, imagen comercial de producto.",
+    "description": "Uniview ColorHunter turret, producto normalizado sobre fondo blanco para coherencia visual.",
     "width": 900,
     "height": 900,
     "source_dimensions": [
@@ -80,7 +80,7 @@
       338
     ],
     "source_sha256": "5d5ef886e12d2b8991f532adaba5984c6411118fcc9dd6910b5e4afaf63ff1fe",
-    "sha256": "1b493ea2de1450d562caf36215594da6e4e9611f78a391080d15b3ade948693c",
+    "sha256": "ede101b4605ef3f1a62a827c0e340d16f2fe861b67df8f5688b0a2817a1436b2",
     "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no representa un trabajo realizado por Rapid."
   }
 ]
