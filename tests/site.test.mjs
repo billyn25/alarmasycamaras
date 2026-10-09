@@ -50,7 +50,7 @@ test('Contenido Ajax diferenciado, fuentes oficiales y sin promesas absolutas',a
 test('Portada sin fotos repetidas y con compromisos, no reseñas inventadas',async()=>{
  const {home}=await import('../src/views.mjs');const html=home(townsFrom(records));
  const images=[...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m=>m[1]);
- assert.equal(images.length,4);assert.equal(new Set(images).size,images.length);
+ assert.ok(images.length>=7);assert.equal(new Set(images).size,images.length);
  assert.equal((html.match(/class="trust-star"/g)||[]).length,5);
  assert.ok(!/AggregateRating|reviewCount|ratingValue/.test(html));
  assert.ok(html.includes('Instalación discreta. Protección profesional.'));
@@ -66,3 +66,5 @@ test('Totales del pie calculados y teléfono clicable',async()=>{
 import './local-media.test.mjs';
 
 import './quote-form.test.mjs';
+
+import './multibrand.test.mjs';

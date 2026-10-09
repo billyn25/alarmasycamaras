@@ -53,4 +53,4 @@ with sync_playwright() as p:
     nojs.close();browser.close()
 report={'checks':checks,'passed':len(checks),'noJavaScript':'Photos and accessories present in HTML','consoleErrors':errors}
 (OUT/'local-media-browser-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-print('LOCAL BROWSER OK:',len(checks),'layouts; four distinct images; green verified; no overflow.')
+print('LOCAL BROWSER OK:',len(checks),'layouts; seven distinct images; green verified; no overflow.')

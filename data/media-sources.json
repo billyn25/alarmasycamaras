@@ -40,5 +40,47 @@
     "source_sha256": "9219dc58bc3f1eb18ad7d557160e89c1aa5980bb21d24310289cac138e5b5b75",
     "sha256": "41a08eefbf9f154a599de47059a1484c008d1b60d3000cb9aec7c22a8aba3bcb",
     "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no es una instalación realizada por Rapid."
+  },
+  {
+    "file": "hikvision-colorvu.webp",
+    "source": "https://www.megateh.eu/files/products/00/48/85/ds-2cd2347g2-lu-28.png",
+    "description": "Hikvision ColorVu turret, imagen comercial de producto.",
+    "width": 900,
+    "height": 900,
+    "source_dimensions": [
+      640,
+      479
+    ],
+    "source_sha256": "6cfb1f9b78faaf41e49facdd91aed1f461d1e3a6c46448c0a40a16958217f545",
+    "sha256": "35e07ceb6b78fd211141c873d129b045d6cc3a0192fac879a9446e9209c0a622",
+    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no representa un trabajo realizado por Rapid."
+  },
+  {
+    "file": "dahua-wizsense.webp",
+    "source": "https://cdn11.bigcommerce.com/s-5pb63bdidh/images/stencil/1280x1280/products/4132/37616/28DH-IPC-HDW3866EMP-S-AUS_front__90420.1758675415.1280.1280_1765522230__38779.1769138534.jpg?c=1&imbypass=on",
+    "description": "Dahua WizSense turret, imagen comercial de producto.",
+    "width": 900,
+    "height": 900,
+    "source_dimensions": [
+      1280,
+      1280
+    ],
+    "source_sha256": "a4c98044d5bc2a34b96f4b90b3700ec1852270503e5379d55e9ef85c1399bbdc",
+    "sha256": "280c5ba57257940f351f5e13428201689b90d2d8fcc2b2e0cf62ff428a8976ce",
+    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no representa un trabajo realizado por Rapid."
+  },
+  {
+    "file": "uniview-colorhunter.webp",
+    "source": "https://global.uniview.com/es/res/202608/24/20260824_2374576_dccd647d-392f-49c8-9089-956914e68944_1051531_798522_0.png",
+    "description": "Uniview ColorHunter turret, imagen comercial de producto.",
+    "width": 900,
+    "height": 900,
+    "source_dimensions": [
+      600,
+      338
+    ],
+    "source_sha256": "5d5ef886e12d2b8991f532adaba5984c6411118fcc9dd6910b5e4afaf63ff1fe",
+    "sha256": "1b493ea2de1450d562caf36215594da6e4e9611f78a391080d15b3ade948693c",
+    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no representa un trabajo realizado por Rapid."
   }
 ]

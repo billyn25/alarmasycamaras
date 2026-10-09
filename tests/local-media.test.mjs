@@ -8,19 +8,19 @@ import {localServiceMedia} from '../src/local-media.mjs';
 const data=JSON.parse(fs.readFileSync('data/municipios.json','utf8'));
 const towns=townsFrom(data.municipalities);
 
-test('Todos los municipios: cuatro fotos distintas, contenido útil y tres intenciones intactas',()=>{
+test('Todos los municipios: siete fotos distintas, contenido útil y tres intenciones intactas',()=>{
   for(const t of towns){
     const html=townPage(t,[],null);
     const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
-    assert.equal(srcs.length,4,t.url);
-    assert.equal(new Set(srcs).size,4,t.url);
+    assert.equal(srcs.length,7,t.url);
+    assert.equal(new Set(srcs).size,7,t.url);
     for(const src of srcs)assert.ok(fs.existsSync('public'+src),src);
     assert.equal((html.match(/<h1[> ]/g)||[]).length,1,t.url);
     assert.equal((html.match(/<h2>Instalación de /g)||[]).length,3,t.url);
     assert.ok(html.includes('id="local-ecosystem-title"'),t.url);
     assert.ok(html.includes('id="local-usage-title"'),t.url);
     assert.ok(html.includes('loading="eager" fetchpriority="high"'),t.url);
-    assert.equal((html.match(/loading="lazy"/g)||[]).length,3,t.url);
+    assert.equal((html.match(/loading="lazy"/g)||[]).length,6,t.url);
     assert.ok(html.includes('Imagen de producto, no de una instalación local.'),t.url);
   }
 });
@@ -31,7 +31,7 @@ test('Verde verificado y logo Rapid inalterado',()=>{
   const sha=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+logo.length+'\0'),logo])).digest('hex');
   assert.equal(sha,'4cb69142e42ec4dd11b058b38403a0bb1feabde7');
   const html=home(towns);const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
-  assert.equal(srcs.length,4);assert.equal(new Set(srcs).size,4);
+  assert.equal(srcs.length,7);assert.equal(new Set(srcs).size,7);
 });
 test('Pie con un solo teléfono y sin reactivar indexación',()=>{
   const site=JSON.parse(fs.readFileSync('config/site.json','utf8'));site.directoryCount=towns.length;
