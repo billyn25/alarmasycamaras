@@ -1,0 +1,31 @@
+name: Limpiar foto Uniview
+on:
+  push:
+    branches: [revision/uniview-clean]
+permissions:
+  contents: write
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - name: Limpiar fondo y comprobar web
+        run: |
+          python scripts/clean-uniview-background.py
+          npm run build
+          npm test
+      - name: Guardar imagen corregida
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/assets/uniview-colorhunter.webp data/media-sources.json
+          git diff --cached --quiet || git commit -m 'fix: limpiar fondo negro de cámara Uniview'
+          git push origin HEAD:revision/uniview-clean
