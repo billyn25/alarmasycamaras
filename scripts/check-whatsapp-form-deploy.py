@@ -3,7 +3,7 @@ import json,re
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.request import Request,urlopen
-BASE='https://alarmasycamarasrapid.netlify.app'
+BASE='https://camarasyalarmasrapid.com'
 checks=[]
 def get(path):
     with urlopen(Request(BASE+path,headers={'User-Agent':'Rapid form deployment check','Cache-Control':'no-cache'}),timeout=20) as response:
