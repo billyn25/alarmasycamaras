@@ -41,6 +41,7 @@ jobs:
           python tests/cookies-brands-browser.py
           python tests/browser.py
           python tests/local-media-browser.py
+          python tests/multibrand-browser.py
           python tests/privacy-seo-browser.py
       - name: Comprobar versión visible en Netlify sin modificarla
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

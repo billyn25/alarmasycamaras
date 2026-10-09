@@ -71,16 +71,16 @@
   },
   {
     "file": "uniview-colorhunter.webp",
-    "source": "https://global.uniview.com/es/res/202608/24/20260824_2374576_dccd647d-392f-49c8-9089-956914e68944_1051531_798522_0.png",
-    "description": "Uniview ColorHunter turret, producto normalizado sobre fondo blanco para coherencia visual.",
+    "source": "https://global.uniview.com/es/res/202609/22/20260922_2613239_26c76448-426e-4e99-b6b8-d49dd81ce27c_1049793_798522_0.png",
+    "description": "Uniview IPC3624LE-ADF28K-WP ColorHunter Wise-ISP, imagen oficial de producto sobre fondo blanco.",
     "width": 900,
     "height": 900,
     "source_dimensions": [
       600,
       338
     ],
-    "source_sha256": "5d5ef886e12d2b8991f532adaba5984c6411118fcc9dd6910b5e4afaf63ff1fe",
-    "sha256": "ede101b4605ef3f1a62a827c0e340d16f2fe861b67df8f5688b0a2817a1436b2",
-    "rights": "Imagen comercial para revisión. Confirmar permiso de uso antes de producción; no representa un trabajo realizado por Rapid."
+    "source_sha256": "84f49c4c4e4305f129c28b942d431b2b77a7bccca054f9edf17e22b07b4126dc",
+    "sha256": "5d0c21dccc4543ad93cc2a1a1d8970d34426a638563a8b73116d59ee0f9febb7",
+    "rights": "Imagen oficial de producto para revisión. Confirmar condiciones de uso antes de producción; no representa un trabajo realizado por Rapid."
   }
 ]
