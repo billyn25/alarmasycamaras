@@ -46,7 +46,7 @@ with sync_playwright() as p:
     page.screenshot(path=str(OUT/'home-verde-1440.png'))
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
     q=nojs.new_page();q.goto(BASE+'/burgos/lerma/')
-    assert q.locator('main img').count()==4
+    assert q.locator('main img').count()==7
     assert q.locator('.local-ecosystem-options li').count()==6
     assert q.locator('meta[name=robots]').get_attribute('content').startswith('noindex')
     assert not errors,errors
