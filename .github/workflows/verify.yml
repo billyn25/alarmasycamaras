@@ -46,7 +46,7 @@ jobs:
           python tests/multibrand-browser.py
           python tests/local-variants-browser.py
           python tests/privacy-seo-browser.py
-      - name: Comprobar versión visible en Netlify sin modificarla
+      - name: Comprobar producción visible y SEO en dominio real
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           python scripts/check-public-preview.py
