@@ -13,10 +13,10 @@ test('19 provincias y seis marcas',()=>{assert.equal(provinces.length,19);assert
 test('Inventario municipal íntegro y rutas únicas',()=>{const towns=townsFrom(records);assert.equal(towns.length,3797);assert.equal(new Set(towns.map(t=>t.url)).size,towns.length);assert.ok(towns.some(t=>t.url==='/burgos/lerma/'));assert.ok(towns.some(t=>t.url==='/bizkaia/zalla/'));});
 test('Rechaza códigos municipales duplicados',()=>assert.throws(()=>townsFrom([records[0],records[0]]),/duplicado/));
 test('Rechaza provincia y código incoherentes',()=>assert.throws(()=>townsFrom([{id:'01001',province:'09',name:'Prueba'}]),/inválido/));
-test('Preview por defecto sin dominio inventado',()=>assert.deepEqual(runtime(site,{}),{production:false,base:''}));
+test('Producción por defecto usa el dominio final',()=>assert.deepEqual(runtime(site,{}),{production:true,base:'https://camarasyalarmasrapid.com'}));
 test('Producción puede publicarse sin inventar datos legales',()=>assert.equal(runtime({...site,mode:'production'},{SITE_MODE:'production'}).production,true));
 test('Una preview de rama nunca hereda producción',()=>assert.equal(runtime(site,{SITE_MODE:'production',CONTEXT:'deploy-preview',DEPLOY_PRIME_URL:'https://revision.netlify.app'}).production,false));
-test('Valida origen de la URL',()=>assert.throws(()=>runtime(site,{URL:'https://revision.netlify.app/ruta'}),/origen/));
+test('Valida origen de la URL en preview',()=>{const preview={...site,mode:'preview'};assert.throws(()=>runtime(preview,{URL:'https://revision.netlify.app/ruta'}),/origen/);});
 test('Producción usa el dominio definitivo y rechaza hosts de revisión',()=>{const ready=structuredClone(site);for(const k of Object.keys(ready.ready))ready.ready[k]=true;for(const k of Object.keys(ready.legal))ready.legal[k]='Dato de prueba';assert.equal(runtime(ready,{SITE_MODE:'production'}).base,'https://camarasyalarmasrapid.com');assert.throws(()=>runtime(ready,{SITE_MODE:'production',SITE_URL:'https://revision.netlify.app'}),/Dominio/);assert.equal(runtime(ready,{SITE_MODE:'production',SITE_URL:'https://camarasyalarmasrapid.com'}).production,true);});
 test('No se aprueba una página local vacía',()=>{assert.equal(approvedLocal(null),false);assert.equal(approvedLocal({approved:true}),false);assert.equal(approvedLocal({approved:true,reviewedAt:'2026-10-08',source:'Registro verificado de cobertura',blocks:[{title:'Datos del servicio',text:'Contenido comprobado. '.repeat(12)},{title:'Condiciones de la visita',text:'Información comprobada. '.repeat(12)}]}),true);});
 
