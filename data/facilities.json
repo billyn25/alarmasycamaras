@@ -1,0 +1,297 @@
+[
+  {
+    "slug": "pisos-y-viviendas",
+    "label": "Pisos y viviendas",
+    "building": "Vivienda",
+    "image": "ajax-kit.jpg",
+    "size": 800,
+    "alt": "Kit Ajax con central y detectores inalámbricos",
+    "title": "Alarmas y cámaras para pisos y viviendas",
+    "description": "Protección para pisos: puerta, ventanas accesibles, Modo Noche, mascotas y privacidad. Criterios para una alarma inalámbrica y cámaras bien ubicadas.",
+    "lead": "Protege los accesos sin convertir tu casa en un espacio incómodo. La alarma debe adaptarse a tus recorridos, a quienes viven contigo y a las zonas que necesitas mantener libres.",
+    "brief": "Puerta de entrada, ventanas accesibles y recorridos interiores. Diferenciamos la protección cuando sales de la que utilizas mientras estás dentro.",
+    "alarm": "Contactos de apertura y detectores de movimiento elegidos según cada estancia. Modo Noche para los dispositivos seleccionados y controles que todos sepan utilizar.",
+    "video": "Una cámara aporta directo y archivo donde resulte necesario; un detector MotionCam aporta fotografías de alarma. No son funciones intercambiables.",
+    "tradeoff": "Una cámara interior no es obligatoria para toda vivienda. Se puede priorizar la detección y limitar las imágenes a los puntos donde aportan utilidad.",
+    "blocks": [
+      [
+        "La entrada importa más que el número de sensores",
+        "Empieza por la puerta principal y las ventanas a las que se puede acceder desde una terraza, patio u otra zona. Un contacto indica una apertura; un detector de movimiento comprueba presencia en su campo de detección. Dibujar esos recorridos permite elegir la combinación, en lugar de comprar un kit por el número de piezas. También interesa saber si el trastero está dentro de la vivienda o separado: no debe darse por hecho que compartirá cobertura con la central."
+      ],
+      [
+        "Armar la vivienda y seguir estando a gusto",
+        "El Modo Noche de Ajax permite seleccionar los detectores que se arman mientras permaneces en casa. Se puede estudiar la protección de accesos manteniendo libres determinados recorridos interiores. Si hay mascotas, la elección y ubicación del detector se revisan con sus hábitos y las condiciones del modelo: no prometemos que ignore cualquier animal en cualquier posición. Antes de entregar, conviene probar entradas, salidas y desarmado con las personas que usarán la instalación."
+      ],
+      [
+        "Imágenes solo donde tienen sentido",
+        "No hace falta colocar cámaras en cada habitación. Para comprobar una alarma puede resultar suficiente una solución compatible de fotoverificación; para consultar vídeo en directo o una secuencia anterior se necesita una cámara y almacenamiento. En un acceso compartido hay que revisar el encuadre y las condiciones de uso antes de instalar. Los permisos de imagen deben decidirse con el propietario, sin utilizar una misma cuenta compartida por todas las personas."
+      ],
+      [
+        "Una entrega que puedas utilizar sin ayuda",
+        "Comprueba con el técnico cómo se arma, qué sucede al abrir un acceso y quién recibe el aviso. Pide que se expliquen el estado de las baterías y la conectividad que necesita el acceso remoto. Los detectores inalámbricos no eliminan la alimentación de la central ni los posibles cables de una cámara. La propuesta sin cuota obligatoria es autogestionada: conectividad, servicios adicionales y futuras revisiones deben quedar separados en el presupuesto."
+      ]
+    ],
+    "checklist": [
+      "Puertas y ventanas accesibles, sin enviar horarios de ausencia.",
+      "Mascotas, convivientes y recorridos que deben quedar libres.",
+      "Internet disponible y si necesitas imágenes o solo detección."
+    ],
+    "example": "Ejemplo de diseño, no de trabajo realizado: en un piso con terraza se pueden estudiar contactos en los accesos y detección interior, y decidir por separado si hace falta una cámara. El número de equipos se fija tras revisar el inmueble.",
+    "faq": [
+      [
+        "¿Puedo usar la alarma cuando estoy en casa?",
+        "Sí, con una configuración apropiada de los dispositivos que se arman en Modo Noche. Los recorridos y accesos se deciden y prueban contigo."
+      ],
+      [
+        "¿Tengo que instalar cámaras dentro?",
+        "No necesariamente. Se estudian detección, fotoverificación y vídeo según lo que necesitas comprobar, respetando la privacidad de los espacios."
+      ]
+    ],
+    "sources": [
+      [
+        "Ajax: apartamentos",
+        "https://ajax.systems/es/solutions-by-facility-type/apartments/"
+      ],
+      [
+        "Ajax: Modo Noche",
+        "https://ajax.systems/es/support/posts/what-is-night-mode/"
+      ]
+    ]
+  },
+  {
+    "slug": "casas-y-chalets",
+    "label": "Casas y chalets",
+    "building": "Casa o chalet",
+    "image": "ajax-bulletcam.webp",
+    "size": 600,
+    "alt": "Cámara Ajax BulletCam para un proyecto de videovigilancia",
+    "title": "Alarmas y cámaras para casas y chalets",
+    "description": "Seguridad para casas con jardín, garaje y varios accesos: detección interior y exterior, cámaras nocturnas y pruebas de señal antes de instalar.",
+    "lead": "La vivienda no termina en la puerta principal. Jardín, garaje, patio y anexos pueden necesitar soluciones diferentes, conectadas dentro de un proyecto que tenga en cuenta cómo utilizas cada zona.",
+    "brief": "Varios accesos, jardín, garaje o anexos. Estudiamos por separado la detección exterior, los recorridos interiores y los puntos de vídeo.",
+    "alarm": "Contactos, detectores interiores y, cuando encajen, detectores de cortina o exteriores adecuados a su ubicación. Se prueba la señal antes de fijarlos.",
+    "video": "Cámaras con encuadres diferenciados para entrada y acceso de vehículos. La visión nocturna se elige con la iluminación real, no solo por la resolución.",
+    "tradeoff": "Un sensor interior no debe colocarse fuera por tener buena señal. Intemperie, vegetación, animales y ángulos de detección cambian la elección.",
+    "blocks": [
+      [
+        "Proteger por zonas, no llenar la parcela",
+        "La puerta de la vivienda, el portón del garaje y un acceso desde el jardín tienen usos distintos. Conviene separar qué se detecta antes de entrar y qué se comprueba dentro. La detección exterior requiere equipos previstos para ese entorno y una ubicación compatible con vegetación, recorridos y animales. Una cámara permite observar una escena, pero no sustituye automáticamente las funciones de un detector de intrusión."
+      ],
+      [
+        "Garaje y anexos: comprobar el enlace",
+        "Las distancias anunciadas por un fabricante no equivalen a la cobertura dentro de cualquier parcela. Se comprueban la señal de los detectores, los obstáculos y la alimentación en los puntos concretos. Si un anexo está separado, el proyecto puede necesitar otra solución de red o dispositivos compatibles adicionales. Antes de instalar conviene decidir también si el garaje debe armarse de forma independiente y quién puede acceder a cada zona."
+      ],
+      [
+        "La cámara de la entrada no resuelve todos los ángulos",
+        "Un encuadre muy amplio puede mostrar toda una entrada sin proporcionar el detalle que esperabas en la zona importante. Define primero qué quieres comprobar y desde qué distancia. Por la noche se revisan faros, paredes próximas y reflejos para escoger ubicación e iluminación. La imagen nocturna en color depende del equipo y de la luz disponible o auxiliar; no se ofrece como una prestación universal de todas las cámaras."
+      ],
+      [
+        "Prever la ampliación y la alimentación",
+        "Un proyecto escalable reserva capacidad y deja claro qué se podrá añadir más adelante: otros accesos, una sirena, controles o detección adicional de fugas y humo. Esa ampliación depende de la central y la compatibilidad de los equipos. También se distingue el respaldo de la alarma del que puedan necesitar cámaras, grabador y router. Para comparar presupuestos interesa identificar cada elemento y las conexiones, no únicamente contar cámaras y sensores."
+      ]
+    ],
+    "checklist": [
+      "Número de plantas, accesos y anexos separados.",
+      "Qué zona debe quedar protegida mientras estás dentro.",
+      "Distancias aproximadas, alimentación e iluminación exterior."
+    ],
+    "example": "Ejemplo de diseño: casa con garaje y patio. Se estudia detección en sus accesos y vídeo para entrada peatonal y vehículos, dejando definido cómo se usa cada zona. No es un kit cerrado ni una instalación atribuida a Rapid.",
+    "faq": [
+      [
+        "¿Las cámaras también funcionan sin cables?",
+        "Depende del modelo. Una alarma con detectores por radio puede convivir con cámaras cableadas; red y alimentación se concretan para cada equipo."
+      ],
+      [
+        "¿Una sola cámara basta para el jardín y el garaje?",
+        "Solo una revisión de distancias, ángulos e iluminación permite decidirlo. Ver un espacio completo no garantiza el detalle útil en todos sus puntos."
+      ]
+    ],
+    "sources": [
+      [
+        "Ajax: viviendas unifamiliares",
+        "https://ajax.systems/es/solutions-by-facility-type/private-houses/"
+      ],
+      [
+        "Ajax: configuración de grupos",
+        "https://ajax.systems/es/support/posts/ajax-group-mode/"
+      ]
+    ]
+  },
+  {
+    "slug": "comercios",
+    "label": "Comercios y locales",
+    "building": "Comercio o local",
+    "image": "ajax-keypad-touchscreen.webp",
+    "size": 1000,
+    "alt": "Teclado Ajax KeyPad TouchScreen para controlar una instalación",
+    "title": "Alarmas y cámaras para comercios y locales",
+    "description": "Seguridad para comercios: entrada, escaparate, almacén, usuarios y archivo de vídeo. Proyecto de intrusión y CCTV adaptado a la actividad.",
+    "lead": "Abrir, atender, recibir mercancía y cerrar: tu seguridad tiene que acompañar esa rutina. Cada acceso y cada usuario deben tener una función clara dentro del sistema.",
+    "brief": "Entrada, escaparate y almacén con usos distintos. Organizamos detección, vídeo y usuarios sin confundir la actividad del negocio con una alarma.",
+    "alarm": "Contactos y sensores seleccionados para accesos y zonas internas, con permisos personales y una secuencia de apertura y cierre definida.",
+    "video": "Encuadres útiles de los accesos y áreas acordadas. Se dimensiona el archivo y se comprueba que puedes localizar una grabación, no solo ver el directo.",
+    "tradeoff": "La referencia exacta del equipo importa más que una etiqueta de inteligencia artificial. Detección, iluminación y grabación deben comprobarse juntas.",
+    "blocks": [
+      [
+        "Del escaparate al almacén",
+        "Una fachada acristalada, una persiana y una puerta de mercancías no se protegen necesariamente del mismo modo. Se estudia qué puede abrirse, qué zonas requieren detección interior y dónde tiene sentido un sensor específico. Si el almacén se usa mientras la tienda está abierta, la configuración debe distinguir esa situación del cierre completo. Primero se define la actividad y después se seleccionan los dispositivos."
+      ],
+      [
+        "Cada persona, el acceso que necesita",
+        "En un negocio pueden intervenir empleados, responsables y personal de limpieza. Conviene gestionar usuarios y permisos por separado, retirar accesos que ya no se necesitan y evitar un código compartido por todos. Ajax dispone de funciones de gestión de usuarios y grupos según la central y configuración. Se acuerda quién recibe avisos y qué hacer ante una incidencia; una instalación autogestionada no implica vigilancia permanente de una central receptora."
+      ],
+      [
+        "Grabar es también poder encontrar el momento",
+        "Pide que te enseñen a localizar y reproducir un evento. La capacidad instalada debe corresponder al número de cámaras, calidad y modo de grabación. En zonas acristaladas se revisan contraluces y reflejos nocturnos antes de dar por bueno el encuadre. El uso de cámaras en un establecimiento requiere revisar finalidad, información y acceso a imágenes; el diseño técnico no sustituye la comprobación de las obligaciones del responsable."
+      ],
+      [
+        "Una prueba completa antes de cerrar",
+        "La entrega debería incluir apertura y cierre, respuesta de detectores, recepción de avisos y consulta de grabaciones. Anota los modelos instalados y cómo solicitar asistencia. Se pueden valorar detectores de fugas u otras protecciones adicionales donde proceda, pero no se presenta un accesorio doméstico como sustituto de las medidas de seguridad o incendios que exija la actividad. Mantenimiento y servicios opcionales se detallan aparte."
+      ]
+    ],
+    "checklist": [
+      "Actividad del local y accesos de clientes y mercancía.",
+      "Si hay almacén independiente y varios usuarios.",
+      "Qué grabaciones necesitas consultar y qué equipos existen."
+    ],
+    "example": "Ejemplo de diseño: tienda con escaparate y almacén. Se estudian detección y permisos por zonas; las cámaras se sitúan para comprobar los accesos acordados. Es una propuesta de planificación, no un caso de cliente publicado.",
+    "faq": [
+      [
+        "¿Se pueden dar accesos distintos al personal?",
+        "Sí, según central, controles y configuración. Se definen permisos personales y se comprueba cómo retirarlos cuando dejan de ser necesarios."
+      ],
+      [
+        "¿Sin cuotas significa que alguien vigila el negocio?",
+        "No. La oferta autogestionada no incluye por sí misma supervisión de una central receptora. Esa diferencia y cualquier servicio adicional deben quedar claros."
+      ]
+    ],
+    "sources": [
+      [
+        "Ajax: tiendas",
+        "https://ajax.systems/es/solutions-by-facility-type/retail-shops/"
+      ],
+      [
+        "AEPD: videovigilancia",
+        "https://www.aepd.es/areas-de-actuacion/videovigilancia"
+      ]
+    ]
+  },
+  {
+    "slug": "oficinas",
+    "label": "Oficinas y despachos",
+    "building": "Oficina",
+    "image": "ajax-keypad-touchscreen.webp",
+    "size": 1000,
+    "alt": "Control de alarma mediante un teclado táctil Ajax",
+    "title": "Alarmas y cámaras para oficinas y despachos",
+    "description": "Protección de oficinas: recepción, salas, accesos por usuarios y zonas técnicas. Intrusión y vídeo con permisos y pruebas de uso definidos.",
+    "lead": "No todos salen a la misma hora ni necesitan entrar en todas las salas. Una oficina requiere ordenar los permisos y las zonas antes de colocar dispositivos.",
+    "brief": "Recepción, despachos y zonas técnicas. Planteamos permisos y zonas de armado para que la protección acompañe el uso del espacio.",
+    "alarm": "Detectores en accesos y recorridos acordados, con grupos cuando sean compatibles y útiles. Se prueba el uso por personal con permisos diferentes.",
+    "video": "Vídeo solo en puntos justificados, con permisos de consulta definidos. Se diferencia el acceso a la alarma del acceso a las imágenes.",
+    "tradeoff": "Tener una cuenta de usuario no debe significar ver todas las cámaras. Los permisos y la privacidad se revisan expresamente.",
+    "blocks": [
+      [
+        "Recepción y espacios de trabajo no son lo mismo",
+        "La entrada principal, una sala técnica y un despacho pueden requerir horarios de uso y permisos distintos. Describe esas diferencias sin compartir por canales públicos códigos o rutinas sensibles. El diseño debe permitir armar las zonas que ya no se utilizan sin provocar incidencias en las que siguen ocupadas, cuando la configuración del sistema lo permita. Evita elegir los sensores antes de aclarar esos recorridos."
+      ],
+      [
+        "Usuarios identificados y permisos revisables",
+        "Define responsables de la instalación, usuarios cotidianos y personas que solo necesiten una intervención puntual. Se estudia el control desde teclado o aplicación y se documenta cómo retirar accesos. Los permisos de armado y los de consulta de vídeo no deben darse por equivalentes. En la entrega resulta útil comprobar al menos dos perfiles de usuario con autorizaciones diferentes y explicar cómo mantenerlos actualizados."
+      ],
+      [
+        "Proteger lo que sostiene la actividad",
+        "Un cuarto de comunicaciones o una zona con instalaciones de agua puede justificar protección adicional, pero los dispositivos se eligen por su uso y ubicación. Un detector de fugas domésticas no controla el estado completo de una instalación ni constituye un sistema contra inundaciones generales. La continuidad de la red, el grabador y la alarma debe estudiarse de forma separada, con el respaldo que se presupueste para cada elemento."
+      ],
+      [
+        "Cámaras con finalidad y archivo definidos",
+        "Antes de añadir vídeo conviene delimitar qué se pretende comprobar y quién podrá consultarlo. No todas las estancias necesitan cámaras y el uso laboral requiere una revisión específica de privacidad. El presupuesto debe señalar dónde se guarda el vídeo, cómo se accede y qué infraestructura necesita. La prueba final incluye recuperar una grabación y comprobar accesos de usuarios, no solo verificar que las cámaras aparecen conectadas."
+      ]
+    ],
+    "checklist": [
+      "Accesos compartidos, salas diferenciadas y usuarios.",
+      "Necesidad real de vídeo y responsables de consulta.",
+      "Red existente, zonas técnicas y continuidad requerida."
+    ],
+    "example": "Ejemplo de diseño: oficina con recepción y sala técnica. Se estudia el armado por zonas y el acceso independiente a las imágenes. La propuesta se ajusta a la actividad; no presupone vigilancia de todos los despachos.",
+    "faq": [
+      [
+        "¿Pueden armarse unas zonas y dejar otras abiertas?",
+        "Puede estudiarse con grupos de seguridad compatibles y una configuración adecuada a los recorridos. No se promete esa función sin comprobar la central."
+      ],
+      [
+        "¿Todos los empleados pueden ver el vídeo?",
+        "No debe darse por hecho. La consulta de imágenes se asigna a las personas autorizadas, con una finalidad y configuración definidas."
+      ]
+    ],
+    "sources": [
+      [
+        "Ajax: oficinas",
+        "https://ajax.systems/es/solutions-by-facility-type/offices/"
+      ],
+      [
+        "Ajax: grupos",
+        "https://ajax.systems/es/support/posts/ajax-group-mode/"
+      ],
+      [
+        "AEPD: videovigilancia",
+        "https://www.aepd.es/areas-de-actuacion/videovigilancia"
+      ]
+    ]
+  },
+  {
+    "slug": "naves-y-almacenes",
+    "label": "Naves y almacenes",
+    "building": "Nave o almacén",
+    "image": "ajax-bulletcam.webp",
+    "size": 600,
+    "alt": "Cámara Ajax BulletCam como referencia de un sistema de vídeo",
+    "title": "Alarmas y cámaras para naves y almacenes",
+    "description": "Proyecto de intrusión y CCTV para naves: portones, muelles, estanterías, distancias y archivo. Evaluación del entorno y de la instalación existente.",
+    "lead": "Una nave necesita algo más que ampliar un kit doméstico. Alturas, portones, estanterías y recorridos de mercancía condicionan la detección, el vídeo y las comunicaciones.",
+    "brief": "Portones, zonas de carga y pasillos de almacenamiento. La altura, los obstáculos y los recorridos determinan el proyecto.",
+    "alarm": "Detección y central según evaluación del inmueble. Se comprueban señal, distancias, zonas de uso y si procede una solución cableada o combinada.",
+    "video": "Cámaras dimensionadas por objetivo: vista general, acceso o punto de carga. La lente, luz y archivo importan tanto como la resolución.",
+    "tradeoff": "No toda nave encaja en una alarma de grado 2 ni en un kit inalámbrico. Los requisitos del proyecto se revisan antes de ofrecer una configuración.",
+    "blocks": [
+      [
+        "Portones, muelles y pasos reales",
+        "Identifica entradas de vehículos y peatones, portones de carga y comunicaciones con oficinas. Una zona puede permanecer activa mientras otra está cerrada, por lo que el armado debe planificarse con el funcionamiento de la nave. Los materiales almacenados y las estanterías pueden cambiar los campos de detección y los recorridos de radio. La propuesta no debe basarse solo en la superficie total."
+      ],
+      [
+        "Comprobar el entorno antes de prometer sin cables",
+        "Estructuras metálicas, alturas y separaciones entre edificios exigen una prueba de señal en las ubicaciones previstas. Según el proyecto puede ser preferible un sistema cableado, inalámbrico o combinado. Tampoco debe suponerse que cualquier instalación industrial queda cubierta por un grado de seguridad determinado: las necesidades de la actividad, el inmueble y los equipos deben evaluarse antes de elegir central y sensores."
+      ],
+      [
+        "Una vista general no identifica todos los detalles",
+        "Decide qué puntos requieren detalle y cuáles solo una visión de conjunto. Cámaras, lentes y posiciones se dimensionan según esos objetivos, evitando que estanterías o vehículos oculten la escena importante. En muelles se revisan cambios de iluminación y contraluces. La configuración se prueba con el uso previsto y no únicamente con la nave vacía o en condiciones de luz favorables."
+      ],
+      [
+        "Archivo, red y continuidad documentados",
+        "El grabador debe dimensionarse con las cámaras, calidad y modo de grabación definidos. También importa comprobar una reproducción y la forma de exportar un evento cuando corresponda. Red, alimentación y respaldo no son accesorios implícitos: deben aparecer en el alcance. Si se necesitan medidas contra incendios, se tratan con el proyecto y requisitos específicos de la actividad, sin presentar detectores domésticos como sustitución de un sistema industrial."
+      ]
+    ],
+    "checklist": [
+      "Uso de la nave, portones, alturas y zonas de carga.",
+      "Estanterías, oficinas anexas y cableado existente.",
+      "Objetivos de vídeo, conectividad y requisitos de seguridad."
+    ],
+    "example": "Ejemplo de diseño: almacén con portón y oficina anexa. Se estudian zonas de armado, cámaras en acceso y carga, y archivo dimensionado. No es una instalación realizada ni una garantía de que un kit concreto sea suficiente.",
+    "faq": [
+      [
+        "¿Se puede instalar todo por radio?",
+        "Solo tras comprobar distancias, entorno y requisitos. Una solución cableada o combinada puede ser más apropiada para determinados puntos."
+      ],
+      [
+        "¿Basta una alarma de grado 2 para cualquier nave?",
+        "No puede afirmarse de forma general. Primero se evalúa el proyecto y se definen los requisitos antes de ofrecer grado, equipos y configuración."
+      ]
+    ],
+    "sources": [
+      [
+        "Ajax: almacenes e instalaciones productivas",
+        "https://ajax.systems/es/solutions-by-facility-type/warehouses-and-production-facilities/"
+      ]
+    ]
+  }
+]

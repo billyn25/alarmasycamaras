@@ -1,5 +1,6 @@
 import './cookies-brands.test.mjs';
 import './editorial.test.mjs';
+import './facilities.test.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';

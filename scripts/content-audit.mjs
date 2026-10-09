@@ -1,3 +1,4 @@
+import {facilities,localContexts} from '../src/facilities.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {townsFrom,e} from '../src/lib.mjs';
@@ -10,7 +11,7 @@ const count=t=>t.split(/\s+/).filter(Boolean).length;
 const families=new Map();
 for(const t of towns){let text=plain(townPage(t,[],null));for(const value of [e(t.name),e(t.province.name)].sort((a,b)=>b.length-a.length))text=text.split(value).join('[UBICACION]');const hash=crypto.createHash('sha256').update(text).digest('hex');families.set(hash,(families.get(hash)||0)+1);}
 const details=pages.filter(p=>!p.townId).map(p=>{const html=fs.readFileSync('dist/'+p.file,'utf8');const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1]||'';return {url:p.url,words:count(plain(main)),titleCharacters:plain(html.match(/<title>(.*?)<\/title>/)?.[1]||'').length,descriptionCharacters:p.description.length};});
-const report={reviewedAt:'2026-10-09',scope:'HTML generado completo y plantillas; no es un informe de posiciones ni de Search Console',pages:pages.length,municipalities:towns.length,approvedLocalities:Object.keys(local.approved).length,guides:pages.filter(p=>p.guide).length,mode:site.mode,holder:site.legal.holder,
+const report={reviewedAt:'2026-10-09',scope:'HTML generado completo y plantillas; no es un informe de posiciones ni de Search Console',pages:pages.length,municipalities:towns.length,approvedLocalities:Object.keys(local.approved).length,guides:pages.filter(p=>p.guide).length,facilityPages:facilities.length,municipalContexts:Object.keys(localContexts).length,contextScope:'Contexto municipal público; no acredita atención, obras ni aprobación para indexación.',mode:site.mode,holder:site.legal.holder,
  localTemplate:{note:'Texto de plantillas sin municipio/provincia ni enlaces a otros pueblos. No se inventa contenido para deshacer la similitud.',normalizedFamilies:families.size,largestFamily:Math.max(...families.values())},
  priorities:[
  {priority:'Antes de indexar',topic:'Contenido municipal',status:'pendiente',detail:`${towns.length-Object.keys(local.approved).length} municipios sin una revisión editorial local aprobada. Incorporar cobertura real, condiciones de atención y evidencias propias; no basta con cambiar el topónimo.`},
