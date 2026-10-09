@@ -84,21 +84,54 @@ export function localVariantSignature(t){
  return localVariantSection(t).replaceAll(e(t.name),'[LOCAL]').replaceAll(e(t.province.name),'[PROVINCIA]');
 }
 
+
+const intentHeadings=[
+ t=>`¿Necesitas instalar cámaras o una alarma en ${t.name}?`,
+ t=>`Técnico para instalar cámaras y alarmas en ${t.name}`,
+ t=>`Instalador de cámaras de seguridad y alarmas en ${t.name}`,
+ t=>`Instalación profesional de videovigilancia y alarmas en ${t.name}`,
+ t=>`¿Buscas un técnico de cámaras de seguridad en ${t.name}?`,
+ t=>`Montaje de cámaras y alarmas para tu inmueble en ${t.name}`
+];
+const intentBodies=[
+ t=>`Si buscas instalar cámaras de seguridad en ${t.name}, podemos estudiar el punto de montaje, la visión nocturna, la grabación y el acceso desde móvil. También planteamos la alarma del mismo inmueble para que detección y vídeo se diseñen con un objetivo común.`,
+ t=>`Un técnico de cámaras en ${t.name} debe decidir más que el modelo: encuadre, altura, alimentación, red, almacenamiento y consulta remota. Si además necesitas una alarma, revisamos puertas, ventanas y recorridos antes de cerrar el presupuesto.`,
+ t=>`Trabajamos la instalación de cámaras y alarmas en ${t.name} para viviendas, comercios, oficinas, segundas residencias y naves. La propuesta puede incluir videovigilancia, detectores, sirenas, grabador y control móvil según la instalación.`,
+ t=>`Si lo que buscas es un instalador de cámaras de seguridad en ${t.name}, primero definimos qué acceso quieres vigilar y qué detalle necesitas obtener. Para alarmas, se revisan los puntos de entrada y las zonas de paso, sin vender un kit fijo por defecto.`,
+ t=>`Podemos preparar un proyecto para instalar una alarma en ${t.name} y añadir cámaras cuando aporten verificación o grabación. Las funciones, la compatibilidad entre marcas y cualquier servicio opcional quedan definidos en el presupuesto.`,
+ t=>`La videovigilancia en ${t.name} puede resolverse con cámaras interiores o exteriores, grabación local y acceso remoto según el proyecto. Si buscas también un técnico de alarmas, planteamos ambos sistemas de forma coordinada y comprobamos su funcionamiento al entregar.`
+];
+export function localIntentSection(t){
+ const seed=t.id+'|search-intent';
+ const heading=choose(intentHeadings,seed+'|h')(t),body=choose(intentBodies,seed+'|b')(t);
+ return `<section class="local-intent wrap" aria-labelledby="local-intent-title"><p class="eyebrow">INSTALACIÓN · TÉCNICO · CÁMARAS · ALARMAS</p><h2 id="local-intent-title">${e(heading)}</h2><p>${e(body)}</p><div class="local-intent-links"><a href="/camaras/">Instalar cámaras de seguridad <span aria-hidden="true">→</span></a><a href="/alarmas/">Instalar una alarma <span aria-hidden="true">→</span></a><a href="/alarmas-y-camaras/">Cámaras y alarmas juntas <span aria-hidden="true">→</span></a></div></section>`;
+}
+
 const titlePatterns=[
  t=>`Alarmas y cámaras en ${t.name}, ${t.province.name}`,
  t=>`Instalación de alarmas y cámaras · ${t.name}, ${t.province.name}`,
  t=>`Cámaras de seguridad y alarmas · ${t.name}, ${t.province.name}`,
  t=>`Instalador de alarmas y cámaras · ${t.name}, ${t.province.name}`,
+ t=>`Técnico de cámaras y alarmas · ${t.name}, ${t.province.name}`,
+ t=>`Instalar cámaras de seguridad · ${t.name}, ${t.province.name}`,
+ t=>`Instalador de cámaras de seguridad · ${t.name}, ${t.province.name}`,
+ t=>`Técnico para instalar alarmas · ${t.name}, ${t.province.name}`,
+ t=>`Videovigilancia y alarmas · ${t.name}, ${t.province.name}`,
  t=>`Alarmas inalámbricas y cámaras · ${t.name}, ${t.province.name}`,
+ t=>`Montaje de cámaras y alarmas · ${t.name}, ${t.province.name}`,
  t=>`Seguridad con alarmas y cámaras · ${t.name}, ${t.province.name}`
 ];
 const descriptionPatterns=[
  (t,p)=>`Instalación de alarmas inalámbricas y cámaras de seguridad en ${t.name}, ${t.province.name}. Diseñamos detección, vídeo y grabación según el inmueble. ${p}.`,
+ (t,p)=>`Técnico de cámaras y alarmas en ${t.name}. Instalación de videovigilancia, detección y control móvil para vivienda o negocio. Consulta: ${p}.`,
+ (t,p)=>`¿Quieres instalar cámaras de seguridad en ${t.name}? Estudiamos ubicación, visión nocturna, grabación y acceso móvil. Presupuesto: ${p}.`,
+ (t,p)=>`Instalador de cámaras de seguridad y alarmas en ${t.name}, ${t.province.name}. Proyecto a medida para vivienda, local, oficina o nave. ${p}.`,
+ (t,p)=>`Instalación de cámaras y alarmas en ${t.name}: accesos, visión nocturna, grabación, usuarios y conectividad definidos según el inmueble. ${p}.`,
+ (t,p)=>`Técnico para instalar alarmas en ${t.name}. Alarmas inalámbricas, detectores, cámaras y avisos configurados según tus accesos. ${p}.`,
+ (t,p)=>`Montaje de cámaras y videovigilancia en ${t.name}. Elegimos óptica, iluminación, NVR o almacenamiento y acceso desde móvil. ${p}.`,
  (t,p)=>`Alarmas y videovigilancia en ${t.name}, ${t.province.name}: accesos, visión nocturna, grabación y control móvil según el proyecto. Presupuesto en ${p}.`,
  (t,p)=>`Protección para viviendas, negocios y segundas residencias en ${t.name}. Alarmas, cámaras y almacenamiento configurados a medida. Consulta: ${p}.`,
- (t,p)=>`Instalador de alarmas y cámaras en ${t.name}. Revisamos accesos, conexión, visión nocturna y grabación antes de elegir equipos. Contacto: ${p}.`,
- (t,p)=>`Cámaras de seguridad y alarmas en ${t.name}, ${t.province.name}. Soluciones para vivienda y negocio, con integración y costes definidos en presupuesto. ${p}.`,
- (t,p)=>`Consulta alarmas inalámbricas y cámaras en ${t.name}. Diseñamos el sistema según accesos, uso, conectividad y necesidades de grabación. ${p}.`
+ (t,p)=>`Instalador de alarmas y cámaras en ${t.name}. Revisamos accesos, conexión, visión nocturna y grabación antes de elegir equipos. Contacto: ${p}.`
 ];
 export function localSeoMeta(t,phone){
  let title=choose(titlePatterns,t.id+'|seo-title')(t);

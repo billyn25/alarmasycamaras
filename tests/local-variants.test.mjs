@@ -19,3 +19,11 @@ test('Metadatos locales estables, variados y únicos',()=>{
 test('Enlazado profundo local es estable y contiene cinco destinos',()=>{
  for(const t of towns.slice(0,200)){const a=localInternalLinks(t),b=localInternalLinks(t);assert.equal(a,b);assert.equal((a.match(/<a href=/g)||[]).length,5);}
 });
+
+
+test('Intenciones de búsqueda local cubren cámara, alarma, técnico e instalación',async()=>{
+ const {localIntentSection}=await import('../src/local-variants.mjs');
+ const sample=towns[0],html=localIntentSection(sample);
+ for(const token of ['cámaras','alarma','INSTALACIÓN','TÉCNICO'])assert.ok(html.toLowerCase().includes(token.toLowerCase()));
+ assert.ok(html.includes('/camaras/'));assert.ok(html.includes('/alarmas/'));assert.ok(html.includes('/alarmas-y-camaras/'));
+});
