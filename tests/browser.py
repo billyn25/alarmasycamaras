@@ -48,7 +48,7 @@ with sync_playwright() as p:
         assert page.locator('.coverage-province').count() == 19
         assert page.locator('.coverage-province li a').count() == 114
         photos = page.locator('main img').evaluate_all("els => els.map(el => el.getAttribute('src'))")
-        assert len(photos) == 4 and len(set(photos)) == 4, photos
+        assert len(photos) == 7 and len(set(photos)) == 7, photos
         assert page.locator('.trust-star').count() == 5
         assert page.locator('[data-stat=municipalities]').inner_text() == '3.797'
         assert page.locator('[data-stat=services]').inner_text() == '4'
