@@ -36,6 +36,10 @@ jobs:
           trap 'kill $SERVER_PID || true' EXIT
           for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
           python tests/browser.py
+          python tests/local-media-browser.py
+      - name: Comprobar versión visible en Netlify sin modificarla
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: python scripts/check-public-preview.py
       - name: Preparar copia de fuentes
         if: always()
         run: |
