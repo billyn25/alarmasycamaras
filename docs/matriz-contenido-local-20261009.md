@@ -4,4 +4,4 @@ Se sustituye la idea de texto aleatorio por una matriz determinista: cada munici
 
 Objetivo: evitar clones literales y aportar más contenido útil a las 3.797 páginas sin tener que redactar cada pueblo a mano. No se inventan barrios, obras, clientes, oficinas, tiempos de llegada, cobertura ni hechos locales. Los contextos municipales con fuente pública siguen siendo una capa separada.
 
-Esta variación editorial no convierte automáticamente una página en contenido local verificado ni garantiza indexación. La salida a Google sigue condicionada a cobertura/oferta real, dominio, datos legales, derechos de imágenes y estrategia de indexación.
+Esta variación editorial se usa en las 3.797 páginas municipales y forma parte de la estrategia de indexación completa. No garantiza posiciones en Google. Los contextos municipales con fuentes públicas siguen siendo una capa adicional de profundidad y no se usan para inventar cobertura, trabajos u oficinas.

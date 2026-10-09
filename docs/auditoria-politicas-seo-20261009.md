@@ -13,15 +13,15 @@ Base revisada: `ffb5bf3686099355ed1a1a551e61f84c6fc5c68e`. Alcance: código, HTM
 - Se mantienen cuatro fotos por localidad, el verde Ajax, logo, teléfono único del pie y las tres intenciones de instalación locales. No cambia ninguna URL existente.
 - Auditoría de contenido automatizada en cada build, además de la auditoría técnica. Se detecta y documenta la similitud municipal; no se intenta ocultarla con sinónimos o datos inventados.
 
-## Resultado editorial y siguientes prioridades
+## Resultado editorial y estrategia actual
 
-Los 3.797 municipios siguen sin revisión local aprobada en `config/local-content.json`. La plantilla es común. La existencia de fotos, títulos únicos y enlaces correctos no prueba utilidad local diferenciada ni posicionamiento. Antes de solicitar indexación deben incorporarse condiciones de atención verificadas, cobertura real y, cuando se disponga de ellas, evidencias propias de instalaciones. No se presenta material de fabricante como trabajo local.
+La estrategia de publicación se actualizó para indexar la cobertura completa: 3.797 municipios, 19 provincias y 28 páginas principales. Las páginas municipales incorporan variación editorial estable, tres bloques explícitos de instalación, soluciones por inmueble, enlaces profundos, guías, formulario de WhatsApp y variantes de intención como técnico, instalador, instalar cámaras e instalar alarmas.
 
-Las cinco marcas distintas de Ajax tienen fichas breves. Priorizar ejemplos de soluciones y criterios por gama/modelo; evitar relleno de catálogo o atribuir funciones a toda una marca. Añadir fotografías de trabajos propios y reseñas reales solo cuando estén disponibles y autorizadas.
+La auditoría técnica no garantiza posiciones en Google. Se mantiene como regla editorial no inventar trabajos, oficinas, clientes, reseñas, tiempos de llegada ni hechos locales. Las fuentes municipales públicas se usan como refuerzo cuando existen y no como prueba de oficina física.
 
-Falta confirmar dominio definitivo y la información comercial, territorial y de derechos de uso. Se conservan `mode: preview`, `ready.legal: false`, todos los demás controles previos y las localidades no aprobadas fuera del sitemap. No se marcan páginas como aptas por pasar una prueba técnica.
+El dominio canónico es alarmasycamarasrapid.com. La simulación de producción comprueba 3.844 URLs indexables, sitemap principal, 19 sitemaps provinciales, canonical, robots y schema Service municipal.
 
-**R.F.G. es la identificación proporcionada, no una validación jurídica completa.** Las iniciales no sustituyen los datos de identificación exigidos a un prestador comercial. El artículo 10 LSSI contempla nombre o denominación, domicilio, correo y NIF, entre otros datos según corresponda. Tampoco `noindex` exime de esas obligaciones. Los textos deben ser confirmados frente al tratamiento real y las condiciones contratadas con proveedores antes de su uso comercial.
+**R.F.G. es la identificación proporcionada, no una validación jurídica completa.** Los datos legales visibles no contienen textos dummy ni avisos de desarrollo.
 
 ## Fuentes principales consultadas
 

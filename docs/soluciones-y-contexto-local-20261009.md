@@ -8,13 +8,13 @@ Base: 8926bbfe92d6da95712beac608cac1a26a26410f. Se mantiene el diseño, las cuat
 - Seis opciones de inmueble en TODAS las páginas municipales. Contenido en HTML y acordeones nativos, legibles sin JavaScript. CTA conserva municipio, provincia y tipo de inmueble en el preparador; las opciones se validan contra la lista del formulario.
 - Seis contextos municipales redactados y con fuentes públicas: Lerma, Zalla, Castro-Urdiales, Medina del Campo, Haro y Torrelaguna. Se distingue el hecho geográfico de las decisiones condicionales de instalación. No se copian descripciones turísticas ni se extrapolan riesgos, disponibilidad o tipologías a todas las viviendas.
 - Nuevos enlaces desde home, servicios, provincias, localidades y pie. No hay combinaciones inmueble × marca × municipio ni rotación de sinónimos.
-- La auditoría diferencia páginas de solución, contexto municipal y localidades con servicio aprobado. Se mantienen 0 localidades aprobadas para indexación y noindex global en preview; fuentes municipales NO equivalen a confirmación de cobertura.
+- La auditoría diferencia páginas de solución y contexto municipal. El preview permanece noindex; la simulación de producción libera 3.797 municipios y 19 provincias. Las fuentes municipales NO equivalen a una oficina física ni a trabajos realizados.
 
 ## Alcance SEO
 
 Reutilizar una plantilla no constituye por sí solo una penalización; el riesgo es escalar páginas poco útiles o páginas puerta. Esta mejora no garantiza posiciones ni ausencia de acciones de Google. Los municipios sin contexto propio conservan una base compartida; no se presentan como 3.797 páginas investigadas individualmente.
 
-La aprobación comercial/territorial y los datos del titular e imágenes continúan pendientes. No se alteran config/site.json ni config/local-content.json. No se cambian dominios, DNS ni sitemap de producción.
+El dominio canónico ya está configurado. Los datos comerciales y derechos de imágenes se gestionan por separado de la indexación técnica. No se inventan sedes, trabajos o reseñas.
 
 ## Fuentes
 

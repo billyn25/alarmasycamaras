@@ -1,14 +1,25 @@
-# Estrategia de indexación escalonada · 9 octubre 2026
+# Estrategia de indexación local completa · 9 octubre 2026
 
-Los 3.797 municipios reciben título y descripción estables elegidos de una matriz por ID municipal. El topónimo se conserva completo y las descripciones distribuyen intenciones de alarma, videovigilancia, grabación, instalación y tipo de inmueble sin inventar hechos locales.
+Objetivo: permitir que Google descubra e indexe el máximo de cobertura municipal con una única URL por localidad.
 
-Cada municipio incorpora cinco enlaces profundos estables hacia servicios, soluciones y guías. La selección depende del ID municipal y no cambia entre despliegues.
+## Salida de producción
+- 28 páginas principales indexables.
+- 19 páginas provinciales indexables.
+- 3.797 páginas municipales indexables.
+- Total: 3.844 URLs indexables.
+- Aviso legal, privacidad, cookies y 404 permanecen noindex.
 
-La salida a Google queda controlada:
-- portada, servicios, marcas, guías y soluciones forman el núcleo editorial;
-- una provincia solo será indexable cuando tenga al menos 3 municipios aprobados;
-- un municipio solo será indexable si está aprobado en config/local-content.json;
-- los sitemaps incluyen únicamente URLs realmente indexables;
-- el directorio completo puede seguir disponible para navegación sin convertir automáticamente sus 3.797 páginas en URLs indexables.
+## Intención de búsqueda
+Cada municipio distribuye títulos y descripciones estables entre variantes como instalación de cámaras, instalación de alarmas, instalador, técnico, videovigilancia, montar cámaras y cámaras + alarmas. El contenido visible mantiene tres intenciones principales y añade un bloque comercial/técnico de búsqueda local.
 
-No se activa la indexación con este cambio. Siguen pendientes dominio final, cobertura/oferta confirmadas, identificación legal completa y derechos de fotografías.
+No se crean URLs distintas para sinónimos. Una sola landing municipal concentra la relevancia y enlaza a cámaras, alarmas, integración, soluciones y guías.
+
+## Sitemaps y canonical
+- Canonical único a https://alarmasycamarasrapid.com.
+- Redirecciones de http/www/index.html y variantes históricas.
+- Un sitemap principal.
+- 19 sitemaps provinciales con todos los municipios.
+- CI ejecuta una compilación de producción que no se publica y exige 3.844 URLs indexables.
+
+## Calidad
+La variación municipal es determinista y estable, no cambia por deploy. No se inventan oficinas, clientes, reseñas, tiempos de llegada o hechos locales. El contexto municipal público verificado es una capa adicional donde existe.

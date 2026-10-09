@@ -32,13 +32,13 @@ Abrir `http://127.0.0.1:4173`. El build no requiere red ni paquetes de producci�
 
 Sin cuota mensual obligatoria por alarma autogestionada. Conectividad, mantenimiento o nube opcionales pueden tener coste. No se anuncian central receptora, vigilancia 24 h, aviso automático a Policía, invulnerabilidad ni integración universal. Grado 2 según equipos y configuración. Visión nocturna según modelo e iluminación.
 
-## Antes de indexar
+## Publicación e indexación
 
-Dominio definitivo configurado. Revisar datos legales; confirmar contacto, cobertura real, condiciones y derechos de las fotos. Los flags `ready` impiden activar producción por accidente. `SITE_MODE=production` y `SITE_URL` solo después de esa revisión.
+Dominio definitivo configurado en **https://alarmasycamarasrapid.com**. En modo preview todo permanece `noindex`. La simulación de producción valida **3.844 URLs indexables**: 28 páginas principales, 19 provincias y 3.797 municipios. Aviso legal, privacidad, cookies y 404 siguen fuera del índice.
 
-Los municipios están generados como **base editorial de revisión**, no como miles de textos locales originales ya terminados. Para indexar uno, completar su entrada por código en `config/local-content.json` con `approved`, `reviewedAt`, `source` y al menos dos bloques locales comprobados. Los no revisados permanecen noindex aunque la portada pase a producción. No inventar trabajos, sedes, reseñas ni tiempos de llegada.
+Cada municipio conserva una sola URL canónica y combina contenido técnico, variantes de intención de búsqueda, soluciones por inmueble, guías y enlazado interno. No se crean páginas distintas para «técnico», «instalador», «instalar cámaras» o «instalar alarmas». Los contextos municipales con fuente pública añaden profundidad extra, pero no son un requisito técnico de indexación.
 
-En producción se generan sitemap principal e índices provinciales únicamente con páginas indexables; no se generan sitemaps vacíos o con URLs de revisión. La configuración por defecto no genera sitemap ni inventa un dominio.
+En producción se genera un sitemap principal y 19 sitemaps provinciales. No inventar trabajos, oficinas, reseñas, tiempos de llegada ni hechos locales.
 
 ## Fuentes e imágenes
 

@@ -23,4 +23,4 @@ const report={reviewedAt:'2026-10-09',scope:'HTML generado completo y plantillas
  {priority:'Confianza comercial',topic:'Pruebas del trabajo',status:'pendiente',detail:'Añadir fotografías de instalaciones propias autorizadas, referencias y testimonios reales cuando se aporten. Estrellas actuales: compromisos, no valoraciones.'}
  ],details};
 fs.writeFileSync('.cache/content-seo-report.json',JSON.stringify(report,null,2));
-console.log(`CONTENT AUDIT: ${report.guides} guías; ${report.approvedLocalities}/${report.municipalities} localidades aprobadas; pendientes documentados.`);
+console.log(`CONTENT AUDIT: ${report.guides} guías; ${report.municipalities} páginas municipales con variación editorial; ${report.municipalContexts} contextos públicos adicionales.`);

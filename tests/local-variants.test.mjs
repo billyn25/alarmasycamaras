@@ -21,9 +21,21 @@ test('Enlazado profundo local es estable y contiene cinco destinos',()=>{
 });
 
 
-test('Intenciones de búsqueda local cubren cámara, alarma, técnico e instalación',async()=>{
+test('Las 3797 páginas cubren intención de cámaras, alarmas, técnico e instalación',async()=>{
  const {localIntentSection}=await import('../src/local-variants.mjs');
- const sample=towns[0],html=localIntentSection(sample);
- for(const token of ['cámaras','alarma','INSTALACIÓN','TÉCNICO'])assert.ok(html.toLowerCase().includes(token.toLowerCase()));
- assert.ok(html.includes('/camaras/'));assert.ok(html.includes('/alarmas/'));assert.ok(html.includes('/alarmas-y-camaras/'));
+ for(const town of towns){
+  const html=localIntentSection(town).toLowerCase();
+  for(const token of ['cámaras','alarma','instalación','técnico'])assert.ok(html.includes(token),town.url+' '+token);
+  assert.ok(html.includes('/camaras/'));assert.ok(html.includes('/alarmas/'));assert.ok(html.includes('/alarmas-y-camaras/'));
+ }
+});
+test('Titles y descriptions reparten múltiples formas de búsqueda',()=>{
+ const titles=new Set(),descriptions=new Set();
+ for(const t of towns){
+  const meta=localSeoMeta(t,'641 589 394');
+  titles.add(meta.title.replace(t.name,'[PUEBLO]').replace(t.province.name,'[PROVINCIA]'));
+  descriptions.add(meta.description.replace(t.name,'[PUEBLO]').replace(t.province.name,'[PROVINCIA]').replace('641 589 394','[TEL]'));
+ }
+ assert.ok(titles.size>=8,titles.size);
+ assert.ok(descriptions.size>=7,descriptions.size);
 });
