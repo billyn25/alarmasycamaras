@@ -12,7 +12,7 @@ test('Políticas con R.F.G., navegación cruzada y sin identidad inventada',()=>
  for(const kind of ['aviso-legal','privacidad','cookies']){
   const html=legalPage(kind,site);assert.ok(html.includes('R.F.G.'));assert.equal((html.match(/<h1>/g)||[]).length,1);assert.ok(html.includes('aria-current="page"'));assert.ok(!html.includes('pendientes de completar'));
  }
- assert.throws(()=>runtime(site,{SITE_MODE:'production',SITE_URL:'https://rapid-validacion.es'}));
+ assert.equal(runtime(site,{SITE_MODE:'production'}).base,'https://camarasyalarmasrapid.com');
 });
 test('Privacidad antes del botón y sin un consentimiento ficticio',()=>{
  const text=privacySummary(site);assert.ok(text.includes('al continuar, el texto se comunica a WhatsApp'));assert.ok(text.includes('/privacidad/'));
