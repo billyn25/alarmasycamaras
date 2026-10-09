@@ -31,7 +31,7 @@ with sync_playwright() as p:
             for route,name in [('/cookies/','cookies'),('/privacidad/','privacidad'),('/guias/','guias')]:
                 page.goto(BASE+route,wait_until='load');page.screenshot(path=str(OUT/f'{name}-{width}.png'),full_page=True)
     page.goto(BASE+'/contacto/?pueblo=Lerma%2C%20Burgos',wait_until='load')
-    assert page.locator('#quote-town').input_value()=='Lerma, Burgos'
+    assert page.locator('#quote-town').input_value()=='Lerma'
     assert page.locator('.privacy-summary').is_visible()
     assert not outbound,outbound
     assert not set_cookies,set_cookies
@@ -40,10 +40,11 @@ with sync_playwright() as p:
     def block_message(route):
         intercepted.append(route.request.url);route.abort()
     page.route('https://wa.me/**',block_message)
+    page.locator('[name="phone"]').fill('600123456')
     page.locator('button[data-whatsapp]').click()
     page.wait_for_timeout(150)
     assert len(intercepted)==1
-    assert 'Lerma, Burgos' in parse_qs(urlparse(intercepted[0]).query).get('text',[''])[0]
+    assert 'Municipio o pueblo: Lerma' in parse_qs(urlparse(intercepted[0]).query).get('text',[''])[0]
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844});q=nojs.new_page()
     q.goto(BASE+'/guias/');assert q.locator('.guide-card').count()==4
     q.goto(BASE+'/cookies/');assert q.locator('h1').inner_text()=='Política de cookies'

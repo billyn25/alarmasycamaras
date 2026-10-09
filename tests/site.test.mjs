@@ -64,3 +64,5 @@ test('Totales del pie calculados y teléfono clicable',async()=>{
 });
 
 import './local-media.test.mjs';
+
+import './quote-form.test.mjs';

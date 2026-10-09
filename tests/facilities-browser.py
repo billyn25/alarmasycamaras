@@ -44,7 +44,7 @@ with sync_playwright() as p:
         page.goto(BASE+'/burgos/lerma/');page.locator('.facility-choice summary').nth(1).click()
         page.locator('.facility-choice').nth(1).locator('a').nth(1).click()
         page.wait_for_url('**/contacto/**')
-        expect(page.locator('[name="town"]')).to_have_value('Lerma, Burgos')
+        expect(page.locator('[name="town"]')).to_have_value('Lerma')
         expect(page.locator('[name="building"]')).to_have_value('Casa o chalet')
         page.goto(BASE+'/contacto/?inmueble=%3Cscript%3Ebad%3C%2Fscript%3E')
         expect(page.locator('[name="building"]')).to_have_value('Vivienda')

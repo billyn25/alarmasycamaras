@@ -47,6 +47,6 @@ test('Escape de campos y tipos de inmueble en el preparador',()=>{
  const t={name:'Pueblo <script>',province:{name:'Provincia & región'}};
  const h=facilitySection(t);assert.ok(h.includes('Pueblo &lt;script&gt;'));assert.ok(!h.includes('Pueblo <script>'));
  const u=new URL(quoteFor(facilities[1],t),'https://example.invalid');assert.equal(u.searchParams.get('inmueble'),'Casa o chalet');
- const js=fs.readFileSync('public/app.js','utf8');assert.ok(js.includes('option.value===building'));
+ const js=fs.readFileSync('public/quote-form.js','utf8');assert.ok(js.includes('choose(fields.building'));assert.ok(js.includes('[...select.options].find'));
  assert.ok(!js.includes('innerHTML'));
 });

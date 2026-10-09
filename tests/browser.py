@@ -1,6 +1,6 @@
 """Pruebas funcionales y capturas de la web real. No contactan WhatsApp."""
 from pathlib import Path
-import json
+import json,os
 from urllib.parse import unquote
 from playwright.sync_api import sync_playwright
 BASE = 'http://127.0.0.1:4173'
@@ -8,7 +8,7 @@ OUT = Path('artifacts')
 OUT.mkdir(exist_ok=True)
 checks = []
 with sync_playwright() as p:
-    browser = p.chromium.launch()
+    browser = p.chromium.launch(**({'executable_path':os.environ['RAPID_CHROMIUM']} if os.environ.get('RAPID_CHROMIUM') else {}))
     context = browser.new_context()
     page = context.new_page()
     errors = []
@@ -82,12 +82,13 @@ with sync_playwright() as p:
     page.wait_for_timeout(250)
     assert page.locator('[data-no-results]').is_visible()
     page.goto(BASE + '/contacto/?pueblo=Lerma%2C%20Burgos')
-    assert page.locator('#quote-town').input_value() == 'Lerma, Burgos'
+    assert page.locator('#quote-town').input_value() == 'Lerma'
     captured = []
     def stop_whatsapp(route):
         captured.append(route.request.url)
         route.fulfill(status=200, content_type='text/plain', body='WhatsApp interceptado en la prueba; no enviado.')
     page.route('https://wa.me/**', stop_whatsapp)
+    page.locator('[name="phone"]').fill('600123456')
     page.locator('button[type="submit"]').click()
     page.wait_for_timeout(300)
     assert captured and 'Lerma' in unquote(captured[0])
