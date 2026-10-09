@@ -8,7 +8,7 @@ import {localServiceMedia} from '../src/local-media.mjs';
 const data=JSON.parse(fs.readFileSync('data/municipios.json','utf8'));
 const towns=townsFrom(data.municipalities);
 
-test('Todos los municipios: cuatro fotos distintas, contenido útil y tres intenciones intactas',()=>{
+test('Todos los municipios: siete fotos distintas, contenido útil y tres intenciones intactas',()=>{
   for(const t of towns){
     const html=townPage(t,[],null);
     const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
