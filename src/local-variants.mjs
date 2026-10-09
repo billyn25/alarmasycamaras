@@ -102,8 +102,10 @@ const descriptionPatterns=[
 ];
 export function localSeoMeta(t,phone){
  let title=choose(titlePatterns,t.id+'|seo-title')(t);
- const description=choose(descriptionPatterns,t.id+'|seo-description')(t,phone);
+ let description=choose(descriptionPatterns,t.id+'|seo-description')(t,phone);
  if(title.length>76)title=`${t.name}, ${t.province.name}: alarmas y cámaras`;
+ if(description.length>165)description=`Alarmas y cámaras en ${t.name}, ${t.province.name}. Instalación a medida de detección, videovigilancia y grabación según el inmueble.`;
+ if(description.length>165)description=`Alarmas y cámaras en ${t.name}. Instalación a medida de detección y videovigilancia según el inmueble.`;
  return {title,description};
 }
 const deepLinks=[
