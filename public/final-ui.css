@@ -1,0 +1,36 @@
+/* Cierre visual aprobado: identidad Rapid más comercial sin perder legibilidad ni SEO. */
+.utility-bar{background:#092740;color:#dbe7ef;font-size:11px}
+.utility-inner{min-height:36px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:18px}
+.utility-inner>span,.utility-inner>a{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;white-space:nowrap}
+.utility-inner a{color:#eef7fb}.utility-inner strong{color:#fff}.utility-inner .icon{width:15px;height:15px;color:#42a5ff}
+.site-header{background:#fff;box-shadow:0 1px 0 #e8edf1}
+.header-inner{min-height:90px}.logo{width:300px}
+.main-nav{gap:18px}.main-nav>a{font-size:12px;font-weight:550}.main-nav>a[aria-current]{color:#1473ff}
+.main-nav .nav-whatsapp{display:flex;align-items:center;gap:10px;background:#22ad62;color:#fff;border-radius:12px;padding:9px 14px;line-height:1.15}
+.main-nav .nav-whatsapp:hover{color:#fff;background:#199753}.main-nav .nav-whatsapp .icon{width:22px;height:22px}.main-nav .nav-whatsapp span{font-size:10px}.main-nav .nav-whatsapp strong{display:block;font-size:13px;margin-top:2px}
+.home-hero-shell{position:relative;overflow:hidden;background:radial-gradient(circle at 68% 10%,#1e5e8d55,transparent 32%),linear-gradient(125deg,#071b2e 0%,#0a2f4e 58%,#0a243a 100%)}
+.home-hero-shell:after{content:"";position:absolute;inset:auto -10% -58% 45%;height:470px;background:#1687ff18;filter:blur(90px);border-radius:50%;pointer-events:none}
+.hero-final{color:#fff;padding-block:62px 58px;position:relative;z-index:1}
+.hero-final .eyebrow{color:#50b7ff;margin-bottom:18px}.hero-final h1{font-size:clamp(52px,5.8vw,82px);line-height:.96;letter-spacing:-.055em}
+.hero-rapid{display:block;color:#1988ff;font-weight:760}.hero-final .lead{color:#dce6ee;max-width:610px;font-size:18px;margin-block:23px 26px}
+.hero-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;max-width:600px;margin:0 0 28px}
+.hero-proof-grid>span{display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center;border-top:1px solid #ffffff24;padding-top:12px}
+.hero-proof-grid .icon{grid-row:1/3;width:25px;height:25px;color:#38a5ff}.hero-proof-grid strong{font-size:12px;color:#fff}.hero-proof-grid small{font-size:9px;color:#aebdca;line-height:1.35}
+.hero-final .actions{gap:14px}.hero-final .hero-whatsapp{background:#20ad62;border-color:#20ad62}.hero-final .hero-whatsapp:hover{background:#188f52}
+.hero-final .hero-secondary{background:transparent;border-color:#cbd8e3;color:#fff}.hero-final .hero-secondary:hover{background:#ffffff12;color:#fff}.hero-final .fine-print{color:#9fb0bf;margin-top:18px}
+.hero-final .hero-visual{background:linear-gradient(145deg,#f8fafb,#e9eff3);border:1px solid #ffffff32;box-shadow:0 30px 70px #03111f4d;border-radius:28px}
+.hero-final .floating-product{background:#fff}.hero-final .visual-note{color:#69757f}
+.assurance{background:#fff;border-bottom:0;padding-block:26px}.assurance>div{justify-content:flex-start}.assurance .icon{color:#0c3b62}.assurance strong{font-size:12px}.assurance span{font-size:9px}
+.brand-band{border-top:1px solid #eef2f5;border-bottom:1px solid #eef2f5;padding-block:24px}.brand-band>p{margin-bottom:18px}
+.home-quick-types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding-block:22px 34px}
+.home-quick-types>a{display:grid;grid-template-columns:34px 1fr 18px;gap:11px;align-items:center;background:#f6f8fa;border:1px solid #e9edf0;border-radius:12px;padding:18px 19px}
+.home-quick-types>a:hover{border-color:#1473ff;background:#fff}.home-quick-types>a>.icon:first-child{width:28px;height:28px;color:#0c3b62}.home-quick-types>a>.icon:last-child{width:16px;height:16px}
+.home-quick-types strong{display:block;font-size:14px}.home-quick-types small{display:block;color:#6c7780;font-size:10px;margin-top:2px}
+.site-footer{background:#071b2d;color:#f3f7fa;border-top:0}.site-footer a{color:#e8f1f7}.site-footer a:hover{color:#62b7ff}
+.footer-summary{border-color:#244057;padding-block:38px}.footer-summary>div>p,.footer-figures dt,.site-footer p{color:#9fb1c0}.footer-direct-phone{color:#fff}.footer-whatsapp{color:#44d185}
+.footer-top{border-top:1px solid #244057}.footer-top h2{color:#fff}.footer-brand>a{display:inline-block;background:#fff;border-radius:12px;padding:8px 12px}.footer-brand img{width:270px}
+.footer-bottom{border-color:#244057}.site-footer .footer-bottom p:first-child{color:#d9e4ec}
+@media(max-width:1180px){.utility-last{display:none}.utility-inner{grid-template-columns:repeat(3,minmax(0,1fr))}.logo{width:250px}.main-nav{gap:11px}.main-nav>a{font-size:11px}.main-nav .nav-whatsapp{padding:8px 10px}}
+@media(max-width:1080px){.header-inner{min-height:76px;flex-wrap:wrap}.menu-toggle{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;width:42px;height:42px;border:1px solid var(--line);border-radius:9px;background:#fff}.menu-toggle>span:not(.sr-only){display:block;width:18px;height:1px;background:var(--ink)}.js .main-nav{display:none}.js .main-nav.is-open{display:flex;flex-basis:100%;flex-direction:column;align-items:stretch;padding:12px 0 20px;gap:0}.js .main-nav>a{padding:12px 14px;font-size:14px}.js .main-nav .nav-whatsapp{margin-top:10px;justify-content:center}.hero-final{grid-template-columns:1fr 1fr}.home-quick-types{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.utility-bar{font-size:9px}.utility-inner{grid-template-columns:1fr 1fr;gap:6px;min-height:34px}.utility-inner>span:nth-child(3),.utility-last{display:none}.utility-inner>span,.utility-inner>a{justify-content:flex-start}.logo{width:min(250px,calc(100% - 58px))}.hero-final{grid-template-columns:1fr;padding-block:42px 36px}.hero-final h1{font-size:clamp(46px,13vw,66px)}.hero-final .lead{font-size:16px}.hero-proof-grid{grid-template-columns:1fr 1fr;gap:10px}.hero-final .actions{align-items:stretch}.hero-final .actions .button{flex:1}.home-quick-types{grid-template-columns:1fr 1fr;gap:8px}.home-quick-types>a{padding:14px 13px;grid-template-columns:29px 1fr 14px}.home-quick-types>a>.icon:first-child{width:24px;height:24px}.footer-brand>a{padding:7px 10px}}
+@media(max-width:430px){.utility-inner{grid-template-columns:1fr}.utility-inner>span:first-child{display:none}.utility-inner>a{justify-content:center}.hero-proof-grid{grid-template-columns:1fr}.hero-final .actions{flex-direction:column}.home-quick-types{grid-template-columns:1fr}}
