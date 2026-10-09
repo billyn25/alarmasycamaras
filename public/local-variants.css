@@ -6,3 +6,9 @@
 .local-variant-card>p:not(.eyebrow){color:#5f6864;line-height:1.65}
 .local-variant-card .text-link{display:inline-flex;margin-top:10px}
 @media(max-width:820px){.local-variant-grid{grid-template-columns:1fr}.local-variant-card,.local-variant-card:nth-child(4),.local-variant-card:nth-child(5){grid-column:auto;padding:20px;border-radius:18px}.local-variant-card h3{font-size:1.18rem}}
+
+.local-deep-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch;margin:8px auto 0;padding:0 0 clamp(44px,7vw,88px)}
+.local-deep-links>strong{grid-column:1/-1;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#747c78;margin-bottom:4px}
+.local-deep-links a{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:14px 15px;border:1px solid #e2e6e4;border-radius:14px;background:#fff;color:#202522;text-decoration:none;font-size:.88rem;font-weight:650}
+.local-deep-links a:hover{border-color:#5ae4aa;background:#f8fffb}
+@media(max-width:820px){.local-deep-links{grid-template-columns:1fr 1fr}.local-deep-links>strong{grid-column:1/-1}.local-deep-links a:last-child{grid-column:1/-1}}
