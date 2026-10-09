@@ -1,0 +1,42 @@
+name: Preparar fotos multimarca
+on:
+  push:
+    branches: [revision/multimarca-cctv]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0 playwright==1.57.0
+      - run: |
+          python scripts/import-multibrand-media.py
+          npm run build
+          npm test
+          python -m playwright install --with-deps chromium
+          node scripts/serve.mjs > /tmp/rapid.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          python tests/multibrand-browser.py
+      - name: Guardar imágenes comprobadas
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/assets/hikvision-colorvu.webp public/assets/dahua-wizsense.webp public/assets/uniview-colorhunter.webp data/media-sources.json
+          git diff --cached --quiet || git commit -m 'assets: cámaras Hikvision, Dahua y Uniview verificadas'
+          git push origin HEAD:revision/multimarca-cctv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revision-multimarca
+          path: artifacts/
+          retention-days: 7

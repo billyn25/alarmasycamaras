@@ -1,0 +1,5 @@
+# Variedad visual CCTV · 9 octubre 2026
+Se añade un bloque compacto de videovigilancia multimarca con referencias visuales de Hikvision, Dahua y Uniview. Ajax mantiene el protagonismo de intrusión; este bloque equilibra la parte de cámaras.
+Las tres imágenes se sirven desde el propio sitio. Se muestran en portada, página de cámaras y páginas municipales, con enlaces a las fichas de cada marca. Son referencias comerciales de producto, no trabajos de Rapid; los permisos de uso siguen pendientes de confirmación antes de producción.
+La selección visual no implica recomendar esas referencias concretas para todos los proyectos. El modelo final depende de iluminación, grabación, analítica, compatibilidad y presupuesto.
+El principal trabajo SEO pendiente sigue siendo contenido local verificable por tandas, cierre de dominio/cobertura/oferta y derechos de imágenes. No se activa indexación con este cambio.
