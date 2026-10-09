@@ -28,7 +28,7 @@ with sync_playwright() as p:
                 assert page.locator('.facility-choice').count()==6
                 page.locator('.facility-choice summary').nth(3).click()
                 assert page.locator('.facility-choice').nth(3).get_attribute('open') is not None
-                assert page.locator('main img').count()==4
+                assert page.locator('main img').count()==7
             checks.append({'route':route,'width':width,'overflow':False,'h1':1})
         if width in [390,1440]:
             for route,selector,name in [('/soluciones/',None,'soluciones'),('/burgos/lerma/','.municipal-context','lerma-contexto'),('/burgos/lerma/','.facility-selector','lerma-selector'),('/la-rioja/haro/','.municipal-context','haro-contexto'),('/soluciones/casas-y-chalets/',None,'chalets')]:
