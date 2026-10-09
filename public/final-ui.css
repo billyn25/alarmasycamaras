@@ -121,3 +121,22 @@
  .hero-proof-grid strong{font-size:11px}
  .hero-proof-grid small{font-size:8px}
 }
+
+/* Afinado móvil del hero: menos texto antes del producto y mejor primer pantallazo. */
+@media(max-width:700px){
+  .hero-final{padding-top:30px;padding-bottom:92px;gap:18px}
+  .hero-final .eyebrow{margin-bottom:13px;font-size:9px;letter-spacing:.15em;line-height:1.5}
+  .hero-final .eyebrow:before{width:18px}
+  .hero-final h1{font-size:clamp(44px,11.8vw,58px);line-height:.98}
+  .hero-final .lead{font-size:15px;line-height:1.58;margin-block:17px 19px;max-width:520px}
+  .hero-final .actions{gap:8px}
+  .hero-final .actions .button{min-height:48px;padding-block:12px}
+  .hero-final .fine-print{margin-top:13px;line-height:1.45}
+  .hero-final .hero-visual{padding-top:37px}
+}
+@media(max-width:430px){
+  .hero-final{padding-top:27px;padding-bottom:94px}
+  .hero-final h1{font-size:clamp(43px,12vw,55px)}
+  .hero-final .lead{font-size:14.5px}
+  .hero-final .actions .button{min-height:46px}
+}
