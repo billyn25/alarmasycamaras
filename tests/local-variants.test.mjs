@@ -51,3 +51,13 @@ test('Las 3797 localidades incluyen intención de vivienda vacía y sin luz',asy
   assert.ok(html.includes('/guias/alarma-vivienda-cerrada-sin-luz/'),town.url);
  }
 });
+
+
+test('Frase SEO exacta de pisos vacíos y sin luz está presente',async()=>{
+ const {localVacantPowerIntent}=await import('../src/local-variants.mjs');
+ const sample=towns.find(t=>t.url==='/burgos/lerma/')||towns[0];
+ const html=localVacantPowerIntent(sample).toLowerCase();
+ assert.ok(html.includes('alarma'));
+ assert.ok(html.includes('vacía')||html.includes('vacío'));
+ assert.ok(html.includes('sin luz')||html.includes('sin suministro')||html.includes('corte de luz'));
+});

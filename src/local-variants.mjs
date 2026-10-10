@@ -109,8 +109,11 @@ export function localIntentSection(t){
 
 
 const vacantPowerHeadings=[
+ t=>`Instalación de alarma en piso vacío y sin luz en ${t.name}`,
+ t=>`Instalación de alarma en vivienda vacía sin electricidad en ${t.name}`,
  t=>`Alarma para vivienda vacía o sin luz en ${t.name}`,
  t=>`¿Cómo proteger un piso vacío en ${t.name} si se corta la luz?`,
+ t=>`Instalar una alarma en piso vacío sin suministro eléctrico en ${t.name}`,
  t=>`Seguridad para segunda residencia o vivienda cerrada en ${t.name}`,
  t=>`Alarma para casa cerrada y cortes de luz en ${t.name}`,
  t=>`Protección de vivienda vacía en ${t.name}: alarma, batería y avisos`,
@@ -131,6 +134,8 @@ export function localVacantPowerIntent(t){
 }
 
 const titlePatterns=[
+ t=>`Instalación de alarma en piso vacío · ${t.name}, ${t.province.name}`,
+ t=>`Alarma para vivienda vacía sin luz · ${t.name}, ${t.province.name}`,
  t=>`Alarmas y cámaras en ${t.name}, ${t.province.name}`,
  t=>`Instalación de alarmas y cámaras · ${t.name}, ${t.province.name}`,
  t=>`Cámaras de seguridad y alarmas · ${t.name}, ${t.province.name}`,
@@ -145,6 +150,8 @@ const titlePatterns=[
  t=>`Seguridad con alarmas y cámaras · ${t.name}, ${t.province.name}`
 ];
 const descriptionPatterns=[
+ (t,p)=>`Instalación de alarma en piso vacío y sin luz en ${t.name}. Batería de respaldo, comunicación móvil y protección de accesos según el inmueble. ${p}.`,
+ (t,p)=>`Alarma para vivienda vacía sin electricidad en ${t.name}, ${t.province.name}. Estudiamos autonomía, SIM, avisos y alimentación compatible. ${p}.`,
  (t,p)=>`Instalación de alarmas inalámbricas y cámaras de seguridad en ${t.name}, ${t.province.name}. El técnico plantea detección, vídeo y grabación según el inmueble. ${p}.`,
  (t,p)=>`Técnico de cámaras y alarmas en ${t.name}. Instalación de videovigilancia, detección y control móvil para vivienda o negocio. Consulta: ${p}.`,
  (t,p)=>`¿Quieres instalar cámaras de seguridad en ${t.name}? El técnico estudia ubicación, visión nocturna, grabación y acceso móvil. Presupuesto: ${p}.`,
