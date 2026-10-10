@@ -20,14 +20,14 @@ test('Valida origen de la URL en preview',()=>{const preview={...site,mode:'prev
 test('Producción usa el dominio definitivo y rechaza hosts de revisión',()=>{const ready=structuredClone(site);for(const k of Object.keys(ready.ready))ready.ready[k]=true;for(const k of Object.keys(ready.legal))ready.legal[k]='Dato de prueba';assert.equal(runtime(ready,{SITE_MODE:'production'}).base,'https://camarasyalarmasrapid.com');assert.throws(()=>runtime(ready,{SITE_MODE:'production',SITE_URL:'https://revision.netlify.app'}),/Dominio/);assert.equal(runtime(ready,{SITE_MODE:'production',SITE_URL:'https://camarasyalarmasrapid.com'}).production,true);});
 test('No se aprueba una página local vacía',()=>{assert.equal(approvedLocal(null),false);assert.equal(approvedLocal({approved:true}),false);assert.equal(approvedLocal({approved:true,reviewedAt:'2026-10-08',source:'Registro verificado de cobertura',blocks:[{title:'Datos del servicio',text:'Contenido comprobado. '.repeat(12)},{title:'Condiciones de la visita',text:'Información comprobada. '.repeat(12)}]}),true);});
 
-test('Cobertura en portada: 19 provincias y 114 localidades de su propia provincia',async()=>{
+test('Cobertura en portada: 19 provincias y 190 localidades de su propia provincia',async()=>{
  const {coverageSection,featuredByProvince}=await import('../src/coverage.mjs');
  const towns=townsFrom(records),html=coverageSection(towns);
  assert.equal((html.match(/class="coverage-province"/g)||[]).length,19);
- assert.equal((html.match(/<li><a href=/g)||[]).length,114);
+ assert.equal((html.match(/<li><a href=/g)||[]).length,190);
  assert.equal(Object.keys(featuredByProvince).length,19);
  for(const province of provinces){
-  const names=featuredByProvince[province.slug];assert.equal(new Set(names).size,6);
+  const names=featuredByProvince[province.slug];assert.equal(new Set(names).size,10);
   for(const name of names){const town=towns.find(t=>t.province.id===province.id&&t.name===name);assert.ok(town);assert.ok(html.includes(`href="${town.url}"`));}
   assert.ok(html.includes('Ver todos los municipios de '+e(province.name)));
  }
