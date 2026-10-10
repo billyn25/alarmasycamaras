@@ -39,3 +39,15 @@ test('Titles y descriptions reparten múltiples formas de búsqueda',()=>{
  assert.ok(titles.size>=8,titles.size);
  assert.ok(descriptions.size>=7,descriptions.size);
 });
+
+
+test('Las 3797 localidades incluyen intención de vivienda vacía y sin luz',async()=>{
+ const {localVacantPowerIntent}=await import('../src/local-variants.mjs');
+ for(const town of towns){
+  const html=localVacantPowerIntent(town).toLowerCase();
+  assert.ok(html.includes(town.name.toLowerCase()),town.url);
+  assert.ok(html.includes('sin luz')||html.includes('corte de luz')||html.includes('apagón'),town.url);
+  assert.ok(html.includes('vivienda')||html.includes('piso')||html.includes('casa'),town.url);
+  assert.ok(html.includes('/guias/alarma-vivienda-cerrada-sin-luz/'),town.url);
+ }
+});

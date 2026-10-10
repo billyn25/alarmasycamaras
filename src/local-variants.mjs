@@ -107,6 +107,29 @@ export function localIntentSection(t){
  return `<section class="local-intent wrap" aria-labelledby="local-intent-title"><p class="eyebrow">INSTALACIÓN · TÉCNICO · CÁMARAS · ALARMAS</p><h2 id="local-intent-title">${e(heading)}</h2><p>${e(body)}</p><div class="local-intent-links"><a href="/camaras/">Instalar cámaras de seguridad <span aria-hidden="true">→</span></a><a href="/alarmas/">Instalar una alarma <span aria-hidden="true">→</span></a><a href="/alarmas-y-camaras/">Cámaras y alarmas juntas <span aria-hidden="true">→</span></a><a href="/guias/alarma-vivienda-cerrada-sin-luz/">Alarma para vivienda cerrada sin luz <span aria-hidden="true">→</span></a></div></section>`;
 }
 
+
+const vacantPowerHeadings=[
+ t=>`Alarma para vivienda vacía o sin luz en ${t.name}`,
+ t=>`¿Cómo proteger un piso vacío en ${t.name} si se corta la luz?`,
+ t=>`Seguridad para segunda residencia o vivienda cerrada en ${t.name}`,
+ t=>`Alarma para casa cerrada y cortes de luz en ${t.name}`,
+ t=>`Protección de vivienda vacía en ${t.name}: alarma, batería y avisos`,
+ t=>`Piso vacío en ${t.name}: qué sigue funcionando si falta la luz`
+];
+const vacantPowerBodies=[
+ t=>`Si una vivienda de ${t.name} queda vacía durante semanas o meses, conviene separar detección, comunicaciones y videovigilancia. La central de alarma puede disponer de batería de respaldo, pero router, cámaras y grabador necesitan su propia alimentación si deben seguir funcionando durante un corte de luz.`,
+ t=>`Para un piso vacío en ${t.name}, la pregunta no es solo qué sensores instalar. También hay que revisar cómo enviará avisos el sistema si el router está apagado y qué autonomía tendrá la central si desaparece la red eléctrica. La comunicación móvil y una alimentación compatible pueden formar parte del proyecto según el equipo.`,
+ t=>`En una segunda residencia de ${t.name} interesa saber qué ocurre cuando nadie está dentro. Se revisan puerta, ventanas, detección, batería del hub y vía de comunicación. Si además quieres cámaras, su consumo y el del NVR o router se calculan aparte porque no dependen de la batería interna de la alarma.`,
+ t=>`Una alarma para vivienda cerrada en ${t.name} puede mantenerse operativa durante un apagón si el equipo dispone de respaldo adecuado. Para periodos largos sin suministro se estudia una alimentación externa compatible. La autonomía real depende del hub, la batería, la cobertura y los canales de comunicación activos.`,
+ t=>`Si el inmueble de ${t.name} permanece vacío y sin suministro eléctrico estable, se puede estudiar una solución de alarma con batería y comunicación móvil. Las cámaras requieren otro planteamiento energético: no se promete grabación continua sin revisar alimentación, red, almacenamiento y autonomía.`,
+ t=>`Proteger una casa vacía en ${t.name} exige comprobar algo más que la sirena. Conviene definir quién recibe los avisos, qué pasa si se corta Internet, cuánto puede funcionar la central con batería y si las cámaras o el grabador necesitan respaldo propio.`
+];
+export function localVacantPowerIntent(t){
+ const seed=t.id+'|vacant-power';
+ const heading=choose(vacantPowerHeadings,seed+'|h')(t),body=choose(vacantPowerBodies,seed+'|b')(t);
+ return `<section class="local-vacant-power wrap" aria-labelledby="vacant-power-title"><p class="eyebrow">VIVIENDA VACÍA · SEGUNDA RESIDENCIA · SIN LUZ</p><h2 id="vacant-power-title">${e(heading)}</h2><p>${e(body)}</p><a class="text-link" href="/guias/alarma-vivienda-cerrada-sin-luz/">Ver cómo plantear una alarma en una vivienda cerrada sin luz <span aria-hidden="true">→</span></a></section>`;
+}
+
 const titlePatterns=[
  t=>`Alarmas y cámaras en ${t.name}, ${t.province.name}`,
  t=>`Instalación de alarmas y cámaras · ${t.name}, ${t.province.name}`,

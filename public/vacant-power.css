@@ -1,0 +1,4 @@
+
+.local-vacant-power{margin-block:16px 34px;padding:30px 34px;border-left:4px solid #5ae4aa;background:#f7faf9;border-radius:0 18px 18px 0}
+.local-vacant-power .eyebrow{color:#21694e;margin-bottom:10px}.local-vacant-power h2{font-size:clamp(27px,3.2vw,39px);max-width:840px}.local-vacant-power>p:not(.eyebrow){font-size:15px;line-height:1.8;max-width:920px;margin:16px 0 18px}
+@media(max-width:600px){.local-vacant-power{padding:25px 22px;margin-block:12px 26px}.local-vacant-power h2{font-size:29px}.local-vacant-power>p:not(.eyebrow){font-size:14px}}
