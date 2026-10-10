@@ -5,7 +5,7 @@ from urllib.parse import urlparse, parse_qs
 from playwright.sync_api import sync_playwright
 BASE=os.environ.get('RAPID_TEST_BASE','http://127.0.0.1:4173').rstrip('/')
 OUT=Path('artifacts');OUT.mkdir(exist_ok=True)
-routes=['/aviso-legal/','/privacidad/','/cookies/','/guias/','/guias/alarmas-sin-cuotas/','/guias/vision-nocturna-y-grabacion/','/guias/seguridad-segunda-residencia/','/guias/presupuesto-instalacion/','/guias/camaras-exteriores-noche/','/guias/grabacion-nvr-almacenamiento/','/guias/camaras-4g-solares/','/contacto/']
+routes=['/aviso-legal/','/privacidad/','/cookies/','/guias/','/guias/alarmas-sin-cuotas/','/guias/vision-nocturna-y-grabacion/','/guias/seguridad-segunda-residencia/','/guias/presupuesto-instalacion/','/guias/camaras-exteriores-noche/','/guias/grabacion-nvr-almacenamiento/','/guias/camaras-4g-solares/','/guias/alarma-vivienda-cerrada-sin-luz/','/contacto/']
 checks=[];errors=[];outbound=[];set_cookies=[]
 with sync_playwright() as p:
     launch={'executable_path':os.environ['RAPID_CHROMIUM']} if os.environ.get('RAPID_CHROMIUM') else {}
@@ -51,7 +51,7 @@ with sync_playwright() as p:
     assert len(intercepted)==1
     assert 'Municipio o pueblo: Lerma' in parse_qs(urlparse(intercepted[0]).query).get('text',[''])[0]
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844});q=nojs.new_page()
-    q.goto(BASE+'/guias/');assert q.locator('.guide-card').count()==7
+    q.goto(BASE+'/guias/');assert q.locator('.guide-card').count()==8
     q.goto(BASE+'/cookies/');assert q.locator('h1').inner_text()=='Política de cookies'
     assert not errors,errors
     browser.close()

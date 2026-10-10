@@ -29,6 +29,10 @@
       [
         "Una entrega que puedas utilizar sin ayuda",
         "Comprueba con el técnico cómo se arma, qué sucede al abrir un acceso y quién recibe el aviso. Pide que se expliquen el estado de las baterías y la conectividad que necesita el acceso remoto. Los detectores inalámbricos no eliminan la alimentación de la central ni los posibles cables de una cámara. La propuesta sin cuota obligatoria es autogestionada: conectividad, servicios adicionales y futuras revisiones deben quedar separados en el presupuesto."
+      ],
+      [
+        "Piso cerrado o sin suministro eléctrico",
+        "Si la vivienda queda cerrada y se corta la luz durante unas horas, la central puede seguir funcionando con su batería de respaldo según el modelo y la configuración. Si el inmueble va a permanecer sin red eléctrica durante semanas o meses, se estudia una alimentación externa compatible, como 6V PSU con batería externa en hubs compatibles, y una vía móvil mediante SIM si no habrá router. La batería del hub no alimenta cámaras ni grabadores, por lo que vídeo y alarma se dimensionan por separado."
       ]
     ],
     "checklist": [
@@ -45,6 +49,10 @@
       [
         "¿Tengo que instalar cámaras dentro?",
         "No necesariamente. Se estudian detección, fotoverificación y vídeo según lo que necesitas comprobar, respetando la privacidad de los espacios."
+      ],
+      [
+        "¿Puede funcionar la alarma en un piso cerrado y sin luz?",
+        "Sí, pero hay que distinguir un apagón temporal de una vivienda sin suministro durante mucho tiempo. La batería interna sirve de respaldo; para periodos prolongados se estudia una batería externa y fuente compatible, además de comunicación móvil si no habrá Internet fijo."
       ]
     ],
     "sources": [

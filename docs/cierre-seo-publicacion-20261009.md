@@ -4,7 +4,7 @@ La verificación normal se ejecuta en modo preview/noindex. Además, CI realiza 
 
 La simulación exige:
 - dominio canónico https://camarasyalarmasrapid.com;
-- 3.844 URLs indexables en producción: 28 páginas núcleo, 19 provincias y 3.797 municipios;
+- 3.845 URLs indexables en producción: 29 páginas núcleo, 19 provincias y 3.797 municipios;
 - sitemap principal con las páginas núcleo y provincias;
 - 19 sitemaps provinciales con todos sus municipios;
 - canonical único y coincidente con la URL limpia;

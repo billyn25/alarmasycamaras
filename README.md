@@ -26,6 +26,10 @@ npm run preview
 
 Abrir `http://127.0.0.1:4173`. El build no requiere red ni paquetes de producción: utiliza las fuentes ya versionadas. La auditoría revisa todas las páginas, sus H1, títulos, descripciones, imágenes, enlaces y anclas. GitHub Actions ejecuta además Chromium en móvil, tableta y PC, prueba los buscadores y el mensaje WhatsApp sin enviarlo, y exporta capturas.
 
+## Nueva intención: vivienda cerrada sin luz
+
+La guía `/guias/alarma-vivienda-cerrada-sin-luz/` cubre búsquedas de alarma para piso vacío, vivienda cerrada, alarma sin suministro eléctrico y alarma con batería externa. Se enlaza desde viviendas y páginas municipales.
+
 ## Contacto y condiciones
 
 **641 589 394** está configurado como teléfono y WhatsApp del sitio en `config/site.json`. La consulta abre llamada o WhatsApp: no hay CRM, envío de emails ni base de datos.
@@ -34,7 +38,7 @@ Sin cuota mensual obligatoria por alarma autogestionada. Conectividad, mantenimi
 
 ## Publicación e indexación
 
-Dominio definitivo configurado en **https://camarasyalarmasrapid.com**. En producción se publican **3.844 URLs indexables**: 28 páginas principales, 19 provincias y 3.797 municipios. Aviso legal, privacidad, cookies y 404 siguen fuera del índice.
+Dominio definitivo configurado en **https://camarasyalarmasrapid.com**. En producción se publican **3.845 URLs indexables**: 29 páginas principales, 19 provincias y 3.797 municipios. Aviso legal, privacidad, cookies y 404 siguen fuera del índice.
 
 Cada municipio conserva una sola URL canónica y combina contenido técnico, variantes de intención de búsqueda, soluciones por inmueble, guías y enlazado interno. No se crean páginas distintas para «técnico», «instalador», «instalar cámaras» o «instalar alarmas». Los contextos municipales con fuente pública añaden profundidad extra, pero no son un requisito técnico de indexación.
 

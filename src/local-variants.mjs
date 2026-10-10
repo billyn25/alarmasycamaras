@@ -104,7 +104,7 @@ const intentBodies=[
 export function localIntentSection(t){
  const seed=t.id+'|search-intent';
  const heading=choose(intentHeadings,seed+'|h')(t),body=choose(intentBodies,seed+'|b')(t);
- return `<section class="local-intent wrap" aria-labelledby="local-intent-title"><p class="eyebrow">INSTALACIÓN · TÉCNICO · CÁMARAS · ALARMAS</p><h2 id="local-intent-title">${e(heading)}</h2><p>${e(body)}</p><div class="local-intent-links"><a href="/camaras/">Instalar cámaras de seguridad <span aria-hidden="true">→</span></a><a href="/alarmas/">Instalar una alarma <span aria-hidden="true">→</span></a><a href="/alarmas-y-camaras/">Cámaras y alarmas juntas <span aria-hidden="true">→</span></a></div></section>`;
+ return `<section class="local-intent wrap" aria-labelledby="local-intent-title"><p class="eyebrow">INSTALACIÓN · TÉCNICO · CÁMARAS · ALARMAS</p><h2 id="local-intent-title">${e(heading)}</h2><p>${e(body)}</p><div class="local-intent-links"><a href="/camaras/">Instalar cámaras de seguridad <span aria-hidden="true">→</span></a><a href="/alarmas/">Instalar una alarma <span aria-hidden="true">→</span></a><a href="/alarmas-y-camaras/">Cámaras y alarmas juntas <span aria-hidden="true">→</span></a><a href="/guias/alarma-vivienda-cerrada-sin-luz/">Alarma para vivienda cerrada sin luz <span aria-hidden="true">→</span></a></div></section>`;
 }
 
 const titlePatterns=[
@@ -149,7 +149,8 @@ const deepLinks=[
  ['/guias/camaras-exteriores-noche/','Cámaras exteriores y noche'],
  ['/guias/grabacion-nvr-almacenamiento/','Grabación y NVR'],
  ['/guias/camaras-4g-solares/','Cámaras 4G y solares'],
- ['/guias/presupuesto-instalacion/','Cómo comparar presupuestos']
+ ['/guias/presupuesto-instalacion/','Cómo comparar presupuestos'],
+ ['/guias/alarma-vivienda-cerrada-sin-luz/','Alarma sin luz para vivienda cerrada']
 ];
 export function localInternalLinks(t){
  const ranked=deepLinks.map((item,i)=>({item,rank:hash(t.id+'|deep-link|'+i)})).sort((a,b)=>a.rank-b.rank).slice(0,5);

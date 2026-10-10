@@ -3,10 +3,10 @@
 Objetivo: permitir que Google descubra e indexe el máximo de cobertura municipal con una única URL por localidad.
 
 ## Salida de producción
-- 28 páginas principales indexables.
+- 29 páginas principales indexables.
 - 19 páginas provinciales indexables.
 - 3.797 páginas municipales indexables.
-- Total: 3.844 URLs indexables.
+- Total: 3.845 URLs indexables.
 - Aviso legal, privacidad, cookies y 404 permanecen noindex.
 
 ## Intención de búsqueda

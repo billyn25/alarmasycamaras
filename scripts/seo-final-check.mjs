@@ -7,7 +7,7 @@ const report=JSON.parse(fs.readFileSync('.cache/build-report.json','utf8'));
 const base=new URL(site.domain).origin;
 
 assert.equal(base,'https://camarasyalarmasrapid.com');
-assert.equal(report.pages,3848);
+assert.equal(report.pages,3849);
 assert.equal(report.municipalities,3797);
 
 for(const page of pages){
