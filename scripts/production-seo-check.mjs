@@ -14,7 +14,7 @@ assert.equal(report.indexable,3866,'Deben salir indexables 29 páginas núcleo, 
 assert.equal(report.sitemaps.length,20);assert.ok(report.sitemaps.includes('/sitemaps/principal.xml'));for(const slug of ['alava','bizkaia','gipuzkoa','burgos','cantabria','navarra','la-rioja','leon','valladolid','zamora','avila','palencia','salamanca','segovia','soria','madrid','asturias','toledo','guadalajara'])assert.ok(report.sitemaps.includes('/sitemaps/'+slug+'.xml'));
 
 const indexed=pages.filter(p=>p.indexed);
-assert.equal(indexed.length,3845);
+assert.equal(indexed.length,3866);
 assert.equal(indexed.filter(p=>p.townId).length,3797);
 assert.equal(indexed.filter(p=>p.province&&!p.townId&&!p.district).length,19);assert.equal(indexed.filter(p=>p.district).length,21);
 
