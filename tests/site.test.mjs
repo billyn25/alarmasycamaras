@@ -4,6 +4,7 @@ import './facilities.test.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {madridDistricts} from '../src/madrid-districts.mjs';
 import {e,slug,cleanName,townsFrom,runtime,approvedLocal} from '../src/lib.mjs';
 import {provinces,brands,services} from '../src/content.mjs';
 const site=JSON.parse(fs.readFileSync('config/site.json','utf8')),records=JSON.parse(fs.readFileSync('data/municipios.json','utf8')).municipalities;
@@ -70,3 +71,11 @@ import './quote-form.test.mjs';
 import './multibrand.test.mjs';
 
 import './local-variants.test.mjs';
+
+
+test('Madrid publica 21 distritos con rutas únicas',()=>{
+  assert.equal(madridDistricts.length,21);
+  assert.equal(new Set(madridDistricts.map(d=>d.url)).size,21);
+  assert.ok(madridDistricts.some(d=>d.slug==='san-blas-canillejas'));
+  assert.ok(madridDistricts.some(d=>d.slug==='vicalvaro'));
+});
