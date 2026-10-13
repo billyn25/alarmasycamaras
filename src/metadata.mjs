@@ -10,6 +10,7 @@ export function structuredData(page,site,rt){
  const service=services.find(s=>page.url===`/${s.slug}/`);
  if(service)graph.push({'@context':'https://schema.org','@type':'Service','@id':url+'#service',name:service.title,serviceType:service.title,url,description:page.description,provider:{'@id':org}});
  if(page.townId)graph.push({'@context':'https://schema.org','@type':'Service','@id':url+'#local-service',name:'Instalación de cámaras y alarmas en '+page.town,serviceType:'Instalación de cámaras de seguridad, videovigilancia y alarmas',url,description:page.description,provider:{'@id':org},areaServed:{'@type':'AdministrativeArea',name:page.town+', '+page.provinceName}});
+ if(page.district)graph.push({'@context':'https://schema.org','@type':'Service','@id':url+'#district-service',name:'Instalación de cámaras y alarmas en '+page.districtName+', Madrid',serviceType:'Instalación de cámaras de seguridad, videovigilancia y alarmas',url,description:page.description,provider:{'@id':org},areaServed:{'@type':'AdministrativeArea',name:page.districtName+', Madrid'}});
  return graph;
 }
 const trimMeta=(value,max=165)=>{const text=String(value??'').trim();if(text.length<=max)return text;const raw=text.slice(0,max-1),space=raw.lastIndexOf(' '),cut=(space>100?raw.slice(0,space):raw).replace(/[\s,;:.\-]+$/,'');return cut+'.';};
