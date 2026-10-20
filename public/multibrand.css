@@ -36,3 +36,18 @@
 .solar-home p{line-height:1.7}
 #marcas-conectadas{scroll-margin-top:100px}
 @media(max-width:760px){.solar-home{grid-template-columns:1fr}.solar-home-image img{max-height:320px}.solar-home-image{padding:18px}}
+
+/* Explicit rhythm: global resets remove the default heading/paragraph margins. */
+.solar-home>div:last-child{display:flex;flex-direction:column;align-items:flex-start;gap:22px;min-width:0}
+.solar-home>div:last-child>h2,.solar-home>div:last-child>p{margin:0}
+.solar-home>div:last-child>.eyebrow{margin-bottom:2px}
+.solar-home>div:last-child>.button{margin-top:6px}
+.solar-home>div:last-child>.fine-print{margin-top:2px;line-height:1.65}
+@media(max-width:760px){
+ .solar-home{gap:32px}
+ .solar-home>div:last-child{gap:24px}
+ .solar-home h2{line-height:1.14}
+ .solar-home>div:last-child>p:not(.eyebrow):not(.fine-print){font-size:1rem;line-height:1.75}
+ .solar-home>div:last-child>.button{margin-top:8px}
+ .solar-home>div:last-child>.fine-print{font-size:.78rem}
+}
