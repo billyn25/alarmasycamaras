@@ -28,3 +28,11 @@
  .multi-camera-copy small{font-size:.82rem;line-height:1.35}
  .multi-camera-section>.wrap>.fine-print{font-size:.78rem;line-height:1.55;margin-top:22px}
 }
+.solar-home{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:center;scroll-margin-top:100px}
+.solar-home-image{background:#f6f8f7;border-radius:28px;padding:28px;text-align:center;min-width:0}
+.solar-home-image img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block}
+.solar-home-image span{display:block;font-size:.8rem;letter-spacing:.08em;margin-top:18px}
+.solar-home h2{font-size:clamp(2rem,4vw,4rem);line-height:1.05;letter-spacing:-.04em}
+.solar-home p{line-height:1.7}
+#marcas-conectadas{scroll-margin-top:100px}
+@media(max-width:760px){.solar-home{grid-template-columns:1fr}.solar-home-image img{max-height:320px}.solar-home-image{padding:18px}}

@@ -31,7 +31,9 @@ test('Verde verificado y logo Rapid inalterado',()=>{
   const sha=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+logo.length+'\0'),logo])).digest('hex');
   assert.equal(sha,'dca6aeb64a3a897dd5ebf22e7d0817974afffcf1');
   const html=home(towns);const srcs=[...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map(m=>m[1]);
-  assert.equal(srcs.length,7);assert.equal(new Set(srcs).size,7);
+  assert.equal(srcs.length,8);assert.equal(new Set(srcs).size,8);
+  for(const brand of ['Imou','Nivian','Vesta','Safire Smart'])assert.ok(html.includes(brand));
+  assert.ok(srcs.includes('/assets/nivian-solar-4g.webp'));
 });
 test('Pie con un solo teléfono y sin reactivar indexación',()=>{
   const site=JSON.parse(fs.readFileSync('config/site.json','utf8'));site.directoryCount=towns.length;
