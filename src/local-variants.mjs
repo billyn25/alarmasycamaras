@@ -59,6 +59,162 @@ const pools=[
  ]}
 ];
 
+
+const servicePools = [
+ {
+  "key": "garages",
+  "label": "GARAJES COMUNITARIOS",
+  "url": "/camaras/",
+  "variants": [
+   [
+    "Cámaras para garajes comunitarios",
+    "Estudiamos rampas, accesos peatonales, puertas de vehículos y zonas de paso para colocar cámaras con un encuadre útil. Revisamos contraluces, iluminación nocturna y recorrido del cableado hasta el grabador. La entrega incluye reproducción de eventos y cuentas de acceso para las personas designadas por la comunidad."
+   ],
+   [
+    "Videovigilancia en rampas y accesos del garaje",
+    "Los faros y el cambio de luz entre la calle y el sótano pueden dificultar la imagen. Se prueba la posición y se eligen óptica e iluminación según cada acceso. Para varias cámaras se valora un NVR y conexión PoE, separando el acceso de administración del uso cotidiano."
+   ],
+   [
+    "Renovación de cámaras en aparcamientos de comunidades",
+    "Si el garaje ya tiene cámaras, comprobamos cableado, fuentes, grabador y calidad de imagen antes de sustituir equipos. Podemos estudiar ampliaciones para accesos que quedan fuera de encuadre y mejorar la búsqueda de grabaciones, sin dar por aprovechable material que no se haya probado."
+   ]
+  ]
+ },
+ {
+  "key": "farms",
+  "label": "FINCAS SIN LUZ NI RED",
+  "url": "/guias/camaras-4g-solares/",
+  "variants": [
+   [
+    "Cámaras para fincas sin luz ni internet fijo",
+    "Para vigilar una finca sin suministro eléctrico ni router se estudian cámaras con batería, panel solar y comunicación móvil 4G/GSM compatible. Comprobamos cobertura en el punto de montaje, sombras y orientación del panel. La propuesta concreta grabación por eventos, almacenamiento y necesidades de datos de la SIM."
+   ],
+   [
+    "Vigilancia de parcelas y terrenos sin red eléctrica",
+    "Un portón aislado exige resolver por separado energía y comunicaciones. Valoramos batería y aporte solar, cobertura móvil y distancia al acceso. Se revisa cuánto movimiento habrá y con qué frecuencia se consultará el directo para dimensionar la solución sin prometer autonomía ilimitada."
+   ],
+   [
+    "Seguridad para casetas y accesos de fincas",
+    "Cuando no llega Wi-Fi ni electricidad, estudiamos una cámara autónoma con conexión móvil. Antes de elegirla se revisan ubicación del panel, fijación, señal y mantenimiento. Si no existe cobertura suficiente, hay que valorar otra ubicación o un enlace viable antes de cerrar la instalación."
+   ]
+  ]
+ },
+ {
+  "key": "solar",
+  "label": "CÁMARAS 4G Y SOLARES",
+  "url": "/guias/camaras-4g-solares/",
+  "variants": [
+   [
+    "Instalación de cámaras GSM/4G con panel solar",
+    "Montamos soluciones de vídeo con SIM y alimentación solar según las condiciones del emplazamiento. Se configura la aplicación, la detección y el almacenamiento compatible, y se comprueba la recepción de avisos. La SIM, los datos y los servicios opcionales se detallan en el presupuesto."
+   ],
+   [
+    "Panel solar, batería y cobertura se calculan juntos",
+    "La sombra de un árbol o una fachada puede reducir la recarga del equipo. Se estudian orientación, horas de sol, actividad y consumo antes de fijar cámara y panel. Para acceso remoto se prueba la red móvil que utilizará la SIM en el lugar real."
+   ],
+   [
+    "Cámaras solares para entradas alejadas del router",
+    "Una cámara solar puede evitar un tendido eléctrico hasta un acceso remoto, pero necesita energía suficiente y una conexión adecuada. Se comprueba si encaja Wi-Fi o 4G, cómo se recuperan los eventos y qué mantenimiento requerirá la batería en periodos de menor insolación."
+   ]
+  ]
+ },
+ {
+  "key": "battery",
+  "label": "CÁMARAS CON BATERÍA",
+  "url": "/camaras/",
+  "variants": [
+   [
+    "Cámaras con batería para puntos sin enchufe",
+    "Instalamos cámaras recargables donde conviene evitar una toma eléctrica junto al equipo. Antes se comprueba alcance de Wi-Fi o conexión móvil, acceso para recargar y frecuencia de detecciones. El modo de grabación depende del modelo; una cámara de batería no se presupone equivalente a un CCTV continuo."
+   ],
+   [
+    "Vídeo por eventos con equipos recargables",
+    "Para un acceso de uso ocasional puede estudiarse una cámara con batería y avisos por movimiento. Ajustamos sensibilidad y zonas de detección para reducir activaciones innecesarias. Revisamos dónde se guardan los eventos y cómo consultar el nivel de batería desde la aplicación."
+   ],
+   [
+    "Ampliar vigilancia sin llevar corriente a cada punto",
+    "Si el cableado resulta complicado, valoramos cámaras con batería o apoyo solar. Se explica cómo se recargan, qué conectividad requieren y qué funciones dependen de servicios opcionales. La elección se hace por actividad y mantenimiento, además del lugar de montaje."
+   ]
+  ]
+ },
+ {
+  "key": "peephole",
+  "label": "MIRILLAS WI-FI",
+  "url": "/camaras/",
+  "variants": [
+   [
+    "Mirilla Wi-Fi para consultar quién llama a tu puerta",
+    "Estudiamos mirillas digitales con pantalla y consulta desde el móvil según el modelo. Se revisan grosor de puerta, alojamiento, cobertura Wi-Fi y recarga de batería. Antes de activar captación o grabación se valora el encuadre hacia el rellano y las condiciones aplicables a los espacios compartidos."
+   ],
+   [
+    "Sustitución de mirilla por un modelo digital conectado",
+    "Una mirilla con pantalla puede facilitar ver quién está al otro lado de la puerta. Comprobamos medidas, montaje y funciones de la referencia elegida: avisos, directo y grabación no son iguales en todos los equipos. La configuración incluye usuarios y prueba de conexión desde el móvil."
+   ],
+   [
+    "Avisos en el móvil y visión de la entrada",
+    "Para consultar visitas sin abrir la puerta se puede valorar una mirilla Wi-Fi compatible con el acceso. Revisamos señal junto a la puerta, alimentación y ángulo de visión. Las funciones de nube y sus posibles costes se aclaran antes de elegir equipo; no se promete evitar todos los incidentes."
+   ]
+  ]
+ },
+ {
+  "key": "brands",
+  "label": "IMOU, NIVIAN Y OTRAS MARCAS",
+  "url": "/camaras/",
+  "variants": [
+   [
+    "Instalación y configuración de cámaras Imou y Nivian",
+    "Valoramos referencias Imou, Nivian, EZVIZ y otras marcas según interior, exterior, batería, Wi-Fi o 4G. Se comprueba la función concreta de cada modelo antes de presupuestar. Configuramos cuentas del propietario, avisos y almacenamiento compatible, sin asumir que todas las marcas comparten aplicación o grabador."
+   ],
+   [
+    "Elegir la marca por el servicio que necesitas",
+    "Imou, Nivian, EZVIZ, Hikvision, Dahua y Uniview ofrecen gamas distintas. Para elegir se revisan alimentación, visión nocturna, grabación y acceso remoto de la referencia concreta. En ampliaciones comprobamos compatibilidad con el sistema existente antes de mezclar equipos."
+   ],
+   [
+    "Puesta en marcha de cámaras y aplicaciones móviles",
+    "Podemos revisar cámaras Imou, Nivian y otros equipos compatibles para recuperar conexión, configurar usuarios y comprobar las grabaciones. La viabilidad depende de referencia, estado y acceso legítimo a la cuenta. No se da por incluida una integración entre marcas sin verificarla."
+   ]
+  ]
+ },
+ {
+  "key": "maintenance",
+  "label": "REPARACIÓN Y MANTENIMIENTO",
+  "url": "/guias/grabacion-nvr-almacenamiento/",
+  "variants": [
+   [
+    "La cámara aparece desconectada o no guarda vídeo",
+    "Revisamos alimentación, conectores, red, fecha y almacenamiento para localizar el fallo. Si existe NVR se comprueban disco y canales; en equipos con tarjeta se prueba el archivo disponible. Después verificamos directo y reproducción, porque recuperar imagen no garantiza que vuelva a grabar."
+   ],
+   [
+    "Mantenimiento de cámaras, grabadores y acceso remoto",
+    "Comprobamos fuentes, cableado, discos y estado de los equipos para detectar canales sin grabación o avisos que han dejado de llegar. Se revisan usuarios y ajustes compatibles y se realiza una prueba de reproducción. Cualquier sustitución se concreta tras diagnosticar la instalación."
+   ],
+   [
+    "Cambio de router y recuperación de cámaras Wi-Fi",
+    "Un cambio de red puede dejar cámaras fuera de línea. Revisamos enlace, credenciales que introduce el propietario y conexión del grabador antes de volver a vincular los equipos. La puesta en marcha termina al comprobar acceso remoto y almacenamiento, según las funciones contratadas."
+   ]
+  ]
+ },
+ {
+  "key": "business",
+  "label": "LOCALES, TRASTEROS Y ALMACENES",
+  "url": "/soluciones/",
+  "variants": [
+   [
+    "Cámaras para trasteros y accesos de almacenes",
+    "Estudiamos pasillos, puertas y puntos de carga para definir qué necesita mostrar cada cámara. Revisamos iluminación y red en sótanos o anexos, donde el Wi-Fi puede ser insuficiente. La propuesta puede combinar cableado PoE, grabación centralizada y permisos de consulta."
+   ],
+   [
+    "Videovigilancia para pequeños comercios y oficinas",
+    "Planteamos cámaras para entradas, caja y almacén según el objetivo del negocio. Se ajustan encuadre, grabación y cuentas de usuario y se comprueba el acceso desde móvil. Si hay una alarma existente, estudiamos cómo coordinar avisos y consulta de vídeo con equipos compatibles."
+   ],
+   [
+    "Cámaras exteriores para portones y anexos",
+    "Un acceso alejado puede necesitar un enlace de red o conexión móvil independiente. Revisamos recorrido, alimentación e iluminación antes de elegir una cámara exterior. También se comprueba fijación y protección de las conexiones para que el montaje sea mantenible."
+   ]
+  ]
+ }
+];
+
 const intros=[
  'Para preparar una instalación en {town} conviene empezar por el inmueble y por cómo se utiliza. Esta combinación de criterios sirve para ordenar la consulta antes de elegir referencias concretas.',
  'En {town}, la propuesta se construye a partir de accesos, uso, conectividad y necesidades de vídeo. No partimos de un kit cerrado: primero se define qué debe detectar, mostrar y guardar el sistema.',
@@ -75,9 +231,10 @@ export function localVariantSection(t){
  const seed=t.id+'|'+t.province.id+'|'+t.name;
  const intro=choose(intros,seed+'|intro').replace('{town}',e(t.name));
  const drop=hash(seed+'|drop')%pools.length;
- const selected=pools.filter((_,i)=>i!==drop).map(pool=>({pool,variant:choose(pool.variants,seed+'|'+pool.key),order:hash(seed+'|order|'+pool.key)})).sort((a,b)=>a.order-b.order).slice(0,5);
+ const ranked = (items, salt) => items.map(pool=>({pool,variant:choose(pool.variants,seed+'|'+pool.key),order:hash(seed+'|'+salt+'|'+pool.key)})).sort((a,b)=>a.order-b.order);
+ const selected=[...ranked(servicePools,'services').slice(0,3),...ranked(pools.filter((_,i)=>i!==drop),'criteria').slice(0,2)];
  const blocks=selected.map(({pool,variant})=>`<article class="local-variant-card"><p class="eyebrow">${e(pool.label)}</p><h3>${e(variant[0])}</h3><p>${e(variant[1])}</p><a class="text-link" href="${pool.url}">Ampliar información <span aria-hidden="true">→</span></a></article>`).join('');
- return `<section class="section wrap local-variant-section" aria-labelledby="local-variant-title"><div class="section-heading"><div><p class="eyebrow">CÓMO PLANTEAR TU INSTALACIÓN</p><h2 id="local-variant-title">Decisiones útiles para ${e(t.name)}.</h2></div><p>${intro}</p></div><div class="local-variant-grid">${blocks}</div><p class="fine-print">Estos criterios ayudan a preparar la instalación según el inmueble. La visita, disponibilidad y condiciones se confirman al preparar el presupuesto.</p></section>`;
+ return `<section class="section wrap local-variant-section" aria-labelledby="local-variant-title"><div class="section-heading"><div><p class="eyebrow">SERVICIOS Y OPCIONES DE INSTALACIÓN</p><h2 id="local-variant-title">Cámaras y soluciones de seguridad en ${e(t.name)}.</h2></div><p>${intro}</p></div><div class="local-variant-grid">${blocks}</div><p class="fine-print">Estos criterios ayudan a preparar la instalación según el inmueble. La visita, disponibilidad y condiciones se confirman al preparar el presupuesto.</p></section>`;
 }
 
 export function localVariantSignature(t){
