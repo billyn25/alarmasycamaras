@@ -57,6 +57,6 @@ with sync_playwright() as p:
     assert page.locator('.facility-choice').first.get_attribute('open') is not None
     assert not errors,errors;assert not external,external
     nojs.close();browser.close()
-report={'base':BASE,'checks':checks,'layouts':len(checks),'municipalContexts':6,'newSolutionPages':5,'preservedTownAndBuilding':True,'withoutJavaScript':True,'consoleErrors':errors,'externalRequests':external}
+report={'base':BASE,'checks':checks,'layouts':len(checks),'municipalContexts':6,'newSolutionPages':len(facilities),'preservedTownAndBuilding':True,'withoutJavaScript':True,'consoleErrors':errors,'externalRequests':external}
 (OUT/'facilities-browser-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
 print('FACILITIES OK:',len(checks),'layouts; native HTML, municipality and building preserved; no third-party requests.')
