@@ -301,5 +301,127 @@
         "https://ajax.systems/es/solutions-by-facility-type/warehouses-and-production-facilities/"
       ]
     ]
+  },
+  {
+    "slug": "garajes-comunitarios",
+    "label": "Garajes comunitarios",
+    "building": "Garaje comunitario",
+    "image": "ajax-turret.jpg",
+    "size": 1000,
+    "alt": "Cámara Ajax TurretCam como referencia para videovigilancia",
+    "title": "Instalación de cámaras para garajes comunitarios",
+    "description": "Cámaras para garajes comunitarios: rampas, accesos, grabador, visión nocturna y permisos. Revisión de la instalación existente y presupuesto a medida.",
+    "lead": "Ver quién accede y poder recuperar una secuencia útil requiere algo más que colocar cámaras en el techo. Estudiamos entradas, luz y grabación con la persona responsable de la comunidad.",
+    "brief": "Rampas, puertas peatonales y accesos de vehículos. Imagen útil, grabaciones comprobadas y acceso para las personas autorizadas.",
+    "alarm": "Si también hace falta detección en un cuarto o acceso, se evalúa por separado del sistema de vídeo y del funcionamiento diario del garaje.",
+    "video": "Encuadres por acceso, iluminación, cableado y grabador dimensionados para el aparcamiento. Pruebas de directo y reproducción antes de entregar.",
+    "tradeoff": "Instalar una cámara no autoriza a compartir sus imágenes con todos los vecinos. La comunidad debe definir las condiciones de uso.",
+    "blocks": [
+      [
+        "Rampas con faros y cambios de luz",
+        "Una rampa combina la claridad de la calle con una zona interior más oscura. Los faros, una luminaria frente a la lente o el reflejo de una pared pueden ocultar justo el momento que interesa. Revisamos altura, orientación y distancia antes de elegir cámara. La prueba debe incluir el paso de vehículos y personas con la iluminación que utiliza el garaje. Una imagen general del aparcamiento no equivale a detalle suficiente en cada puerta; tampoco se promete lectura de matrículas con cualquier equipo."
+      ],
+      [
+        "Puerta de vehículos y acceso peatonal",
+        "El portón, la puerta del ascensor y el paso desde los trasteros tienen usos distintos. Se dibujan los puntos que interesa comprobar y el recorrido del cable hasta el grabador, aprovechando canalizaciones cuando sea viable. Para cámaras IP puede estudiarse alimentación PoE; si existe cable coaxial, se revisan sus condiciones y los equipos compatibles antes de plantear una renovación. La elección se recoge por referencias y funciones, sin dar por aprovechable todo lo existente."
+      ],
+      [
+        "Grabar y encontrar lo sucedido",
+        "El presupuesto define número de canales, disco, resolución y modo de grabación. La capacidad se calcula con el uso previsto; no se asigna un número fijo de días a cualquier disco. Al entregar, buscamos una secuencia anterior y comprobamos su reproducción y exportación por la persona autorizada. También se decide dónde proteger el grabador y cómo mantenerlo alimentado. Consultar el directo desde un móvil no demuestra por sí solo que haya archivo ni que pueda recuperarse una incidencia."
+      ],
+      [
+        "Permisos y privacidad desde el diseño",
+        "Antes de montar, la comunidad debe revisar las condiciones aplicables a la videovigilancia. Se estudian el encuadre, la información mediante carteles y las personas autorizadas a acceder a imágenes siguiendo las referencias de la AEPD. No se configura una cuenta común para repartir grabaciones entre vecinos. Los permisos, la conservación y cualquier acceso remoto forman parte de las decisiones previas. La propuesta técnica debe acompañar esas decisiones y evitar captar espacios ajenos al objetivo de protección."
+      ],
+      [
+        "Renovar sin sustituir a ciegas",
+        "Si las cámaras ya están instaladas, comprobamos alimentación, señal, cableado y estado del almacenamiento. Una imagen borrosa puede tener su origen en suciedad, enfoque, reflejos o un equipo deteriorado; un archivo vacío exige revisar la configuración y el disco. Se separa lo que puede conservarse de lo que conviene cambiar. La revisión termina con pruebas acordadas de imagen, reproducción y usuarios, y un alcance claro de materiales y trabajos en el presupuesto."
+      ]
+    ],
+    "checklist": [
+      "Número aproximado de accesos y plantas del garaje.",
+      "Si existen cámaras, grabador y conexión a Internet.",
+      "Persona autorizada por la comunidad para preparar la consulta."
+    ],
+    "example": "Ejemplo de diseño, no de una instalación realizada: un garaje con rampa y puerta peatonal puede necesitar encuadres independientes para cada acceso. Se revisan luz y cableado, se dimensiona el archivo y se prueba la recuperación de una secuencia antes de cerrar el trabajo.",
+    "faq": [
+      [
+        "¿Hace falta Internet para grabar?",
+        "Un sistema compatible puede guardar localmente sin Internet. La consulta remota necesita una conexión adecuada y permisos configurados."
+      ],
+      [
+        "¿Podéis aprovechar las cámaras existentes?",
+        "Se revisan referencias y funcionamiento. El presupuesto distingue equipos conservados, sustituciones y funciones verificadas."
+      ]
+    ],
+    "sources": [
+      [
+        "AEPD: videovigilancia",
+        "https://www.aepd.es/areas-de-actuacion/videovigilancia"
+      ]
+    ]
+  },
+  {
+    "slug": "fincas-sin-luz-ni-internet",
+    "label": "Fincas sin luz ni internet",
+    "building": "Finca o explotación",
+    "image": "nivian-solar-4g.webp",
+    "size": 1000,
+    "alt": "Cámara Nivian solar 4G con panel de alimentación",
+    "title": "Instalación de cámaras para fincas sin luz ni internet",
+    "description": "Cámaras solares 4G para fincas sin electricidad ni Wi-Fi. Estudio de cobertura SIM, batería, panel, avisos y grabación según la ubicación y el uso.",
+    "lead": "Un portón aislado, una caseta o una finca necesitan resolver energía y comunicación en el mismo proyecto. Estudiamos si una cámara con batería, panel solar y SIM encaja en el punto que quieres vigilar.",
+    "brief": "Accesos alejados de enchufes y router. Revisamos cobertura móvil, sombras, batería y actividad antes de elegir una cámara solar 4G.",
+    "alarm": "La detección de una cámara y una alarma de intrusión son sistemas distintos. Si se necesitan ambos, se dimensionan sus equipos y alimentación por separado.",
+    "video": "Cámara con conectividad móvil y almacenamiento compatible. Configuración de eventos, consulta remota y pruebas con la cobertura disponible.",
+    "tradeoff": "El panel no garantiza energía ilimitada. Actividad, uso del directo, sombras y condiciones estacionales afectan a la autonomía.",
+    "blocks": [
+      [
+        "Cobertura en el punto de montaje",
+        "Tener señal junto a la casa no garantiza que una cámara vaya a conectar en el portón. Antes de elegir, se revisa el emplazamiento y la red móvil disponible para el equipo y la SIM previstos. La cámara 4G utiliza datos móviles: no necesita un router Wi-Fi fijo, pero sí un servicio de datos adecuado. Si no hay conexión suficiente, se estudia otra ubicación o una alternativa viable antes de confirmar el montaje. No se ofrece consulta remota sin resolver primero ese enlace."
+      ],
+      [
+        "Panel y batería según actividad y sombras",
+        "El panel debe recibir luz en una ubicación que pueda mantenerse y quedar bien fijado. Árboles, tejados y orientación modifican el aporte solar. También importa cuántas veces se activa la cámara y cuánto se utiliza el directo desde el teléfono. Una entrada con paso constante exige una previsión distinta a una caseta con pocos eventos. Se revisa el consumo esperado y la posibilidad de recarga o mantenimiento; la autonomía indicada para unas condiciones no se convierte en una garantía para cualquier finca."
+      ],
+      [
+        "Eventos, directo y grabación continua",
+        "Muchas cámaras autónomas están pensadas para activarse y guardar eventos, en lugar de grabar continuamente todo el día. Esa diferencia debe explicarse antes de comprar. Se comprueba cómo detecta el modelo, qué sucede al abrir la aplicación y qué almacenamiento admite. La microSD y la nube tienen condiciones diferentes; los servicios con coste se detallan aparte. Si necesitas archivo continuo o varias cámaras, puede hacer falta un proyecto de energía, comunicaciones y almacenamiento distinto de una cámara solar autónoma."
+      ],
+      [
+        "Un encuadre pensado para el acceso",
+        "Colocar la cámara muy alta puede mostrar toda la parcela y perder el detalle de quien entra. Se revisan distancia al paso, altura y dirección, evitando que ramas o reflejos dominen la escena. De noche se comprueba la iluminación del acceso y el funcionamiento previsto del modelo. También se decide cómo fijar y proteger cámara, panel y conexiones. Para zonas compartidas o límites con otras propiedades se revisa el encuadre antes de activar captación y archivo."
+      ],
+      [
+        "Entrega y costes que conviene dejar claros",
+        "La puesta en marcha incluye configurar usuarios, avisos y almacenamiento, abrir una secuencia guardada y comprobar el directo con la conexión disponible. Se separan instalación, equipo, SIM de datos y nube opcional para conocer los gastos posteriores. El cliente debe saber cómo consultar la batería y qué revisión requiere el panel. Si ya existe una cámara, se comprueba si la incidencia procede de cobertura, datos, energía o configuración antes de proponer sustituirla. No envíes claves ni fechas de ausencia al pedir presupuesto."
+      ]
+    ],
+    "checklist": [
+      "Tipo de acceso y distancia aproximada al punto que quieres ver.",
+      "Si hay electricidad, Wi-Fi o cobertura móvil en esa ubicación.",
+      "Si necesitas eventos, directo o grabación continua."
+    ],
+    "example": "Ejemplo de diseño, no de trabajo realizado: para un portón sin enchufe ni router se puede estudiar una cámara 4G con batería y panel. Primero se comprueban señal y sombras; después se definen eventos, almacenamiento, fijación y mantenimiento. Si esas condiciones no encajan, se plantea otra solución.",
+    "faq": [
+      [
+        "¿La cámara solar funciona sin Wi-Fi?",
+        "Un modelo 4G compatible puede utilizar una SIM con datos. Hay que comprobar la cobertura en su ubicación."
+      ],
+      [
+        "¿Graba las 24 horas?",
+        "Depende del equipo y del proyecto de energía. Muchas cámaras autónomas graban por eventos; la grabación continua debe confirmarse expresamente."
+      ]
+    ],
+    "sources": [
+      [
+        "Nivian: equipos y soporte",
+        "https://www.nivianhome.com/es/"
+      ],
+      [
+        "AEPD: videovigilancia",
+        "https://www.aepd.es/areas-de-actuacion/videovigilancia"
+      ]
+    ]
   }
 ]

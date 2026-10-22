@@ -64,7 +64,7 @@ const servicePools = [
  {
   "key": "garages",
   "label": "GARAJES COMUNITARIOS",
-  "url": "/camaras/",
+  "url": "/soluciones/garajes-comunitarios/",
   "variants": [
    [
     "Cámaras para garajes comunitarios",
@@ -83,7 +83,7 @@ const servicePools = [
  {
   "key": "farms",
   "label": "FINCAS SIN LUZ NI RED",
-  "url": "/guias/camaras-4g-solares/",
+  "url": "/soluciones/fincas-sin-luz-ni-internet/",
   "variants": [
    [
     "Cámaras para fincas sin luz ni internet fijo",

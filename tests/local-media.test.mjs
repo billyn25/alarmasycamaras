@@ -16,7 +16,8 @@ test('Todos los municipios: siete fotos distintas, contenido útil y tres intenc
     assert.equal(new Set(srcs).size,7,t.url);
     for(const src of srcs)assert.ok(fs.existsSync('public'+src),src);
     assert.equal((html.match(/<h1[> ]/g)||[]).length,1,t.url);
-    assert.equal((html.match(/<h2>Instalación de /g)||[]).length,3,t.url);
+    assert.equal((html.match(/<h2>Instalación de /g)||[]).length,2,t.url);
+    assert.ok(html.includes('<h2>Alarma y vídeo conectados en '+t.name+'</h2>'),t.url);
     assert.ok(html.includes('id="local-ecosystem-title"'),t.url);
     assert.ok(html.includes('id="local-usage-title"'),t.url);
     assert.ok(html.includes('loading="eager" fetchpriority="high"'),t.url);

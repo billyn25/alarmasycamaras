@@ -6,9 +6,9 @@ import {townsFrom,approvedLocal,e} from '../src/lib.mjs';
 import {townPage} from '../src/views.mjs';
 const towns=townsFrom(JSON.parse(fs.readFileSync('data/municipios.json','utf8')).municipalities);
 const plain=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-test('Soluciones: cinco páginas útiles y segunda residencia sin URL competidora',()=>{
- validateFacilities(towns);assert.equal(facilities.length,5);
- assert.equal(new Set(facilities.map(facilityUrl)).size,5);
+test('Soluciones: siete páginas útiles y segunda residencia sin URL competidora',()=>{
+ validateFacilities(towns);assert.equal(facilities.length,7);
+ assert.equal(new Set(facilities.map(facilityUrl)).size,7);
  for(const f of facilities){
   const h=facilityPage(f);assert.equal((h.match(/<h1>/g)||[]).length,1);
   assert.ok(plain(h).split(' ').length>420,f.slug);

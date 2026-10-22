@@ -13,7 +13,7 @@ test('Formulario único con servicio, provincia, municipio, nombre, teléfono y 
  assert.ok(html.includes('type="tel"'));assert.ok(html.includes('autocomplete="tel"'));
  assert.ok(html.includes('data-whatsapp="'+site.whatsapp+'"'));
  for(const p of provinces)assert.ok(html.includes(`value="${p.name}"`));
- assert.equal(quoteServices.length,4);assert.equal(quoteBuildings.length,8);
+ assert.equal(quoteServices.length,4);assert.equal(quoteBuildings.length,10);
  assert.ok(html.includes('data-quote-preview'));assert.ok(html.includes('Responsable: R.F.G.'));
  assert.ok(html.includes('<noscript>'));assert.ok(!html.includes('data-netlify'));
 });

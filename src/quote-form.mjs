@@ -6,7 +6,7 @@ import {privacySummary} from './legal.mjs';
 // Build-time defaults. No customer data is stored by this module.
 const defaultSite=JSON.parse(fs.readFileSync(new URL('../config/site.json',import.meta.url),'utf8'));
 export const quoteServices=['Alarmas y cámaras','Alarma inalámbrica','Cámaras de seguridad','Revisión o ampliación'];
-export const quoteBuildings=['Vivienda','Casa o chalet','Segunda residencia','Comercio o local','Oficina','Nave o almacén','Negocio','Otro'];
+export const quoteBuildings=['Vivienda','Casa o chalet','Segunda residencia','Comercio o local','Oficina','Nave o almacén','Garaje comunitario','Finca o explotación','Negocio','Otro'];
 const fold=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
 export function quoteLocation(location=''){
  const text=String(location).trim();
