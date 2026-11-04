@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs && node scripts/audit.mjs && node scripts/content-audit.mjs",
-    "test": "node --test tests/site.test.mjs",
-    "preview": "node scripts/serve.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/serve.mjs",
+    "build:release": "npm run build && npm test && node scripts/seo-final-check.mjs && node scripts/consolidate-localities.mjs && node scripts/regional-contact.mjs && node scripts/audit-consolidated-coverage.mjs"
   }
 }
