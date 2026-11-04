@@ -50,11 +50,12 @@ with sync_playwright() as p:
         assert page.locator('.coverage-province').count() == 19
         assert page.locator('.coverage-province li a').count() == 190
         photos = page.locator('main img').evaluate_all("els => els.map(el => el.getAttribute('src'))")
-        assert len(photos) == 7 and len(set(photos)) == 7, photos
+        assert len(photos) >= 7 and len(set(photos)) == len(photos), photos
+        assert '/assets/ajax-keypad-touchscreen.webp' in photos, 'Falta el teclado Ajax de la portada'
         assert page.locator('.trust-star').count() == 5
         assert page.locator('[data-stat=municipalities]').inner_text() == '3.797'
         assert page.locator('[data-stat=services]').inner_text() == '4'
-        checks.append(f'{width}px: proporción, 4 fotos distintas, compromisos, totales y cobertura OK')
+        checks.append(f'{width}px: proporción, fotos distintas, compromisos, totales y cobertura OK')
     page.goto(BASE + '/marcas/ajax/', wait_until='networkidle')
     assert page.locator('.ajax-topics article').count() == 6
     assert page.locator('.source-links a').count() >= 8

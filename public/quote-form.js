@@ -17,7 +17,7 @@
   return /^\+[1-9]\d{7,14}$/.test(cleaned)?cleaned:'';
  };
  let directory=null;
- const getDirectory=()=>directory||=(fetch('/assets/municipios-search.json').then(r=>{if(!r.ok)throw Error('No disponible');return r.json();}).catch(error=>{directory=null;throw error;}));
+ const getDirectory=()=>directory||=(fetch('/assets/municipios-search.json?v=20261104').then(r=>{if(!r.ok)throw Error('No disponible');return r.json();}).catch(error=>{directory=null;throw error;}));
  const serviceByPath={'/alarmas/':'Alarma inalámbrica','/camaras/':'Cámaras de seguridad','/alarmas-y-camaras/':'Alarmas y cámaras','/mantenimiento/':'Revisión o ampliación'};
  const serviceAliases={alarmas:'Alarma inalámbrica',camaras:'Cámaras de seguridad','alarmas-y-camaras':'Alarmas y cámaras',mantenimiento:'Revisión o ampliación'};
  for(const form of forms){

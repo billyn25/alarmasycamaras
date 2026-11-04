@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && node scripts/regional-contact.mjs"
+  command = "npm run build:release"
   publish = "dist"
 [build.environment]
   NODE_VERSION = "22"
